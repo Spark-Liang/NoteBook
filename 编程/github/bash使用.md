@@ -1,5 +1,3 @@
-
-
 ### 乱码问题
 
 #### git bash 中
@@ -10,13 +8,9 @@ cmd 字符集查看方法：chcp命令。
 
 cmd修改字符集：chcp 936 (转成gbk)，chcp 65001 (转成 utf-8)
 
-
-
 bash 修改字符集的方式 export LANG 变量。
 
 设置为 utf8： export LANG=zh_CN.UTF-8
-
-
 
 设置 git log 编码
 
@@ -26,13 +20,9 @@ git config --global i18n.commitencoding utf-8
 
 git config --global i18n.logoutputencoding  utf-8
 
-
-
 设置 git gui 界面字符集
 
 git config --global gui.encoding utf-8
-
-
 
 git status 乱码
 
