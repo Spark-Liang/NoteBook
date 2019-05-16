@@ -1,10 +1,9 @@
-
 ## pySparkSQL
+
 pySparkSQL 是 SparkSQL 在 python 的api
 
-
-
 ### 获取 sparkSQL 的执行环境
+
 ```python
 from pyspark.sql import SparkSession
 
@@ -12,7 +11,9 @@ spark = SparkSession.builder.getOrCreate()
 ```
 
 ### 文件操作
+
 csv
+
 ```python
 # 读取
 path = "filepath"
@@ -43,9 +44,13 @@ with open(path,'w') as out_file:
 ```
 
 ### DataFrame 操作
+
 在 pySparkSQL 中，提供了和SQL 非常相似的API 方法，使得对于一些小型的查询不需要通过写sql实现，直接调用相应的方法即可。写SQL去处理简单DataFrame比较麻烦，因为使用sql 处理的 DataFrame 需要首先注册为 tempView 通过方法 createTempView 或者 createOrReplaceTempView.
+
 #### 直接调用sql
+
 调用sql 前应当确认是否把DataFrame 注册到 spark 的上下文中。
+
 ```python
 sql = "select * from <view name>"
 df.createTempView('<view name>')
@@ -61,12 +66,13 @@ def exec_sql(sql):
       v.createOrReplaceTempView(k)
   spark_ctx = gbl_vars['spark']
   spark_ctx.sql(sql)
-
 ```
 
 #### select 和 selectExpr 方法
+
 这两个方法能够对 DataFrame 进行 select
 其中 select 把所有接收到的参数都当做是字段名，而selectExpr 则把所有接收到的字符串都当做是表达式
+
 ```python
 # 比如有个字段叫 “简 称”
 df.select('简 称')
@@ -79,6 +85,7 @@ df.select('col1','*')
 ```
 
 #### SQL API 的链式调用
+
 ```python
 sql = """
 select
