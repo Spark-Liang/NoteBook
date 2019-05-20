@@ -39,8 +39,69 @@ os 模块中获取系统参数的变量有：
 
 [完整的表格请看此链接](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior)
 
+
+
+##### 日期计算
+
+日期加减：
+
+```python
+from datetime import datetime,timedelta
+dt # type: datetime
+# dt 加上时间差
+dt + timedelta(days=1)
+
+```
+
+
+
+### 日志
+
+```python
+# 在各个模块中获取logger
+import logging
+logger = logging.getLogger(__name__)
+
+# 在入口模块中制定日志的级别以及日志的格式
+import logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+```
+
+#### 日志格式配置
+
+| Attribute name | Format         | Description                                                                                                                                                                     |
+| -------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| asctime        | %(asctime)s    | Human-readable time when the LogRecord was created. By default this is of the form ‘2003-07-08 16:49:45,896’ (the numbers after the comma are millisecond portion of the time). |
+| levelname      | %(levelname)s  | Text logging level for the message ('DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL').                                                                                           |
+| name           | %(name)s       | Name of the logger used to log the call.                                                                                                                                        |
+| message        | %(message)s    | The logged message, computed as msg % args. This is set when Formatter.format() is invoked.                                                                                     |
+| thread         | %(thread)d     | Thread ID (if available).                                                                                                                                                       |
+| threadName     | %(threadName)s | Thread name (if available).                                                                                                                                                     |
+
+[日志格式配置详细表格](https://docs.python.org/3/library/logging.html?highlight=logging#logrecord-attributes)
+
+
+
+#### 日志handler
+
+##### FileHandler
+
+用于把日志写入到文件中。
+
+例子：
+
+```python
+handler = logging.FileHandler("log.txt")
+handler.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler
+```
+
+
+
 #### 官方文档链接
 
 - [python3](https://docs.python.org/3.7/)
-
-- 
+  
+  
