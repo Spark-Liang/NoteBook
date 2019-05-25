@@ -39,8 +39,6 @@ os 模块中获取系统参数的变量有：
 
 [完整的表格请看此链接](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior)
 
-
-
 ##### 日期计算
 
 日期加减：
@@ -50,10 +48,7 @@ from datetime import datetime,timedelta
 dt # type: datetime
 # dt 加上时间差
 dt + timedelta(days=1)
-
 ```
-
-
 
 ### 日志
 
@@ -80,8 +75,6 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(leve
 
 [日志格式配置详细表格](https://docs.python.org/3/library/logging.html?highlight=logging#logrecord-attributes)
 
-
-
 #### 日志handler
 
 ##### FileHandler
@@ -98,10 +91,21 @@ handler.setFormatter(formatter)
 logger.addHandler(handler
 ```
 
+### 异常处理
 
+#### 打印栈信息
+
+```python
+try:
+    1 / 0 # 触发异常
+except BaseException as e:
+    msg = traceback.format_exc() # 方式1
+    print (msg)
+    logging.exception(e) # 方式2
+finally:
+    pass
+```
 
 #### 官方文档链接
 
 - [python3](https://docs.python.org/3.7/)
-  
-  
