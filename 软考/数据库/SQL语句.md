@@ -38,7 +38,7 @@ primary key(<field name>)
 # 外键的列级约束
 # <field name> <data type> reference <tbl name>(<field name>)
 # 外键的表级约束,采用表级约束可以定义复合主键
-foreign key(<field name>) reference <tbl name>(<target field name>)
+foreign key(<field name>) references <tbl name>(<target field name>)
 
 
 # 修改表

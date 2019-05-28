@@ -18,20 +18,16 @@
 
 ```sql
 CREATE TABLE WORKS(
-    Eno CHAR(10) reference EMP(Eno),
-    Cno CHAR(6) reference COMPANY(Cno),
+    Eno CHAR(10) references EMP(Eno),
+    Cno CHAR(6) references COMPANY(Cno),
     Salary int check(Salary >= 1500),
     primary key (Eno,Cno)
 )
 ```
 
-
-
 #### 函数调用注意点
 
 注意函数的输入参数，输出参数类型。类型不符合需要进行类型转换 convert(<type>, <expression>)
-
-
 
 #### 触发器注意点
 
@@ -50,11 +46,7 @@ BEGIN
 END
 ```
 
-
-
 ### 错题收集
-
-
 
 1. 
 
