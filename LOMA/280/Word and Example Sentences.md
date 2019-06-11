@@ -1,0 +1,1 @@
+- Compensate: The purpose of insurance is to compensate for financial loss, not to provide and opportunity for financial gain.
