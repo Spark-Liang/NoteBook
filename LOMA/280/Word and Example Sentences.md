@@ -1,1 +1,7 @@
 - Compensate: The purpose of insurance is to compensate for financial loss, not to provide and opportunity for financial gain.
+- peril : 
+  - Synonyms For: risk, adventure
+  - example: If the economic losses that actually result from a given peril, sucah as disability, can be spread across a large pool of people who are all subject to the risk of such loeese and the probability of loss is relatively small for each person. (subject to = suffer)
+- obligation : 
+  - synonyms for : responsiblity
+  - example : Such a loss is not insurable because the insurer could not responsibly promise to pay benefits for the loss and still meet its other obligations.
