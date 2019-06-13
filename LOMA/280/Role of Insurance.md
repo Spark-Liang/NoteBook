@@ -49,12 +49,9 @@ some concept:
 - reinsurance 
   
   - corresponding concept: 
-    
     - direct writer ( the company who purchase the reinsurance )
     
     - reinsurer ( the company who issue the reinsurance policy  )
-
-
 
 #### Some concept in underwriting
 
@@ -63,3 +60,23 @@ some concept:
 - physical hazard : hazard = risk 
 
 - moral hazard :
+
+- risk class or risk level:
+  
+  - standard risk
+  
+  - preferred risks: the people who has lower possibility to occur the coverred event
+  
+  - substandard risks: the people who  is more likely to occur the coverred event
+  
+  - declined risk : the risk is to great for insure company to cover
+
+
+
+#### Insurable interst
+
+###### A person is presume (or consider) to have an insurable interst in his life:
+
+Because we always consider that a person can gain more by living than by dying.
+
+#### when the policy issue, the insurable intersts will not influence the issued policy.

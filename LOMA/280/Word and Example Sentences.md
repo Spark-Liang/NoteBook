@@ -5,3 +5,6 @@
 - obligation : 
   - synonyms for : responsiblity
   - example : Such a loss is not insurable because the insurer could not responsibly promise to pay benefits for the loss and still meet its other obligations.
+- wager : 
+  - synonyms for : bet, stake
+  - example : The practice of purchasing insurance as a wager is now consider against public policy.
