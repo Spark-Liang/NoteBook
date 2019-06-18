@@ -71,8 +71,6 @@ some concept:
   
   - declined risk : the risk is to great for insure company to cover
 
-
-
 #### Insurable interst
 
 ###### A person is presume (or consider) to have an insurable interst in his life:
