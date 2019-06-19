@@ -8,22 +8,18 @@
 
 2. 设置环境参数
    
-   | 环境变量         | 内容值             |
-   | ------------ | --------------- |
-   | JAVA_HOME    | Java的安装目录       |
-   | CLASSPATH    | %JAVA_HOME%\lib |
-   | SPARK_HOME_  | spark 的安装目录     |
-   | HADOOP_HOME_ | hadoop的安装目录     |
+   | 环境变量        | 内容值             |
+   | ----------- | --------------- |
+   | JAVA_HOME   | Java的安装目录       |
+   | CLASSPATH   | %JAVA_HOME%\lib |
+   | SPARK_HOME  | spark 的安装目录     |
+   | HADOOP_HOME | hadoop的安装目录     |
    
    并且添加一下路径到path：
    
    %JAVA_HOME%\bin;%SPARK_HOME%\bin;%SPARK_HOME%\sbin;%HADOOP_HOME%\bin
 
 3. 
-
-
-
-
 
 #### 安装 pyspark
 
@@ -71,3 +67,23 @@ spark-class.cmd org.apache.spark.deploy.master.Master -i localhost
 spark-class.cmd org.apache.spark.deploy.worker.Worker spark://localhost:7077 -i localhost
 :: 其中 -i 表示worker所在的ip地址。默认采用本机ip地址作为worker地址。
 ```
+
+##### windows 下启动history server
+
+[原文连接]([https://medium.com/@eyaldahari/how-to-run-spark-history-server-on-windows-52cde350de07](https://medium.com/@eyaldahari/how-to-run-spark-history-server-on-windows-52cde350de07)
+
+需要进行一下步骤在windows 下启动history server：
+
+1. 在 %SPARK\_HOME%\conf 中配置spark-defaults.conf文件，该文件可以通过复制conf目录下的spark-defaults.conf.template 得到
+
+2. 在spark-defaults.conf中添加如下配置：
+   
+   1. spark.eventLog.enabled true
+   
+   2. spark.eventLog.dir    \<where the log files placed in\>
+      
+      1. 配置本地路径需要加 file://做前缀，在windows下比如c的某个路径为file:///c:/...
+      
+      2. 配置hdfs上的路径，如：hdfs://namenode:8021/directory
+
+3. 通过spark-class.cmd org.apache.spark.deploy.history.HistoryServer 启动history server
