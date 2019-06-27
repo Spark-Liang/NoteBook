@@ -38,6 +38,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random
 clf.score(X_test,y_test) # 每个分类器的实例都会有 score 方法用于评级该分类器实例的准确性
 ```
 
+#### 
+
 #### 超参数调优
 
 在机器学习中构建模型实例时输入的参数叫做超参数，这些参数会直接影响模型的预测准确性，所以需要对这些参数进行调优。调优方法如下：
@@ -63,41 +65,11 @@ grid_search= GridSearchCV(clf,[
 # 第一个参数是需要评估的算法的一个实例
 # 第二个参数是所有需要测试的参数组合
 
-grid_search.fit(X,y) # 此处提供的是全部的测试数据集，在grid_search的fit方法中会自动对测试数据集进行切分
+grid_search.fit(X_train,y_train) # 此处依旧需要使用 X_train 和 y_train
 
 # 获取超参数网格搜索结果
 grid_search.best_estimator_ # 效果最佳的实例
 grid_search.best_score_ # 效果最佳的准确度
 ```
 
-#### 数据归一化
-
-在一些基于距离的机器学习算法，由于数据的单位不同会导致不同维度对距离的影响不同，进而影响模型的准确性，所以需要对数据进行归一化处理。常见的归一化处理方法如下：
-
-- 绝对值归一化
-
-- 均值方差标准化
-
-在机器学习中数据归一化的流程如下：
-
-```mermaid
-graph TD;
-A[切分出训练数据集合测试数据集] --> B[使用训练数据集进行归一化]
-B --> C[使用归一化后的训练数据训练模型]
-C --> D[使用训练数据集的归一化数据归一化测试数据]
-```
-
-**需要注意的是，归一化只是用训练数据进行归一化，然后再用归一化数据如均值和方差去归一化预测数据。**
-
-这两种方法在scikit-learn中对应的类是在 sklearn.preprocessing 中的 MinMaxScaler,StandardScaler 。Scaler的结构设计如下：
-
-![](img/standardlization_process.PNG)
-
-使用实例：
-
-```python
-scaler = StandardScaler()
-scaler.fit(X_train)
-clf.fit(scaler.transform(X_train),y_train)
-result = clf.predict(scaler.transform(X_test))
-```
+在使用超参数进行调优依旧需要进行"train test split" 的原因是：防止模型对测试数据集出现过拟合。[过拟合欠拟合&交叉验证](过拟合欠拟合&交叉验证.md)
