@@ -1,9 +1,29 @@
+### 安装
+
+##### windows
+
+在python 官网上下载相应的exe或者msi安装包直接安装运行
+
+##### Linux
+
+1. 在官网上下载对应版本的源码包，并解压。[源码包网址](https://www.python.org/ftp/)
+
+2. 安装对应的依赖包 ：zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel
+
+3. 使用 configure 配置，并使用 make 和make install 安装
+
+4. 建立软连接，使得可以使用 “python3" 命令调用 python3.
+
+```bash
+ln -s $PYTHON3_HOME/bin/python3.7 /usr/bin/python3 
+ln -s $PYTHON3_HOME/bin/pip3.7 /usr/bin/pip3   
+```
+
 ### os 模块
 
 python中主要是通过 os 模块来实现常用的系统交互功能。
 
 os 模块中获取系统参数的变量有：
-
 
 ```python
 

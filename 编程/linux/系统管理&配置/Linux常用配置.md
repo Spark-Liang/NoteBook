@@ -1,11 +1,12 @@
 ### 设置 yum 源
+
 ```bash
 sudo mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
 sudo wget -O /etc/yum.repos.d/CentOS-Base.repo  http://mirrors.aliyun.com/repo/Centos-7.repo
-
 ```
 
 ### 设置swap
+
 ```bash
 sudo dd if=/dev/zero of=/var/swap bs=1G count=4
 sudo chmod 600 /var/swap
@@ -17,6 +18,7 @@ vm.swappiness = 20
 ```
 
 ### 设置清理缓存
+
 ```bash
 sudo crontab -e
 
@@ -24,6 +26,7 @@ sudo crontab -e
 ```
 
 ### 配置 github 加速
+
 ```bash
 # 向/etc/hosts 添加以下地址
 151.101.44.249 github.global.ssl.fastly.net 
