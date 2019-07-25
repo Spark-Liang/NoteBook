@@ -31,7 +31,7 @@ else
 awk '{if(NR > 1) print $1,$2; else print 'header';}'
 ```
 
-[AWK 条件语句与循环]([http://www.runoob.com/w3cnote/awk-if-loop.html](http://www.runoob.com/w3cnote/awk-if-loop.html)
+[AWK 条件语句与循环](http://www.runoob.com/w3cnote/awk-if-loop.html)
 
 #### awk 中使用外部变量
 

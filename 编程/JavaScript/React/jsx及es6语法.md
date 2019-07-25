@@ -45,8 +45,6 @@ class clazz extends super_clazz{
 }
 ```
 
-
-
 #### 箭头函数
 
 ```jsx
