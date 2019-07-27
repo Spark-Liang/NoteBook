@@ -1,0 +1,116 @@
+#### 安装配置
+
+##### 安装
+
+###### 在线安装
+
+```bash
+yum -y install bind bind-chroot
+# bind-chroor 用于改变named运行的范围
+```
+
+###### 离线安装
+
+在ref/named下有经测试能够在 CentOS-7.5上安装成功的安装。
+
+
+
+##### 配置文件
+
+在使用了yum安装之后，默认named运行涉及的范围是所有文件，需要使用bind-chroot对应的工具去改变 named 运行的根目录。并且把需要用到的模板文件复制到对应的新位置。<br>
+
+<font color='red'>由于named在运行时是使用一个在named用户组下的账号进行运行，所以需要保证named 用户组对文件有读的权限，否则会导致dns记录解析不正确。</font>
+
+```bash
+# 修改 named 的运行根目录
+sudo /usr/libexec/setup-named-chroot.sh /var/named/chroot on
+
+# 复制配置文件到新的目录 /var/named/chroot 中的对应位置。
+sudo cp -R /usr/share/doc/bind-*/sample/var/named/* /var/named/chroot/var/named/
+
+# 创建一些必须的文件。
+sudo touch /var/named/chroot/var/named/data/cache_dump.db
+sudo touch /var/named/chroot/var/named/data/named_stats.txt
+sudo touch /var/named/chroot/var/named/data/named_mem_stats.txt
+sudo touch /var/named/chroot/var/named/data/named.run
+sudo mkdir /var/named/chroot/var/named/dynamic
+sudo touch /var/named/chroot/var/named/dynamic/managed-keys.bind
+
+chgrp -R named /var/named/chroot
+```
+
+
+
+
+
+#### zone文件配置
+
+##### dns记录类型
+
+dns 记录的格式如下:
+
+```
+name [TTL] [class] type value
+```
+
+- ttl：存活时间，以秒为单位。表示数据项的缓存有效时间
+
+- class：指定网络类型，默认类型为IN，IN(指Internet)、HS(Hesiod:本地使用的目录服务)、CH(供域名服务器内部用来标示自己)
+
+dns记录最重要是配置 name，type 和value。<br>
+
+<font color='red'>在dns记录中，最重要的是域名如果没有以“.”结尾，着代表的相对域名路径，其相对的是该zone对应的域名。</font>
+
+- SOA：（Start Of Authority）主要配置用于主从DNS服务器同步的信息。**在zone文件中必须配置一个 soa记录。**
+  
+  ```bash
+  # SOA 记录格式，采用zone文件里面的格式。；后面的内容代表注释。
+  name [TTL] [IN] SOA <master domain name> <admin emain> (
+      <Serial>
+      <Refresh>
+      <Retry>
+      <Expire>
+      <Minumum TTL>
+  )
+  ```
+
+- master domain name：DNS主机的域名。
+
+- admin email：这里配置的地址中用"."，替换“@”。比如123@123.com,要写成 123.123.com.。记得最后要加"."。
+
+- serial：序列号。一般格式为 YYYYMMDDNU。比如2019072701，其中01代表7月27日的第2个版本。
+
+- Refresh：设置slave向master请求更新的时间。以秒为单位。
+
+- Retry：连接master失败后重试的时间。以秒为单位
+
+- Expired：一直无法连接到master，则该slave失效的时间。
+
+- Minumum TTL：
+
+- **A，或者AAAA：代表指定域名对应的IP。**
+
+- **NS：当请求的域名为 name时，向该记录的value对应的域名请求解析。**
+  
+  ```bash
+  www.baidu.com IN NS com.
+  ```
+  
+  - 上面的例子代表的意思是，如果请求是 www.baidu.com，那么就向com. 的域名服务器请求解析。
+
+- CNAME：该记录定义了一个域名别名
+
+[更多详细的关于dns记录请看鸟哥的DNS Server](http://linux.vbird.org/linux_server/0350dns.php#DNS_master_rr)
+
+
+
+#### dns server测试
+
+在linux中可以采用dig命令测试dns server是否能够正常解析域名
+
+```bash
+dig <domain name>
+
+# 如果测试的不是配置在 /etc/resolv.conf 中的dns server，可以只用通过@指定
+dig @<dns server to test> <domain name>
+```

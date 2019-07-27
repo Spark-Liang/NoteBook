@@ -47,14 +47,8 @@ systemctl set-default multi-user.target # 切换到命令行界面
 
 ##### 使用客户端进行连接
 
-
-
-
-
 #### 错误处理
 
 ##### 1.配置正常但是无法启动 vnc server，或者启动成功后立即被kill掉
 
 出现这种原因有可能是因为没有安装 GNOME DESKTOP。
-
-
