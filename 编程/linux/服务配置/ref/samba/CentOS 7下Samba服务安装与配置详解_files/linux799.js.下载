@@ -1,0 +1,1 @@
+document.writeln("<img src=\'https://www.linuxidc.com/linuxfile/weixin.png\' alt=\'\' width=\'291\' height=\'250\' />");

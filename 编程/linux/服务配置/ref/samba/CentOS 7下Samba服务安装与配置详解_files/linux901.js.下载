@@ -1,0 +1,1 @@
+﻿document.writeln("<a href=\'http://www.linuxprobe.com/chapter-00.html\' rel=\'nofollow\' target=\'_blank\'><img src=\'/linuxfile/lws.jpg\' alt=\'\' width=\'300\' height=\'250\' /></a>");

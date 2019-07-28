@@ -1,0 +1,726 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0049)https://www.linuxidc.com/Linux/2017-11/148354.htm -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CentOS 7下Samba服务安装与配置详解_Linux教程_Linux公社-Linux系统门户网站</title>
+
+<link rel="icon" href="https://www.linuxidc.com/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="https://www.linuxidc.com/favicon.ico" type="image/x-icon">
+<meta name="description" content="Samba提供了基于CIFS的四个服务：文件和打印服务、授权与被授权、名称解析、浏览服务。前两项服务由smbd提供，后两项服务则由nmb">
+<meta name="keywords" content="Samba服务安装,Samba安装,Samba配置,CentOS 7下Samba服务安装与配置详解,Linux,Linux教程,Linux系统,Linux安装,Ubuntu,Fedora,RedHat,SUSE,CentOS,红旗Linux">
+<link rel="canonical" href="https://www.linuxidc.com/Linux/2017-11/148354.htm">
+<meta name="generator" content="Linux公社">
+<meta name="generator" content="Linux">
+<link rel="stylesheet" href="./CentOS 7下Samba服务安装与配置详解_files/style.css" type="text/css">
+<meta name="generator" content="专业的Linux网站">
+<script charset="utf-8" src="./CentOS 7下Samba服务安装与配置详解_files/s.js.下载"></script><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/jquery.js.下载"></script>
+<script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/iwms.js.下载"></script>
+<script type="text/javascript">iwms.urlPrefix="../../";</script>
+
+<script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/show.js.下载"></script>
+<style>html #hm_t_undefined .hm-t-go-top {position:fixed;right:2px;bottom:2px;z-index:99998;cursor:pointer;width:40px;height:37px!important;text-align:center;white-space:normal;font-size:14px;line-height:17px;padding-top:3px;color:#fff;background:#404040;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEkAAAAXCAYAAABH92JbAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMjgwMTE3NDA3MjA2ODExODA4M0UyNDA4ODdDRTZBQiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBQjc5RkRFNkI5ODMxMUUzQkZGNDhENEJFQjM2OTcyRiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBQjc5RkRFNUI5ODMxMUUzQkZGNDhENEJFQjM2OTcyRiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDI4MDExNzQwNzIwNjgxMTgwODNFMjQwODg3Q0U2QUIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDI4MDExNzQwNzIwNjgxMTgwODNFMjQwODg3Q0U2QUIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5HPYM5AAACC0lEQVR42uyZTSgEYRjH90NoqaVcpDblvKW2XOSkNh8H5Yac9sBBDqQokiJKSMpNTi5OPo6Ktsgu67JcUHIXWfK1u3b8Xx6Zxuzu+64dM83uv34zNfu8b8/8Z+d5P8YqSZLFJNLsRmyWvIRMKgVD4AhEwA3YAV0pzGwEqyAEwmAddIICHe7FqhnsdQM14FxKLj+ooFiGE2ykiD8GVbJ4I1ELAnTmasMODnAhpVcIFIMicMgRH6Z4IxnUAh4pP3Zu5TVpUOLXDJgWiB8wkEF9IK7IL07X05oUFLjpZ4JXQQOYYwfzafJcoDjVPqw43KE4lWtUTF+AQ8eBqQSsgTaO2E0apJ7URrdCDZOM62hQJfBzGmShOD+1+2XSiYaJ7utkkBsEgEewnYfauZUmzWmU6DuY0sEgLzgArgzbu6i992cu/1WclqXsa1iHIt0DYlnKP0b9fRZu5pWdZs7dWXqa7B80+s//oF5aMSjflGqBPq5BQnFtVv4UmGHjIPEH96PAZ6C5kVMwf6daPzbFKnqCqvx9Bk/yFjSBFTMvcL+1DerAmUA/p9Rm1+y7AHJdgnqwx9EHm1s0gKtc2CpR6gE00/ZHMm3RKxbJlf0kNb2BDrCk8hsbDdvBay5tuiUTGxL7waTs2iLw0YTR9BLZQRwDUVqwjuTS9q3VRB8C1OQUnM6UqdXX/IcADn0IMADs2AqDOPSutQAAAABJRU5ErkJggg==) no-repeat -42px center #666;*background-image:url(http://ecma.bdimg.com/holmes/t-popup-icons-png8.png);_position:absolute;_top:expression(eval(document.documentElement.scrollTop+(document.documentElement.clientHeight||document.body.clientHeight)-this.offsetHeight-2));}</style></head>
+<body>
+<div class="topBar">
+	<div class="twidth">
+	
+	<div style="float:right">
+		<a href="http://m.linuxidc.com/" rel="nofollow">手机版</a>
+		<script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/language.js.下载"></script> <a id="StranLink" href="javascript:StranBody()" title="點擊以繁體中文方式浏覽">繁體</a>
+	</div>
+	
+	<div id="topUser">你好，游客 <a href="https://www.linuxidc.com/Linux/2017-11/148354.htm#" onclick="iwms.logPop()">登录</a>
+	<a href="https://www.linuxidc.com/memberreg.aspx" rel="nofollow">注册</a>
+	
+	</div>
+	</div>
+</div>
+<div class="twidth">
+<div id="sitehead">
+<div class="l"></div>
+<div class="r"></div>
+<div class="m">
+	<table width="100%">
+	<tbody><tr align="center"><td width="160">
+	<a href="https://www.linuxidc.com/"><img style="filter: chroma(color=#FFFFFF);" src="./CentOS 7下Samba服务安装与配置详解_files/logo.jpg" alt="Linux公社" width="155" height="53" border="0"></a>
+	</td><td>
+	<div align="center"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linux.js.下载"></script></div>
+	</td>
+	</tr></tbody></table>
+</div>
+</div>
+<div id="navbar">
+<div class="l"></div>
+<div class="r"></div>
+<div class="m">
+	<a href="https://www.linuxidc.com/index.htm" class="first">首页</a><a href="https://www.linuxidc.com/it/">Linux新闻</a><a href="https://www.linuxidc.com/Linuxit/" class="thisclass">Linux教程</a><a href="https://www.linuxidc.com/MySql/">数据库技术</a><a href="https://www.linuxidc.com/RedLinux/">Linux编程</a><a href="https://www.linuxidc.com/Apache/">服务器应用</a><a href="https://www.linuxidc.com/Unix/">Linux安全</a><a href="https://www.linuxidc.com/download/">Linux下载</a><a href="https://www.linuxidc.com/theme/">Linux主题</a><a href="https://www.linuxidc.com/Linuxwallpaper/">Linux壁纸</a><a href="https://www.linuxidc.com/linuxsoft/">Linux软件</a><a href="https://www.linuxidc.com/digi/">数码</a><a href="https://www.linuxidc.com/mobile/">手机</a><a href="https://www.linuxidc.com/diannao/">电脑</a>
+
+</div>
+</div>
+
+<div id="navsub">
+<div class="l"></div>
+<div class="r"></div>
+<div class="m">
+	<a href="https://www.linuxidc.com/index.htm">首页</a> → <a href="https://www.linuxidc.com/Linuxit/">Linux教程</a>
+</div>
+</div>
+<div class="linuxe1"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linuxe1.js.下载"></script></div>
+<div class="linux1"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linux1.js.下载"></script></div>
+<div class="linuxa"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linuxa.js.下载"></script></div>
+<div class="linuxa1"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linuxa1.js.下载"></script></div>
+<table id="middle" width="100%" cellspacing="0" cellpadding="0" style="table-layout:fixed">
+<tbody><tr valign="top"><td>
+
+	<div class="mframe mR">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+		<div class="moreR">
+			背景：<script type="text/javascript">WriteBg()</script><img src="./CentOS 7下Samba服务安装与配置详解_files/b.gif" style="cursor:pointer;width:7px;height:6px;border:1px solid #999;background:#EDF0F5" alt="#EDF0F5" onclick="ContentBg(&quot;#EDF0F5&quot;)"> <img src="./CentOS 7下Samba服务安装与配置详解_files/b.gif" style="cursor:pointer;width:7px;height:6px;border:1px solid #999;background:#FAFBE6" alt="#FAFBE6" onclick="ContentBg(&quot;#FAFBE6&quot;)"> <img src="./CentOS 7下Samba服务安装与配置详解_files/b.gif" style="cursor:pointer;width:7px;height:6px;border:1px solid #999;background:#FFF2E2" alt="#FFF2E2" onclick="ContentBg(&quot;#FFF2E2&quot;)"> <img src="./CentOS 7下Samba服务安装与配置详解_files/b.gif" style="cursor:pointer;width:7px;height:6px;border:1px solid #999;background:#FDE6E0" alt="#FDE6E0" onclick="ContentBg(&quot;#FDE6E0&quot;)"> <img src="./CentOS 7下Samba服务安装与配置详解_files/b.gif" style="cursor:pointer;width:7px;height:6px;border:1px solid #999;background:#F3FFE1" alt="#F3FFE1" onclick="ContentBg(&quot;#F3FFE1&quot;)"> <img src="./CentOS 7下Samba服务安装与配置详解_files/b.gif" style="cursor:pointer;width:7px;height:6px;border:1px solid #999;background:#DAFAF3" alt="#DAFAF3" onclick="ContentBg(&quot;#DAFAF3&quot;)"> <img src="./CentOS 7下Samba服务安装与配置详解_files/b.gif" style="cursor:pointer;width:7px;height:6px;border:1px solid #999;background:#EAEAEF" alt="#EAEAEF" onclick="ContentBg(&quot;#EAEAEF&quot;)"> <img src="./CentOS 7下Samba服务安装与配置详解_files/b.gif" style="cursor:pointer;width:7px;height:6px;border:1px solid #999;background:#FFF" alt="默认" onclick="ContentBg(&quot;&quot;)"> 
+		</div>
+		<span class="tt">阅读新闻</span>
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm" id="bodyTd">
+		<div id="printBody" style="word-break:break-all;">
+			<div style="text-align:center"><h1 class="aTitle">CentOS 7下Samba服务安装与配置详解</h1></div>
+			
+			<table width="97%" align="center">
+				<tbody><tr>
+				<td width="140">[日期：2017-11-07]</td>
+				<td align="center">来源：Linux社区&nbsp;
+				作者：Linux</td>
+				<td width="160" align="right">[字体：<a href="javascript:ContentSize(16)">大</a> <a href="javascript:ContentSize(0)">中</a> <a href="javascript:ContentSize(12)">小</a>]
+				</td></tr>
+			</tbody></table>
+<div id="li_all">
+<div id="li_1"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linux201.js.下载"></script></div>
+<div id="li_2"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linux2.js.下载"></script></div>
+</div>
+			<div id="content" style="overflow-x: hidden; word-break: break-all;"><div>
+<h3>1. Samba简介</h3>
+<p>Samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，由服务器及客户端程序构成。SMB（Server Messages Block，信息服务块）是一种在局域网上共享文件和打印机的一种通信协议，它为局域网内的不同计算机之间提供文件及打印机等资源的共享服务。SMB协议是客户机/服务器型协议，客户机通过该协议可以访问服务器上的共享文件系统、打印机及其他资源。通过设置“NetBIOS over TCP/IP”使得Samba不但能与局域网络主机分享资源，还能与全世界的电脑分享资源。</p>
+<p>Samba最大的功能就是可以用于Linux与windows系统直接的文件共享和打印共享，Samba既可以用于windows与Linux之间的文件共享，也可以用于Linux与Linux之间的资源共享。</p>
+<p>Samba由两个主要程序组成，它们是<code>smbd</code>和<code>nmbd</code>。这两个守护进程在服务器启动到停止期间持续运行，功能各异。<code>Smbd</code>和<code>nmbd</code>使用的全部配置信息全都保存在smb.conf文件中。Smb.conf向smbd和nmbd两个守护进程说明输出什么以便共享，共享输出给谁及如何进行输出。</p>
+<p>Samba提供了基于CIFS的四个服务：文件和打印服务、授权与被授权、名称解析、浏览服务。前两项服务由<code>smbd</code>提供，后两项服务则由<code>nmbd</code>提供。 简单地说，<code>smbd</code>进程的作用是处理到来的SMB软件包，为使用该软件包的资源与Linux进行协商，<code>nmbd</code>进程使主机(或工作站)能浏览Linux服务器。</p>
+<h3>2. Samba安装与配置</h3>
+<h4>2.1 Samba安装与查看</h4>
+<ul>
+<li>
+<p>安装samba应用</p>
+<pre class="hljs undefined"><code>yum -y install samba samba-client 
+</code></pre>
+</li>
+<li>
+<p>启动Samba应用</p>
+<pre class="hljs undefined"><code>systemctl start smb nmb
+</code></pre>
+</li>
+<li>
+<p>查看Samba服务进程</p>
+<pre class="hljs undefined"><code>[root@Linuxidc-Server ~]# ps -ef | grep -E 'smb|nmb'
+root      9885     1  0 14:48 ?        00:00:00 /usr/sbin/nmbd
+root      9887     1  0 14:48 ?        00:00:00 /usr/sbin/smbd
+root      9888  9887  0 14:48 ?        00:00:00 /usr/sbin/smbd
+root      9889  9887  0 14:48 ?        00:00:00 /usr/sbin/smbd
+root      9890  9887  0 14:48 ?        00:00:00 /usr/sbin/smbd
+root      9959  9627  0 15:02 pts/0    00:00:00 grep --color=auto -E smb|nmb
+</code></pre>
+</li>
+<li>
+<p>查看Samba应用服务端口</p>
+<p>smbd应用进程主要监听139和445端口， nmbd应用进程主要监听137与138端口。</p>
+<pre class="hljs undefined"><code>[root@Linuxidc-Server ~]# netstat -tunlp | grep -E 'smbd|nmbd'
+tcp        0      0 0.0.0.0:139             0.0.0.0:*               LISTEN      9887/smbd           
+tcp        0      0 0.0.0.0:445             0.0.0.0:*               LISTEN      9887/smbd           
+tcp6       0      0 :::139                  :::*                    LISTEN      9887/smbd           
+tcp6       0      0 :::445                  :::*                    LISTEN      9887/smbd           
+udp        0      0 192.168.6.255:137       0.0.0.0:*                           9885/nmbd           
+udp        0      0 192.168.6.186:137       0.0.0.0:*                           9885/nmbd           
+udp        0      0 0.0.0.0:137             0.0.0.0:*                           9885/nmbd           
+udp        0      0 192.168.6.255:138       0.0.0.0:*                           9885/nmbd           
+udp        0      0 192.168.6.186:138       0.0.0.0:*                           9885/nmbd           
+udp        0      0 0.0.0.0:138             0.0.0.0:*                           9885/nmbd           
+</code></pre>
+</li>
+</ul>
+<h4>2.2 Samba服务配置介绍</h4>
+<p><strong>1. 查看Samba配置文件</strong></p>
+<p>samba文件共享默认配置文件存放于<code>/etc/samba/smb.conf</code>下， 用于配置Samba服务内容。</p>
+<pre class="hljs undefined"><code> cat /etc/samba/smb.conf
+ [global]
+     workgroup = SAMBA
+     security = user
+
+     passdb backend = tdbsam
+
+     printing = cups
+     printcap name = cups
+     load printers = yes
+     cups options = raw
+
+  [homes]
+     comment = Home Directories
+     valid users = %S, %D%w%S
+     browseable = No
+     read only = No
+     inherit acls = Yes
+
+ [printers]
+     comment = All Printers
+     path = /var/tmp
+     printable = Yes
+     create mask = 0600
+     browseable = No
+
+ [print$]
+     comment = Printer Drivers
+     path = /var/lib/samba/drivers
+     write list = root
+     create mask = 0664
+     directory mask = 0775
+</code></pre>
+<p><strong>2. Samba配置文件详解</strong></p>
+<ul>
+<li>
+<p>全局参数 [global]</p>
+<ul>
+<li>
+<p>config file = /usr/local/samba/lib/smb.conf.%m<br>说明：config file可以让你使用另一个配置文件来覆盖缺省的配置文件。如果文件 不存在，则该项无效。这个参数很有用，可以使得samba配置更灵活，可以让一台samba服务器模拟多台不同配置的服务器。比如，你想让PC1（主机名）这台电脑在访问Samba Server时使用它自己的配置文件，那么先在/etc/samba/host/下为PC1配置一个名为smb.conf.pc1的文件，然后在smb.conf中加入：config file=/etc/samba/host/smb.conf.%m。这样当PC1请求连接Samba Server时，smb.conf.%m就被替换成smb.conf.pc1。这样，对于PC1来说，它所使用的Samba服务就是由smb.conf.pc1定义的，而其他机器访问Samba Server则还是应用smb.conf。</p>
+</li>
+<li>
+<p>workgroup = WORKGROUP<br>说明：设定 Samba Server 所要加入的工作组或者域。</p>
+</li>
+<li>
+<p>server string = Samba Server Version %v<br>说明：设定 Samba Server 的注释，可以是任何字符串，也可以不填。宏%v表示显示Samba的版本号。</p>
+</li>
+<li>
+<p>netbios name = smbserver<br>说明：设置Samba Server的NetBIOS名称。如果不填，则默认会使用该服务器的DNS名称的第一部分。netbios name和workgroup名字不要设置成一样了。</p>
+</li>
+<li>
+<p>interfaces = lo eth0 192.168.12.2/24 192.168.13.2/24<br>说明：设置Samba Server监听哪些网卡，可以写网卡名，也可以写该网卡的IP地址。</p>
+</li>
+<li>
+<p>hosts allow = 127. 192.168.1. 192.168.10.1<br>说明：表示允许连接到Samba Server的客户端，多个参数以空格隔开。可以用一个IP表示，也可以用一个网段表示。hosts deny 与hosts allow 刚好相反。</p>
+<p>例如：</p>
+<pre class="hljs undefined"><code># 表示容许来自172.17.2.*.*的主机连接，但排除172.17.2.50
+hosts allow=172.17.2.EXCEPT172.17.2.50
+# 表示容许来自172.17.2.0/255.255.0.0子网中的所有主机连接
+hosts allow=172.17.2.0/255.255.0.0
+# 表示容许来自M1和M2两台计算机连接
+hosts allow=M1，M2
+# 表示容许来自SC域的所有计算机连接
+hosts allow=@SC
+</code></pre>
+</li>
+<li>
+<p>max connections = 0<br>说明：max connections用来指定连接Samba Server的最大连接数目。如果超出连接数目，则新的连接请求将被拒绝。0表示不限制。</p>
+</li>
+<li>
+<p>deadtime = 0<br>说明：deadtime用来设置断掉一个没有打开任何文件的连接的时间。单位是分钟，0代表Samba Server不自动切断任何连接。</p>
+</li>
+<li>
+<p>time server = yes/no<br>说明：time server用来设置让nmdb成为windows客户端的时间服务器。</p>
+</li>
+<li>
+<p>log file = /var/log/samba/log.%m<br>说明：设置Samba Server日志文件的存储位置以及日志文件名称。在文件名后加个宏%m（主机名），表示对每台访问Samba Server的机器都单独记录一个日志文件。如果pc1、pc2访问过Samba Server，就会在/var/log/samba目录下留下log.pc1和log.pc2两个日志文件。</p>
+</li>
+<li>
+<p>max log size = 50<br>说明：设置Samba Server日志文件的最大容量，单位为kB，0代表不限制。</p>
+</li>
+<li>
+<p>security = user<br>说明：设置用户访问Samba Server的验证方式，一共有四种验证方式。</p>
+<ol>
+<li><em>share</em>：用户访问Samba Server不需要提供用户名和口令, 安全性能较低。</li>
+<li><em>user</em>：Samba Server共享目录只能被授权的用户访问,由Samba Server负责检查账号和密码的正确性。账号和密码要在本Samba Server中建立。</li>
+<li><em>server</em>：依靠其他Windows NT/2000或Samba Server来验证用户的账号和密码,是一种代理验证。此种安全模式下,系统管理员可以把所有的Windows用户和口令集中到一个NT系统上,使用Windows NT进行Samba认证, 远程服务器可以自动认证全部用户和口令,如果认证失败,Samba将使用用户级安全模式作为替代的方式。</li>
+<li><em>domain</em>：域安全级别,使用主域控制器(PDC)来完成认证。</li>
+</ol></li>
+<li>
+<p>passdb backend = tdbsam<br>说明：passdb backend就是用户后台的意思。目前有三种后台：smbpasswd、tdbsam和ldapsam。sam应该是security account manager（安全账户管理）的简写。</p>
+<ol>
+<li>
+<p><em>smbpasswd</em>：该方式是使用smb自己的工具smbpasswd来给系统用户（真实<br>用户或者虚拟用户）设置一个Samba密码，客户端就用这个密码来访问Samba的资源。smbpasswd文件默认在/etc/samba目录下，不过有时候要手工建立该文件。</p>
+</li>
+<li>
+<p><em>tdbsam</em>：该方式则是使用一个数据库文件来建立用户数据库。数据库文件叫passdb.tdb，默认在/etc/samba目录下。passdb.tdb用户数据库可以使用smbpasswd –a来建立Samba用户，不过要建立的Samba用户必须先是系统用户。我们也可以使用pdbedit命令来建立Samba账户。pdbedit命令的参数很多，我们列出几个主要的。</p>
+<blockquote>
+<ul>
+<li>pdbedit –a username：新建Samba账户。</li>
+<li>pdbedit –x username：删除Samba账户。</li>
+<li>pdbedit –L：列出Samba用户列表，读取passdb.tdb数据库文件。</li>
+<li>pdbedit –Lv：列出Samba用户列表的详细信息。</li>
+<li>pdbedit –c “[D]” –u username：暂停该Samba用户的账号。</li>
+<li>pdbedit –c “[]” –u username：恢复该Samba用户的账号。</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><em>ldapsam</em>：该方式则是基于LDAP的账户管理方式来验证用户。首先要建立LDAP服务，然后设置“passdb backend = ldapsam:ldap://LDAP Server”</p>
+</li>
+</ol></li>
+<li>
+<p>encrypt passwords = yes/no<br>说明：是否将认证密码加密。因为现在windows操作系统都是使用加密密码，所以一般要开启此项。不过配置文件默认已开启。</p>
+</li>
+<li>
+<p>smb passwd file = /etc/samba/smbpasswd<br>说明：用来定义samba用户的密码文件。smbpasswd文件如果没有那就要手工新建。</p>
+</li>
+<li>
+<p>username map = /etc/samba/smbusers<br>说明：用来定义用户名映射，比如可以将root换成administrator、admin等。不过要事先在smbusers文件中定义好。比如：root = administrator admin，这样就可以用administrator或admin这两个用户来代替root登陆Samba Server，更贴近windows用户的习惯。</p>
+</li>
+<li>
+<p>guest account = nobody<br>说明：用来设置guest用户名。</p>
+</li>
+<li>
+<p>socket options = TCP_NODELAY SO_RCVBUF=8192 SO_SNDBUF=8192<br>说明：用来设置服务器和客户端之间会话的Socket选项，可以优化传输速度。</p>
+</li>
+<li>
+<p>domain master = yes/no<br>说明：设置Samba服务器是否要成为网域主浏览器，网域主浏览器可以管理跨子网域的浏览服务。</p>
+</li>
+<li>
+<p>local master = yes/no<br>说明：local master用来指定Samba Server是否试图成为本地网域主浏览器。如果设为no，则永远不会成为本地网域主浏览器。但是即使设置为yes，也不等于该Samba Server就能成为主浏览器，还需要参加选举。</p>
+</li>
+<li>
+<p>preferred master = yes/no<br>说明：设置Samba Server一开机就强迫进行主浏览器选举，可以提高Samba Server成为本地网域主浏览器的机会。如果该参数指定为yes时，最好把domain master也指定为yes。使用该参数时要注意：如果在本Samba Server所在的子网有其他的机器（不论是windows NT还是其他Samba Server）也指定为首要主浏览器时，那么这些机器将会因为争夺主浏览器而在网络上大发广播，影响网络性能。如果同一个区域内有多台Samba Server，将上面三个参数设定在一台即可。</p>
+</li>
+<li>
+<p>os level = 200<br>说明：设置samba服务器的os level。该参数决定Samba Server是否有机会成为本地网域的主浏览器。os level从0到255，winNT的os level是32，win95/98的os level是1。Windows 2000的os level是64。如果设置为0，则意味着Samba Server将失去浏览选择。如果想让Samba Server成为PDC，那么将它的os level值设大些。</p>
+</li>
+<li>
+<p>domain logons = yes/no<br>说明：设置Samba Server是否要做为本地域控制器。主域控制器和备份域控制器都需要开启此项。</p>
+</li>
+<li>
+<p>logon . = %u.bat<br>说明：当使用者用windows客户端登陆，那么Samba将提供一个登陆档。如果设置成%u.bat，那么就要为每个用户提供一个登陆档。如果人比较多，那就比较麻烦。可以设置成一个具体的文件名，比如start.bat，那么用户登陆后都会去执行start.bat，而不用为每个用户设定一个登陆档了。这个文件要放置在[netlogon]的path设置的目录路径下。</p>
+</li>
+<li>
+<p>wins support = yes/no<br>说明：设置samba服务器是否提供wins服务。</p>
+</li>
+<li>
+<p>wins server = wins服务器IP地址<br>说明：设置Samba Server是否使用别的wins服务器提供wins服务。</p>
+</li>
+<li>
+<p>wins proxy = yes/no<br>说明：设置Samba Server是否开启wins代理服务。</p>
+</li>
+<li>
+<p>dns proxy = yes/no<br>说明：设置Samba Server是否开启dns代理服务。</p>
+</li>
+<li>
+<p>load printers = yes/no<br>说明：设置是否在启动Samba时就共享打印机。</p>
+</li>
+<li>
+<p>printcap name = cups<br>说明：设置共享打印机的配置文件。</p>
+</li>
+<li>
+<p>printing = cups<br>说明：设置Samba共享打印机的类型。现在支持的打印系统有：bsd, sysv, plp, lprng, aix, hpux, qnx</p>
+</li>
+</ul>
+</li>
+<li>
+<p>共享参数 [共享名]：</p>
+<ul>
+<li>
+<p>comment = 任意字符串<br>说明：comment是对该共享的描述，可以是任意字符串。</p>
+</li>
+<li>
+<p>path = 共享目录路径<br>说明：path用来指定共享目录的路径。可以用%u、%m这样的宏来代替路径里的unix用户和客户机的Netbios名，用宏表示主要用于[homes]共享域。例如：如果我们不打算用home段做为客户的共享，而是在/home/share/下为每个Linux用户以他的用户名建个目录，作为他的共享目录，这样path就可以写成：path = /home/share/%u; 。用户在连接到这共享时具体的路径会被他的用户名代替，要注意这个用户名路径一定要存在，否则，客户机在访问时会找不到网络路径。同样，如果我们不是以用户来划分目录，而是以客户机来划分目录，为网络上每台可以访问samba的机器都各自建个以它的netbios名的路径，作为不同机器的共享资源，就可以这样写：path = /home/share/%m 。</p>
+</li>
+<li>
+<p>browseable = yes/no<br>说明：browseable用来指定该共享是否可以浏览。</p>
+</li>
+<li>
+<p>writable = yes/no<br>说明：writable用来指定该共享路径是否可写。</p>
+</li>
+<li>
+<p>available = yes/no<br>说明：available用来指定该共享资源是否可用。</p>
+</li>
+<li>
+<p>admin users = 该共享的管理者<br>说明：admin users用来指定该共享的管理员（对该共享具有完全控制权限）。在samba 3.0中，如果用户验证方式设置成“security=share”时，此项无效。<br>例如：admin users =bobyuan，jane（多个用户中间用逗号隔开）。</p>
+</li>
+<li>
+<p>valid users = 允许访问该共享的用户<br>说明：valid users用来指定允许访问该共享资源的用户。<br>例如：valid users = bobyuan，@bob，@tech（多个用户或者组中间用逗号隔开，如果要加入一个组就用“@+组名”表示。）</p>
+</li>
+<li>
+<p>invalid users = 禁止访问该共享的用户<br>说明：invalid users用来指定不允许访问该共享资源的用户。<br>例如：invalid users = root，@bob（多个用户或者组中间用逗号隔开。）</p>
+</li>
+<li>
+<p>write list = 允许写入该共享的用户<br>说明：write list用来指定可以在该共享下写入文件的用户。<br>例如：write list = bobyuan，@bob</p>
+</li>
+<li>
+<p>public = yes/no<br>说明：public用来指定该共享是否允许guest账户访问。</p>
+</li>
+<li>
+<p>guest ok = yes/no<br>说明：意义同“public”。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4>2.3 配置Samba服务</h4>
+<ol>
+<li>
+<p>服务规划</p>
+<ul>
+<li>系统分区时，单独划分一个<code>/storage</code>的分区，分区下有logger和shared两个文件夹;</li>
+<li>logger文件夹<code>/storage/logger</code>下对应的管理员账号为<code>logadmin</code>，用户账号为<code>loguser</code>;</li>
+<li>shared文件夹<code>/storage/shared</code>下对应的管理员账号为<code>admin</code>，用户账户号为<code>shared</code>;</li>
+</ul>
+</li>
+<li>
+<p>创建文件夹和用户</p>
+<ul>
+<li>
+<p>创建文件夹</p>
+<pre class="hljs undefined"><code># 创建文件夹
+[root@Linuxidc-Server storage]# cd /storage
+[root@Linuxidc-Server storage]# mkdir logger  shared
+[root@Linuxidc-Server storage]# ls
+total 0
+drwxr-xr-x. 2 root root 6 Aug  3 10:12 logger
+drwxr-xr-x. 2 root root 6 Aug  3 10:12 shared
+</code></pre>
+</li>
+<li>
+<p>创建用户</p>
+<pre class="hljs undefined"><code># 创建用户
+[root@Linuxidc-Server storage]# useradd -s /sbin/nologin logadmin
+[root@Linuxidc-Server storage]# useradd -s /sbin/nologin admin
+[root@Linuxidc-Server storage]# useradd -g admin -s /sbin/nologin shared
+[root@Linuxidc-Server storage]# cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-bus-proxy:x:999:998:systemd Bus Proxy:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:998:997:User for polkitd:/:/sbin/nologin
+tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+logadmin:x:1000:1000::/home/logadmin:/sbin/nologin
+loguser:x:1001:1000::/home/loguser:/sbin/nologin
+admin:x:1002:1002::/home/admin:/sbin/nologin
+shared:x:1003:1002::/home/shared:/sbin/nologin
+[root@Linuxidc-Server storage]# 
+</code></pre>
+</li>
+<li>
+<p>建立Samba用户</p>
+<pre class="hljs undefined"><code>[root@Linuxidc-Server storage]# smbpasswd -a logadmin
+New SMB password:
+Retype new SMB password:
+Added user logadmin.
+[root@Linuxidc-Server storage]# smbpasswd -a loguser
+New SMB password:
+Retype new SMB password:
+Added user loguser.
+[root@Linuxidc-Server storage]# smbpasswd -a admin
+New SMB password:
+Retype new SMB password:
+Added user admin.
+[root@Linuxidc-Server storage]# smbpasswd -a shared
+New SMB password:
+Retype new SMB password:
+Added user shared.
+</code></pre>
+</li>
+<li>
+<p>更改目录属性</p>
+<pre class="hljs undefined"><code>[root@Linuxidc-Server storage]# chown logadmin.logadmin logger
+[root@Linuxidc-Server storage]# chown admin.admin shared
+[root@Linuxidc-Server storage]# chmod -R 777 logger
+[root@Linuxidc-Server storage]# chmod -R 777 shared
+[root@Linuxidc-Server storage]# 
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>配置Samba服务</p>
+<pre class="hljs undefined"><code>[root@Linuxidc-Server storage]# vi /etc/samba/smb.conf
+[global]
+    workgroup = SC.LOCAL
+    server string = Samba Server Version %v
+    netbios name = Linuxidc-Server
+    log file = /var/log/samba/%m.log
+    max log size = 10240
+    security = user
+    passdb backend = tdbsam
+
+[logger]
+    comment = Logs Directories
+    path = /storage/logger/
+    public = no
+    admin users = logadmin
+    valid users = @logadmin
+    browseable = yes
+    writable = yes
+    create mask = 0777
+    directory mask = 0777
+    force directory mode = 0777
+    force create mode = 0777
+
+[shared]
+    # 共享文件目录描述
+    comment = Shared Directories
+    # 共享文件目录
+    path = /storage/shared/
+    # 是否允许guest访问
+    public = no
+    # 指定管理用户
+    admin users = admin
+    # 可访问的用户组、用户
+    valid users = @admin
+    # 是否浏览权限
+    browseable = yes
+    # 是否可写权限
+    writable = yes
+    # 文件权限设置
+    create mask = 0777
+    directory mask = 0777
+    force directory mode = 0777
+    force create mode = 0777
+</code></pre>
+<p>修改完Samba配置文件后，需要重启Samba服务配置才能生效。</p>
+</li>
+<li>
+<p>测试Samba服务</p>
+<ul>
+<li>
+<p>访问Samba服务</p>
+<p>使用Windows客户机通过UNC路径访问Samba服务， 如： <code>\\192.168.6.186</code>, 此时会提示输入用户名和密码（在第2步中创建的用户和密码，如<code>logadmin</code>等）。</p>
+<div class="image-package"><img src="./CentOS 7下Samba服务安装与配置详解_files/171107155096107.png" alt="UNC路径访问"><br>
+<div class="image-caption">UNC路径访问</div>
+</div>
+<div class="image-package"><img src="./CentOS 7下Samba服务安装与配置详解_files/171107155096103.png" alt="输入用户名和密码"><br>
+<div class="image-caption">输入用户名和密码</div>
+</div>
+<div class="image-package"><img src="./CentOS 7下Samba服务安装与配置详解_files/171107155096108.png" alt="共享文件夹"><br>
+<div class="image-caption">共享文件夹</div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>
+<p>测试创建文件</p>
+<p>拷贝客户机文件到Samba共享文件夹下， 测试文件拷贝是否成功。</p>
+<p>将文件<code>book.txt</code>拷贝到Samba共享文件夹<code>logger</code>下， 查看文件是否成功拷贝。</p>
+<div class="image-package"><img src="./CentOS 7下Samba服务安装与配置详解_files/171107155096105.png" alt="成功拷贝文件"><br>
+<div class="image-caption">成功拷贝文件</div>
+</div>
+</li>
+</ul>
+<h3>3. 错误处理</h3>
+<ol>
+<li>
+<p>如果拷贝文件时出现<code>目标文件夹访问被拒绝</code>错误，如下图所示。此时需要检查一下Samba服务器的Selinux和防火墙配置，确认一下Selinux是否关闭，同时确认一下防火墙是否已经打开了Samba服务端口（与Samba服务相关的端口有<code>137、138、139和445</code>）。 最后确认一下Samba提供的共享文件夹是否具有读写权限，具体可以参考第2步和第3步配置（目录属性和Samba服务配置）。</p>
+<div class="image-package"><img src="./CentOS 7下Samba服务安装与配置详解_files/171107155096102.png" alt="拷贝文件时出现错误"><br>
+<div class="image-caption">拷贝文件时出现错误</div>
+</div>
+</li>
+<li>
+<p>当我们要进入不同的samba目录，如：进入<code>shared</code>共享文件夹，但是这些目录都有自己的密码设置时，如果我们在点击这个目录时输入访问该目录的用户名和密码时，会提示“<strong>不允许一个用户使用一个以上用户名与服务器或共享资源的多重连接。中断与此服务器或共享资源的所有连接，然后再试一次。</strong>”出现此问题是windows自身的限制，通常我们会注销当前windows用户，然后再重新登陆samba来访问其他目录。</p>
+<div class="image-package"><img src="./CentOS 7下Samba服务安装与配置详解_files/171107155096106.png" alt="目录访问错误"><br>
+<div class="image-caption">目录访问错误</div>
+</div>
+<p>此时，我们可以打开命令行界面，输入<code>net use * /del /y</code>命令来切掉本机当前的所有远程共享文件信息，然后点击其他目录输入该目录具有访问权限的用户名和密码即可正常访问了。</p>
+<div class="image-package"><img src="./CentOS 7下Samba服务安装与配置详解_files/171107155096104.png" alt="切断远程连接"><br>
+<div class="image-caption">切断远程连接</div>
+</div>
+<div class="image-package"><img src="./CentOS 7下Samba服务安装与配置详解_files/171107155096101.png" alt="更换访问目录"><br>
+<div class="image-caption">更换访问目录</div>
+</div>
+</li>
+</ol></div>
+<p><a href="https://www.linuxidc.com/topicnews.aspx?tid=14" target="_blank" title="CentOS">CentOS</a> 7.2 安装配置Samba服务器&nbsp; <a href="https://www.linuxidc.com/Linux/2017-03/141390.htm">http://www.linuxidc.com/Linux/2017-03/141390.htm</a></p>
+<p>VMWare 虚拟机 <a href="https://www.linuxidc.com/topicnews.aspx?tid=2" target="_blank" title="Ubuntu">Ubuntu</a> 双网卡 访问 samba 速度 翻倍 <a href="https://www.linuxidc.com/Linux/2013-06/85445.htm">http://www.linuxidc.com/Linux/2013-06/85445.htm</a></p>
+<p>Ubuntu 15.04安装Samba服务 <a href="https://www.linuxidc.com/Linux/2016-03/129201.htm">http://www.linuxidc.com/Linux/2016-03/129201.htm</a></p>
+<p>samba安装使用图解&nbsp; <a href="https://www.linuxidc.com/Linux/2017-03/141254.htm">http://www.linuxidc.com/Linux/2017-03/141254.htm</a></p>
+<p>CentOS7.2下源码搭建Samba文件服务器[原创] <a href="https://www.linuxidc.com/Linux/2017-06/144557.htm">http://www.linuxidc.com/Linux/2017-06/144557.htm</a></p>
+<p>CentOS 7.2 安装配置Samba服务器 <a href="https://www.linuxidc.com/Linux/2017-03/141390.htm">http://www.linuxidc.com/Linux/2017-03/141390.htm</a></p>
+<p>CentOS部署Samba企业文件共享服务 <a href="https://www.linuxidc.com/Linux/2016-06/132609.htm">http://www.linuxidc.com/Linux/2016-06/132609.htm</a></p>
+<p>Samba共享服务器的搭建优化&nbsp; <a href="https://www.linuxidc.com/Linux/2017-03/141700.htm">http://www.linuxidc.com/Linux/2017-03/141700.htm</a></p>
+<p>如何在Ubuntu 16.04上安装和配置Samba服务器以进行文件共享&nbsp; <a href="https://www.linuxidc.com/Linux/2017-11/148194.htm">http://www.linuxidc.com/Linux/2017-11/148194.htm</a></p>
+<p>CentOS 6.7下 Samba服务器的搭建与配置（share共享模式）&nbsp; <a href="https://www.linuxidc.com/Linux/2016-12/138220.htm">http://www.linuxidc.com/Linux/2016-12/138220.htm</a></p>
+<p>Ubuntu 16.04下Samba相关配置&nbsp; <a href="https://www.linuxidc.com/Linux/2016-12/138498.htm">http://www.linuxidc.com/Linux/2016-12/138498.htm</a></p>
+<p><a href="https://www.linuxidc.com/topicnews.aspx?tid=10" target="_blank" title="Red Hat">Red Hat</a> 6.5 下 Samba服务器搭建 <a href="https://www.linuxidc.com/Linux/2017-07/145747p2.htm">http://www.linuxidc.com/Linux/2017-07/145747.htm</a></p>
+<p><strong>完整PDF文档可以到Linux公社资源站下载：</strong></p>
+<p>------------------------------------------分割线------------------------------------------</p>
+<p><strong>免费下载地址在</strong> <a title="" href="http://linux.linuxidc.com/" target="_blank">http://linux.linuxidc.com/</a></p>
+<p><strong>用户名与密码都是</strong><a href="http://www.linuxidc.com/">www.linuxidc.com</a></p>
+<p><strong>具体下载目录在</strong> /2017年资料/11月/7日/CentOS 7下Samba服务安装���配置详解/</p>
+<p>下载方法见 <a href="https://www.linuxidc.com/Linux/2013-07/87684.htm">http://www.linuxidc.com/Linux/2013-07/87684.htm</a></p>
+<p>------------------------------------------分割线------------------------------------------</p>
+<p><span style="font-size: small;"><strong>本文永久更新链接地址</strong></span>：<a href="https://www.linuxidc.com/Linux/2017-11/148354.htm">http://www.linuxidc.com/Linux/2017-11/148354.htm</a></p><a href="http://www.linuxidc.com/" target="_blank"><img src="./CentOS 7下Samba服务安装与配置详解_files/logo.gif" alt="linux" width="15" height="17"></a></div><a href="http://www.linuxidc.com/" target="_blank">
+<div class="linux3"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linux3.js.下载"></script></div>
+<div class="linux302"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linux302.js.下载"></script></div>		
+			
+			
+		</a></div><a href="http://www.linuxidc.com/" target="_blank">
+<div class="linuxfx"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/fx.js.下载"></script></div>	
+<div class="linux8"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linux8.js.下载"></script></div>
+<div class="linux801"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linux801.js.下载"></script></div>
+		</a><div class="nearNews"><a href="http://www.linuxidc.com/" target="_blank">
+			</a><div class="prevNews"><a href="http://www.linuxidc.com/" target="_blank"></a><a href="https://www.linuxidc.com/Linux/2017-11/148353.htm">Linux下IP命令使用详解</a></div>
+			<div class="nextNews"><a href="https://www.linuxidc.com/Linux/2017-11/148355.htm">U盘安装CentOS 7系统不能载入到安装界面解决方法</a></div>
+		</div>
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+<div class="linux809"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linux809.js.下载"></script></div>
+	<div class="mframe mR">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+		<span class="tt">相关资讯</span> &nbsp; &nbsp; &nbsp;
+		<a href="https://www.linuxidc.com/search.aspx?where=nkey&amp;keyword=13584" target="_blank">samba配置</a>&nbsp; <a href="https://www.linuxidc.com/search.aspx?where=nkey&amp;keyword=22396" target="_blank">Samba安装</a>&nbsp; <a href="https://www.linuxidc.com/search.aspx?where=nkey&amp;keyword=51539" target="_blank">Samba服务安装</a>&nbsp; 
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm">
+		<table width="100%"><tbody><tr><td width="50%" valign="top"><ul class="nl"><li><a href="https://www.linuxidc.com/Linux/2019-04/158319.htm" target="_blank">Samba服务权限配置案例</a>&nbsp; <span class="gray">(<span class="time">今 14:34</span>)</span></li>
+<li><a href="https://www.linuxidc.com/Linux/2018-01/150493.htm" target="_blank" title="如何在Ubuntu 17.10上使用System-Config-Samba">如何在Ubuntu 17.10上使用System-</a>&nbsp; <span class="gray">(01/22/2018 19:32:30)</span></li>
+<li><a href="https://www.linuxidc.com/Linux/2017-09/147060.htm" target="_blank">Linux中Samba安装详细讲解</a>&nbsp; <span class="gray">(09/25/2017 11:05:57)</span></li>
+</ul></td><td width="50%" valign="top"><ul class="nl"><li><a href="https://www.linuxidc.com/Linux/2018-11/155466.htm" target="_blank" title="Ubuntu 18.04安装Samba服务器及配置">Ubuntu 18.04安装Samba服务器及配</a>&nbsp; <span class="gray">(11/24/2018 08:13:38)</span></li>
+<li><a href="https://www.linuxidc.com/Linux/2017-11/148194.htm" target="_blank" title="如何在Ubuntu 16.04上安装和配置Samba服务器以进行文件共享">如何在Ubuntu 16.04上安装和配置</a>&nbsp; <span class="gray">(11/02/2017 08:24:29)</span></li>
+<li><a href="https://www.linuxidc.com/Linux/2017-07/145445.htm" target="_blank">Ubuntu 16.4下Samba安装配置</a>&nbsp; <span class="gray">(07/06/2017 05:56:38)</span></li>
+</ul></td></tr></tbody></table>
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+<div class="linux808"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linux808.js.下载"></script></div>
+	
+	<div class="mframe mR">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+		<span class="tt">本文评论</span>
+		 	　　<a href="https://www.linuxidc.com/remark.aspx?id=148354" target="_blank">查看全部评论</a> <span class="gray">(0)</span>
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm">
+		<table width="100%" style="margin:6px">		
+		<tbody><tr><td width="50%">
+			<form action="https://www.linuxidc.com/Linux/2017-11/148354.htm" name="fmRemarkSt" onsubmit="return remark.post(this);">
+			<input type="hidden" value="1" name="face" disabled="disabled">
+			表情： <img src="./CentOS 7下Samba服务安装与配置详解_files/b.gif" alt="表情" class="face1" style="cursor:pointer;vertical-align:middle" onclick="remark.dispFace(this)" onmouseout="remark.hideFace()">
+			姓名： <input type="text" name="username" value="" maxlength="15" style="width:60px" class="inputbg" disabled="disabled">
+			<input type="checkbox" id="rmAnonymitySt" onclick="remark.anony(this)" disabled="disabled"><label for="rmAnonymitySt">匿名</label>
+			字数 <input type="text" id="bodyLen" size="3" readonly="readonly" style="border-width:0;background:transparent;vertical-align:middle" value="0" disabled="disabled">
+			<br>
+			<textarea name="body" cols="40" rows="4" onkeydown="remark.dispLen(this)" onkeyup="remark.handle(event,this);remark.dispLen(this)" style="width:39em;height:100px;margin:3px 0;overflow-y:auto" disabled="disabled"></textarea>
+				<br>
+		　　　<input type="checkbox" checked="checked" id="rmAgreeSt" disabled="disabled"><label for="rmAgreeSt">同意评论声明</label>
+		　　　<button type="submit" style="width: 50px; padding: 0px;" disabled="disabled">请登录</button>
+			</form><br>
+			评论声明
+			<ul style="list-style-type:square;margin:5px 0 0 1em;padding:0">
+			<li>尊重网上道德，遵守中华人民共和国的各项有关法律法规</li>
+			<li>承担一切因您的行为而直接或间接导致的民事或刑事法律责任</li>
+			<li>本站管理人员有权保留或删除其管辖留言中的任意内容</li>
+			<li>本站有权在网站内转载或引用您的评论</li>
+			<li>参与本评论即表明您已经阅读并接受上述条款</li>
+			</ul>
+		</td>
+		<td width="50%"><div class="linux799"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linux799.js.下载"></script></div></td></tr>
+		</tbody></table>
+		<script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/remark.js.下载"></script>
+		<script type="text/javascript">
+			remark.maxSize=500;
+			remark.minSize=2;
+			remark.sourceEle=$(document.fmRemarkSt).find("button").get(0);
+			iwms.vCode="CC74440A";
+			iwms.user.name.length==0 ? $i("rmAnonymitySt").click() : $i("rmAnonymitySt").form.username.value=iwms.user.name;
+		</script>
+		<div class="reCont" id="reContainer"></div>
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+	
+</td><td width="300" valign="top">
+<div class="linux901"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linux901.js.下载"></script></div>
+<div class="linux902"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linux902.js.下载"></script></div>
+<div class="linux903"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linux903.js.下载"></script></div>
+<div class="linux905"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linux905.js.下载"></script></div>
+	
+	<div class="lframe">
+	<div class="tl"></div>
+	<div class="tr"></div>
+	<div class="tm">
+		<span class="tt">最新资讯</span>
+	</div>
+	<div class="wrapper">
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="mm">
+		<ul class="nl">
+<li><a href="https://www.linuxidc.com/Linux/2019-04/158319.htm" target="_blank">Samba服务权限配置案例</a></li>
+<li><a href="https://www.linuxidc.com/Linux/2019-04/158318.htm" target="_blank">Python 与 C/C++混合编程的应用</a></li>
+<li><a href="https://www.linuxidc.com/Linux/2019-04/158317.htm" target="_blank" title="使用Jenkins Pipeline自动化构建发布Java项目">使用Jenkins Pipeline自动化构建发布Java项</a></li>
+<li><a href="https://www.linuxidc.com/Linux/2019-04/158316.htm" target="_blank">Linux和Uboot下eMMC boot分区读写</a></li>
+<li><a href="https://www.linuxidc.com/Linux/2019-04/158315.htm" target="_blank" title="devmem读写物理内存和devkmem读取内核虚拟内存">devmem读写物理内存和devkmem读取内核虚拟</a></li>
+<li><a href="https://www.linuxidc.com/Linux/2019-04/158314.htm" target="_blank">Fedora 32可能删除Python 2及其软件包</a></li>
+<li><a href="https://www.linuxidc.com/Linux/2019-04/158313.htm" target="_blank" title="KernelShark 1.0 即将发布，用于可视化“Trace-cmd” Linux内核跟踪">KernelShark 1.0 即将发布，用于可视化“</a></li>
+<li><a href="https://www.linuxidc.com/Linux/2019-04/158312.htm" target="_blank">用于Apache Spark 预览版的.NET现已推出</a></li>
+<li><a href="https://www.linuxidc.com/Linux/2019-04/158311.htm" target="_blank">Rails 6.0.0 RC1发布，多数据库支持</a></li>
+<li><a href="https://www.linuxidc.com/Linux/2019-04/158310.htm" target="_blank" title="Electron 5.0 发布，附带了新版本的Chromium，V8和Node.js">Electron 5.0 发布，附带了新版本的</a></li>
+</ul>
+	</div>
+	</div>
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="bm"></div>
+	</div>
+	<div class="u70"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/u70.js.下载"></script></div>
+	<div class="u80"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/u80.js.下载"></script></div>
+	<div class="u90"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/u90.js.下载"></script></div>
+	<div class="space"></div>
+	<div id="pin" style="position: fixed; top: 0px;">
+	<script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/pin.js.下载"></script><script async="" src="./CentOS 7下Samba服务安装与配置详解_files/f.txt"></script>
+<!-- 右侧粘性自适应 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5195587195407606" data-ad-slot="7669622914" data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+	</div>
+</td></tr>
+</tbody></table>
+<div class="linux906"><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linux906.js.下载"></script></div>
+<div id="footer">
+<a href="https://www.linuxidc.com/aboutus.htm">Linux公社简介</a> - <a href="https://www.linuxidc.com/adsense.htm">广告服务</a> - <a href="https://www.linuxidc.com/sitemap.aspx">网站地图</a> - <a href="https://www.linuxidc.com/help.htm">帮助信息</a> - <a href="https://www.linuxidc.com/contactus.htm">联系我们</a><br>本站（LinuxIDC）所刊载文章不代表同意其说法或描述，仅为提供更多信息，也不构成任何建议。<br><script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/qq.js.下载"></script>主编：漏网的鱼 联系邮箱:<img src="./CentOS 7下Samba服务安装与配置详解_files/email.png" alt="" width="138" height="20"> (如有合作请联系)
+<br>
+<script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/foot.js.下载"></script>本站带宽由[<font color="red">300.ai</font>]友情提供<br>关注Linux，关注LinuxIDC.com，<font color="red">请向您的QQ好友宣传LinuxIDC.com</font>，多谢支持！
+<br>Copyright © 2006-2019　<a href="https://www.linuxidc.com/">Linux公社</a>　All rights reserved 浙ICP备07014134号-8
+	<script type="text/javascript">iwms.aId=148354;$(function(){iwms.imgCont=$i('content');iwms.imgResize();InitContStyle();iwms.getVars();})</script>
+	
+</div>
+</div>
+<script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linuxren1.js.下载"></script><script type="text/javascript">
+document.body.oncopy = function () { setTimeout( function () { var text = clipboardData.getData("text"); if (text) { text = text + "\r\n本篇文章来源于 Linux公社网站(www.linuxidc.com)  原文链接："+location.href; clipboardData.setData("text", text); } }, 100 ) }
+</script>
+
+<script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linuxren2.js.下载"></script>
+<script type="text/javascript" src="./CentOS 7下Samba服务安装与配置详解_files/linuxren3.js.下载"></script><script src="./CentOS 7下Samba服务安装与配置详解_files/h.js.下载" type="text/javascript"></script>
+
+<div id="hm_t_undefined" class="hm-t-container"><div class="hm-t-go-top" style="display: block;"></div></div></body></html>

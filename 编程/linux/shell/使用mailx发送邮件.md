@@ -3,7 +3,9 @@
    ```bash
    yum install mailx
    ```
+
 2. 首先在邮箱中开启smtp，开启后会得到一个授权码，这个授权码就代替了密码（自行去邮箱开启）。
+
 3. 请求数字证书（这里用的qq邮箱，所以向qq请求证书）
    
    ```bash
@@ -14,6 +16,7 @@
    certutil -A -n "GeoTrust SSL CA - G3" -t "Pu,Pu,Pu" -d ~/.certs/./ -i qq.crt
    certutil -L -d /root/.certs
    ```
+
 4. 配置/etc/mail.rc
    
    ```bash

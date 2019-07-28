@@ -1,0 +1,15 @@
+#!/bin/bash
+# -----------------------------------------------------------------
+# 该文件用于配置允许进入该主机的网络流量列表
+# 
+# External Environment Parameter：
+# 1. $EXTIF : 连接外网的网卡设备号，如eth0
+# 2. $INIF : 连接内网的网卡设备号，如eth0
+# -----------------------------------------------------------------
+
+# example：
+# 1. insert at the front of the list
+# iptables -I INPUT -i $EXTIF -s 172.18.22.0/24 -j REJECT
+#
+# 2. append at the end of the list
+# iptables -A INPUT -i $EXTIF -s 172.18.22.0/24 -j REJECT

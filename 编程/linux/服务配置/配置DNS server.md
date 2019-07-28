@@ -13,8 +13,6 @@ yum -y install bind bind-chroot
 
 在ref/named下有经测试能够在 CentOS-7.5上安装成功的安装。
 
-
-
 ##### 配置文件
 
 在使用了yum安装之后，默认named运行涉及的范围是所有文件，需要使用bind-chroot对应的工具去改变 named 运行的根目录。并且把需要用到的模板文件复制到对应的新位置。<br>
@@ -29,19 +27,59 @@ sudo /usr/libexec/setup-named-chroot.sh /var/named/chroot on
 sudo cp -R /usr/share/doc/bind-*/sample/var/named/* /var/named/chroot/var/named/
 
 # 创建一些必须的文件。
+## 处理 var/named/data 文件夹下的文件
+sudo mkdir -p /var/named/chroot/var/named/data/
 sudo touch /var/named/chroot/var/named/data/cache_dump.db
 sudo touch /var/named/chroot/var/named/data/named_stats.txt
 sudo touch /var/named/chroot/var/named/data/named_mem_stats.txt
 sudo touch /var/named/chroot/var/named/data/named.run
-sudo mkdir /var/named/chroot/var/named/dynamic
+sudo chmod 664 /var/named/chroot/var/named/data/*
+## 处理 var/named/dynamic 文件夹下的文件
+sudo mkdir -p /var/named/chroot/var/named/dynamic
 sudo touch /var/named/chroot/var/named/dynamic/managed-keys.bind
+sudo chmod 664 /var/named/chroot/var/named/dynamic/*
 
-chgrp -R named /var/named/chroot
+sudo cp /etc/named.rfc1912.zones etc/named.rfc1912.zones
+sudo cp /etc/named.root.key etc/named.root.key
+
+sudo chgrp -R named /var/named/chroot
 ```
 
+准备好文件之后就要配置 etc/named.conf。
 
+![](img/named.conf.PNG)
 
+- allow-query: 允许发出查询机子的IP范围。可选，any，none，IP地址，子网（如 192.168.1.0/24）
 
+- listen-on：配置监听位置，一般配置为 listen-on port 53 { any; };。如果any更换成 localhost，则DNS server 只会接受来自localhost的请求。
+
+- recursion：是否递归查询。
+
+**allow-query 和 listen-on的区别是，listen-on是首先控制是否接收来自指定ip的请求，allow-query是控制接收到请求后，是否对请求做处理。**
+
+<font color='red'>named.conf 中的文件路径都是相对于 named 运行根目录的路径。</font>
+
+**named.conf中的 zone 配置。zone 配置分两种，一种配置正向解析，另一种配置反向解析。**
+
+```bash
+# 正向解析例子
+zone "named-test.com" { #被解析的域名。任何匹配到该模式的都会由该zone文件解析。
+
+        type master; # 可以为 master，slave 和 hint
+
+        file "named-test.com.zone"; # 指定zone 文件的位置
+
+};
+```
+
+<font color='red'>需要注意的是：不能在同一个DNS server中，配置两个相同前缀的 zone。比如a.test.com 和 test.com。</font><br>
+
+<font color='red'>在编写完成之后可以使用 named-checkconf 命令检查格式及配置是否正确。</font>
+
+```bash
+named-checkconf -t /var/named/chroont 
+# -t 表示修改后运行的根目录。
+```
 
 #### zone文件配置
 
@@ -101,8 +139,6 @@ dns记录最重要是配置 name，type 和value。<br>
 - CNAME：该记录定义了一个域名别名
 
 [更多详细的关于dns记录请看鸟哥的DNS Server](http://linux.vbird.org/linux_server/0350dns.php#DNS_master_rr)
-
-
 
 #### dns server测试
 

@@ -56,4 +56,32 @@ wget https://mirrors.ustc.edu.cn/epel//7/x86_64/Packages/e/epel-release-7-11.noa
 rpm -ivh epel-release-7-11.noarch.rpm
 ```
 
-#### yum 意外终端恢复
+#### 通过yum 下载软件所有的依赖包
+
+通过repotrack命令，可以使用 yum 下载某个软件包对应的所有依赖的包。
+
+```bash
+repotrack <software nane> -p <path to store packages>
+```
+
+#### 使用 rpm
+
+命令模板：
+
+- 安装一个包：rpm -ivh
+
+- 升级一个包 ：rpm -Uvh
+
+- 移走一个包：rpm -e
+
+- 查询包是否被安装：rpm -q
+
+其他命令参数：
+
+- \-\-force：强制覆盖已安装的包
+
+- \-\-nodeps：强制安装对应的包，即使没有对应的依赖
+
+- \-v：等价于 --verbose
+
+- \-h ：等价于 --hash

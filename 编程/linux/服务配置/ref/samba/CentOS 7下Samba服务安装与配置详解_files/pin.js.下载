@@ -1,0 +1,10 @@
+﻿document.writeln("<script async src=\'//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\'></script>");
+document.writeln("<!-- 右侧粘性自适应 -->");
+document.writeln("<ins class=\'adsbygoogle\'");
+document.writeln("     style=\'display:block\'");
+document.writeln("     data-ad-client=\'ca-pub-5195587195407606\'");
+document.writeln("     data-ad-slot=\'7669622914\'");
+document.writeln("     data-ad-format=\'auto\'></ins>");
+document.writeln("<script>");
+document.writeln("(adsbygoogle = window.adsbygoogle || []).push({});");
+document.writeln("</script>");
