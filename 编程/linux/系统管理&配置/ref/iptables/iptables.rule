@@ -115,4 +115,5 @@ fi
 #          -j DNAT --to-destination 192.168.100.20
 
 # 6. 最終將這些功能儲存下來吧！
-/etc/init.d/iptables save
+# /etc/init.d/iptables save
+service iptables save

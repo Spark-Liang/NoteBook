@@ -195,12 +195,9 @@ samba的主配置文件在 /etc/samba/smb.conf 。该文件主要分为两个部
 ###### 错误收集
 
 - Error  NT_STATUS_IO_TIMEOUT：
-  
   - 在配置正确，samba所在server能够 ping 通并且 telnet 也能连接成功。则此时错误出现有可能是因为某个资源对应的目录没有被创建。
   
   - 在配置正确，samba所在server能够 ping 通并且 telnet 也能连接成功，对应的文件夹也存在。并且错误提示为 "protocol negotiation failed: NT_STATUS_IO_TIMEOUT"。则有可能是因为使用了外网的DNS。
-
-
 
 #### smbclient 使用
 

@@ -2,6 +2,18 @@
 
 iptables是在linux中的一款封包过滤防火墙。这个防火墙主要有几个过滤规则的表格，每个表格中又包含若干条规则链用于过滤流量。
 
+由于CentOS7默认使用 firewalld ，所以需要使用如下命令卸载 firewalld 并且安装 iptables。
+
+```bash
+# 关闭服务并且清空规则
+systemctl stop firewalld && systemctl disable firewalld
+systemctl mask firewalld
+# 卸载 firewalld
+yum -y remove firewalld
+#安装 iptables
+yum -y install iptables-services
+```
+
 ##### 规则链
 
 一条规则链内包含和多条规则，iptables会根据这些规则过滤网络流量。并且<font color='red'>每条规则之间的相对顺序是非常重要的。</font>下图是规则链的原理示意图。这种过滤结构类似逻辑判断中的逻辑短路，当满足其中某一条的时候就会采取对应的action。

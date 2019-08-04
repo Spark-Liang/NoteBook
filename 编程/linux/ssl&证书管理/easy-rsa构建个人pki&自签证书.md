@@ -23,16 +23,17 @@ set_var EASYRSA_REQ_OU          "YUEXINJIAOYU"
 
 #### easy-rsa的基本流程
 
-使用easy-rsa构建openvpn的证书pki主要有以下的步骤：
-
-```flowchart
-graph LR;
+```mermaid
+graph LR
 
 A[init-pki]-->B[build-ca]
-B-->C[gen-req (for server)]
-C-->D[sign (sign request for server)]
+B --> C[gen-req for server]
+C-->D[sign sign request for server]
 D-->E[gen-dh]
+
 ```
+
+使用easy-rsa构建openvpn的证书pki主要有以下的步骤：
 
 1. 先通过init-pki构建一个新的pki
 
@@ -49,9 +50,9 @@ D-->E[gen-dh]
 ```bash
 >>> ./easyrsa init-pki
 
- 
+
 Note: using Easy-RSA configuration from: ./vars
- 
+
 init-pki complete; you may now create a CA or requests.
 Your newly created PKI dir is: /etc/openvpn/easy-rsa/easyrsa3/pki
 ```
@@ -63,15 +64,15 @@ Your newly created PKI dir is: /etc/openvpn/easy-rsa/easyrsa3/pki
 ```bash
 >>> ./easyrsa build-ca
 
- 
+
 Note: using Easy-RSA configuration from: ./vars
- 
+
 Using SSL: openssl OpenSSL 1.0.2k-fips  26 Jan 2017
- 
+
 # 这里要输入两次密码，密码自定义(一定不能忘)
 Enter New CA Key Passphrase:
 Re-Enter New CA Key Passphrase:
- 
+
 Generating RSA private key, 2048 bit long modulus
 .........................................................................................+++
 ..........................................................+++
@@ -86,7 +87,7 @@ If you enter '.', the field will be left blank.
 # 输入CA的通用名(唯一，不能和server或者client的通用名重复)
 
 Common Name (eg: your user, host, or server name) [Easy-RSA CA]:yxjy
- 
+
 CA creation complete and you may now import and sign cert requests.
 Your new CA certificate file for publishing is at:
 /etc/openvpn/easy-rsa/easyrsa3/pki/ca.crt
@@ -98,9 +99,9 @@ Your new CA certificate file for publishing is at:
 # 过程中需要设置server的私钥密码，nopass 参数可以使easy-rsa自动生成私钥。
 >>> ./easyrsa gen-req server 
 
- 
+
 Note: using Easy-RSA configuration from: ./vars
- 
+
 Using SSL: openssl OpenSSL 1.0.2k-fips  26 Jan 2017
 Generating a 2048 bit RSA private key
 ....................+++
@@ -116,7 +117,7 @@ If you enter '.', the field will be left blank.
 -----
 # 一个通用名(唯一)
 Common Name (eg: your user, host, or server name) [server]:brian
- 
+
 Keypair and certificate request completed. Your files are:
 req: /etc/openvpn/easy-rsa/easyrsa3/pki/reqs/server.req
 key: /etc/openvpn/easy-rsa/easyrsa3/pki/private/server.key
@@ -127,28 +128,28 @@ key: /etc/openvpn/easy-rsa/easyrsa3/pki/private/server.key
 ```bash
 >>> ./easyrsa sign server server
 
- 
+
 Note: using Easy-RSA configuration from: ./vars
- 
+
 Using SSL: openssl OpenSSL 1.0.2k-fips  26 Jan 2017
- 
- 
+
+
 You are about to sign the following certificate.
 Please check over the details shown below for accuracy. Note that this request
 has not been cryptographically verified. Please be sure it came from a trusted
 source or that you have verified the request checksum with the sender.
- 
+
 Request subject, to be signed as a server certificate for 1080 days:
- 
+
 subject=
     commonName                = brian
- 
- 
+
+
 # 这里输入yes即可
 Type the word 'yes' to continue, or any other input to abort.
   Confirm request details: yes
 Using configuration from /etc/openvpn/easy-rsa/easyrsa3/pki/safessl-easyrsa.cnf
- 
+
 # 这里要输入上面一开始的密码
 Enter pass phrase for /etc/openvpn/easy-rsa/easyrsa3/pki/private/ca.key:
 Check that the request matches the signature
@@ -156,10 +157,10 @@ Signature ok
 The Subject's Distinguished Name is as follows
 commonName            :ASN.1 12:'brian'
 Certificate is to be certified until Oct 19 09:08:51 2021 GMT (1080 days)
- 
+
 Write out database with 1 new entries
 Data Base Updated
- 
+
 Certificate created at: /etc/openvpn/easy-rsa/easyrsa3/pki/issued/server.crt
 ```
 
@@ -168,9 +169,9 @@ Certificate created at: /etc/openvpn/easy-rsa/easyrsa3/pki/issued/server.crt
 ```bash
 >>> ./easyrsa gen-dh
 
- 
+
 Note: using Easy-RSA configuration from: ./vars
- 
+
 Using SSL: openssl OpenSSL 1.0.2k-fips  26 Jan 2017
 Generating DH parameters, 2048 bit long safe prime, generator 2
 This is going to take a long time
@@ -179,5 +180,4 @@ This is going to take a long time
 ..............+........................+.......................................................
 ...........................................+.
 DH parameters of size 2048 created at /etc/openvpn/easy-rsa/easyrsa3/pki/dh.pem
-
 ```
