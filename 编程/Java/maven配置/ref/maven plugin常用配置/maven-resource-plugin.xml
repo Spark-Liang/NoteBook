@@ -1,0 +1,24 @@
+<plugin>
+	<artifactId>maven-resources-plugin</artifactId>
+<!--                <version>3.7</version>-->
+	<executions>
+		<execution>
+			<id>copy-properties</id>
+			<phase>validate</phase>
+			<goals>
+				<goal>copy-resources</goal>
+			</goals>
+			<configuration>
+				<outputDirectory>${basedir}/target/classes</outputDirectory>
+				<resources>
+					<resource>
+						<directory>${basedir}/resource</directory>
+						<includes>
+							<include>**/*.properties</include>
+						</includes>
+					</resource>
+				</resources>
+			</configuration>
+		</execution>
+	</executions>
+</plugin>

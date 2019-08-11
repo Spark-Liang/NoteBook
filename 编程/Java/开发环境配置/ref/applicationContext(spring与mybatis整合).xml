@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+    http://www.springframework.org/schema/jdbc
+    http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
+    http://www.springframework.org/schema/cache
+    http://www.springframework.org/schema/cache/spring-cache-3.1.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- 自动扫描业务包,排除Controller -->
+    <context:component-scan base-package="com.demo" >
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--加载properties配置文件-->
+    <bean id="placeholderConfig"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath*:/configs/DataSource/database.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- data source -->
+    <bean id="dataSource"
+          class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close">
+        <property name="driverClass">
+            <value>${jdbc.driver}</value>
+        </property>
+        <property name="jdbcUrl">
+            <value>${jdbc.url}</value>
+        </property>
+        <property name="user">
+            <value>${jdbc.username}</value>
+        </property>
+        <property name="password">
+            <value>${jdbc.password}</value>
+        </property>
+        <!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+        <property name="acquireIncrement">
+            <value>${c3p0.acquireIncrement}</value>
+        </property>
+        <!--初始化时获取三个连接，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
+        <property name="initialPoolSize">
+            <value>${c3p0.initialPoolSize}</value>
+        </property>
+        <property name="minPoolSize">
+            <value>${c3p0.minPoolSize}</value>
+        </property>
+        <property name="maxPoolSize">
+            <value>${c3p0.maxPoolSize}</value>
+        </property>
+        <!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
+        <property name="maxIdleTime">
+            <value>${c3p0.maxIdleTime}</value>
+        </property>
+        <!--每60秒检查所有连接池中的空闲连接。Default: 0 -->
+        <property name="idleConnectionTestPeriod">
+            <value>${c3p0.idleConnectionTestPeriod}</value>
+        </property>
+        <!-- JDBC的标准参数，用以控制数据源内加载的PreparedStatements数量。但由于预缓存的statements
+                            属于单个connection而不是整个连接池。所以设置这个参数需要考虑到多方面的因素。
+                            如果maxStatements与maxStatementsPerConnection均为0，则缓存被关闭。Default: 0-->
+        <property name="maxStatements">
+            <value>${c3p0.maxStatements}</value>
+        </property>
+        <!-- c3p0是异步操作的，缓慢的JDBC操作通过帮助进程完成。扩展这些操作可以有效的提升性能 通过
+                                  多线程实现多个操作同时被执行。Default: 3-->
+        <property name="numHelperThreads">
+            <value>${c3p0.numHelperThreads}</value>
+        </property>
+    </bean>
+
+    <!--配置mybatis自动注入SQLSession-->
+    <!--配置mybatis的sessionfactory-->
+    <bean id="sqlSessionFactory"  class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <!--配置mybatis全局设置-->
+        <property name="configLocation"  value="classpath:/configs/DataSource/mybatis-config.xml"></property>
+       <!-- 自动扫描mapping.xml文件，**表示迭代查找 -->
+        <property name="mapperLocations" value="classpath*:com/demo/dao/**/*.xml" />
+    </bean>
+    <!-- DAO接口所在包名，Spring会自动查找其下的类 ,包下的类需要使用@MapperScan注解,否则容器注入会失败 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--basePackage不需要带*号-->
+        <property name="basePackage" value="com.demo.dao" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+    </bean>
+
+   <!-- <bean id="messageDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.demo.dao.MessageDao" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>-->
+
+
+    <!-- 配置事务 -->
+    <bean id="txManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <!-- 配置基于注解的事务aop -->
+    <tx:annotation-driven transaction-manager="txManager" proxy-target-class="true"/>
+
+    <!-- 开启注解扫描 -->
+    <!--需要把Aop控制的但是没有注册的类都要通过base-package包含-->
+    <context:component-scan base-package="com.demo.aop"></context:component-scan>
+
+    <!-- 开启aop注解方式 -->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+    <bean id="logonControl" class="com.demo.aop.LogonControl"></bean>
+
+    <!--<aop:config >
+        <aop:aspect id="baseLogonHandle" ref="logonControl">
+            <aop:pointcut id="baseLogonPoint" expression="execution(* com.demo.service..*.*(..))"/>
+            <aop:around method="checkLogon" pointcut-ref="baseLogonPoint"/>
+        </aop:aspect>
+    </aop:config>-->
+
+</beans>

@@ -1,0 +1,17 @@
+web应用下的WEB-INF是前端浏览器无法直接访问的文件夹，所以任何静态资源如果放在WEB-INF目录下是无法通过前端浏览器访问得到。
+
+##### 请求当中redirect和dispatch
+
+forward的真正区别在于redirect是通知浏览器重新发送一个新的地址去请求新的资源，而dispatch
+forward是在后端servlet中，把对应的请求重新转发到相应的请求当中
+
+相应的路径书写的话response.sendrRedirect方法需要在servletpath的基础上添加contextPath，这也从侧面反映出redirect是可以跳转到其他webapp的。而且dispatch
+forward方法是只能在本webapp中进行跳转，所以不需要在servletpath前加上contextpath
+
+##### request 各种路径
+
+getContextPath:获取当前网站项目名称
+
+getServletPath：获取servlet或者action的路径，不包含项目名称
+
+servletPath其实顾名思义就是这个webapp下的servlet映射路径
