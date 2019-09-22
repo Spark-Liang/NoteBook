@@ -57,9 +57,11 @@ some concept:
 
 - antiselection
 
-- physical hazard : hazard = risk 
-
-- moral hazard :
+- Identifying risk:  the risk dependent to an individal person.
+  
+  - physical hazard : hazard = risk , this kind of risk is determined by person's body
+  
+  - moral hazard : this kind of risk is determined by person's 
 
 - risk class or risk level:
   
