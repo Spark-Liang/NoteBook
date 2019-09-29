@@ -22,8 +22,6 @@ joint whole life insurance :
 
 - can provide coverage on more than one person
 
-
-
 ###### different between Universial Life and whole Life Insurance
 
 - in terms of separate policy element
@@ -34,20 +32,47 @@ joint whole life insurance :
   
   - expense charge 
 
-- in terms of flexible face amount
+- in terms of flexible face amount and death benefit:
+  
+  - option A plan:  the death benefit is always equal to face amount
+  
+  - option B plan: the death benefit is equal to face amount plus cash value.
 
-- death benefit:
+- in terms of flexible premium：
+  
+  - the flexible premium means the ability to add the additional premium to cash value.
 
-- premium
+###### different between UL and indexed UL
 
+Indexed UL offered the additional earnings beased on ca published index, such as Nasdaq 100. The creaditing rate is determined by the changes in an index.
 
+###### how the variable insurance allows the policyowner to decide how the premiums and cash value are invested.
+
+Most insurers allow the policyowner to allocate the premium payment into different subaccount. Some subaccount investing with low rick, another investing with high rick.
+
+**Most of the insurers guaranteed will pay the minimum of the death benefit.**
+
+###### The common feature between VUL , UL and VL
+
+VUL and VL :
+
+- the policyowner can choose how to allocate the premium payment to different subaccount
+
+VUL and UL :
+
+- the policyonwer can choose teh premium amount and face amount.
+
+###### Characteristics of Endowment Insurance
+
+- will pay the face amount to policyonwer when the maturity date reach.
+
+- usually level throughout the term of policy.
 
 ###### Chapter knowledge tree
 
 - **whole life insurance** : can provide lifetime coverage and usually at level premium
   
   - premium payment period : 
-    
     - **continuout-premium policy** : the premium are payable until the insured died. But the premium always lowet.
     
     - **limited-payment policy** 
@@ -56,7 +81,7 @@ joint whole life insurance :
 
 - **Modified Whole Life Insurance** : 
   
-  - can modify premium : always based on the assumption that the policyowner can earn more with time pass by.
+  - can modify premium : always based on the assumption that the policyowner can earn more with time pass by. **The initial premium is lower than the equivalent continuous-premium whole life policy. So the cash value growht slowly than whole life policy.**
   
   - can modify coverage : 
 
@@ -72,4 +97,25 @@ joint whole life insurance :
     
     - each child born or adopted can automatically covered by policy.
 
-
+- UL:
+  
+  - separate policy element
+    
+    - mortality charge : to pay for the life insurance part
+    
+    - interest rate : the minimum rate the insure must pay to the insured
+    
+    - expense charge
+  
+  - Operation of UL policy : the premium payment will deduct the mortality charge and operation charge first and then add to the cash value. 
+  
+  - **flexibility feature**:
+    
+    - feature can be decided by policyowner **(the change need the insurers' approve)**:
+      - within certain limits
+      
+      - the face amount
+      
+      - the amount of death benefit payable
+      
+      - the amount of the premium
