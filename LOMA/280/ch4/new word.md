@@ -1,1 +1,0 @@
-- actuaries : a person who compiles and analyzes statistics and uses them to calculate insurance risks and premiums.

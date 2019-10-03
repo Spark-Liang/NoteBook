@@ -1,2 +1,0 @@
-- obligation : means duty 
-- cap : means hat. In UL, it means the opposite of the floor value. It means the top value. 

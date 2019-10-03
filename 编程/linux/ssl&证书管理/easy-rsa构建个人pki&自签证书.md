@@ -21,6 +21,20 @@ set_var EASYRSA_REQ_EMAIL       "brian@@qq.com"
 set_var EASYRSA_REQ_OU          "YUEXINJIAOYU"
 ```
 
+
+
+#### easy-rsa 生成证书文件的位置
+
+- ca 公钥：pki/ca.crt
+
+- ca 私钥：pki/private/ca.key
+
+- 签名证书公钥：pki/issued
+
+- 签名证书私钥：pki/private
+
+- 签名证书请求：pki/reqs
+
 #### easy-rsa的基本流程
 
 ```mermaid
@@ -30,7 +44,6 @@ A[init-pki]-->B[build-ca]
 B --> C[gen-req for server]
 C-->D[sign sign request for server]
 D-->E[gen-dh]
-
 ```
 
 使用easy-rsa构建openvpn的证书pki主要有以下的步骤：
@@ -125,8 +138,10 @@ key: /etc/openvpn/easy-rsa/easyrsa3/pki/private/server.key
 
 ##### 4.认证服务器证书
 
+**注意下面第一个“server” 是类型，可选 server 或者 client。第二个是sign的request 的名字。**
+
 ```bash
->>> ./easyrsa sign server server
+>>> ./easyrsa sign-req server server
 
 
 Note: using Easy-RSA configuration from: ./vars

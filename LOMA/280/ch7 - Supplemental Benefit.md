@@ -24,11 +24,11 @@
 
 **Waiver of Premium and Disability income benefit is not conflict.**
 
-###### The coverage of the Accidental Death Benefit will provide and the exclusion of the coverage.
+###### What coverage of the Accidental Death Benefit will provide and the exclusion of the coverage.
 
 - coverage:
   
-  - The accidental death benefit will pay if the insured's death was directly and indenpendently of all other cause by an accidental bodily injury.
+  - The accidental death benefit will pay if the insured's death was only directly cause by an accidental bodily injury.
 
 - exclusion of coverage:
   
@@ -36,7 +36,7 @@
   
   - war-related accident
   
-  - aviation-related accident
+  - aviation-related accident (such as plane crash)
   
   - accident result from crime.
 
@@ -46,6 +46,7 @@
   - terminal illness benefit
     
     - will pay the benefit when the insured suffered from a terminal illness and will die in a state of time.
+    - **the benefit usually paid in a lump sum, the remain benefit will paid to beneficary after insured died.**
   
   - dread disease benefit
     
@@ -62,10 +63,15 @@
 - spouse insurance rider
   
   - a supplement life insurance policy beneift that provide term life insurance
+  - **is sold based on the coverage unit.**
 
-- children's insurance rider
+- children's insurance rider:
+  
+  - **the premium charged of each coverage unit is stated, regardless of the number or the age of the children covered.**
 
-- second insured rider
+- second insured rider：
+  
+  - **the premium is based on the risk of the second insured.**
 
 ###### kinds of insurability benefit rider and how these rider allow policyowner to purchase additional coverage
 
@@ -84,5 +90,3 @@
   - this rider will expired after a state number of years, which means the policyowner can't purchase more additional additional benefit.
   
   - the premium is based on the attain age.
-
-
