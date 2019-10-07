@@ -10,16 +10,16 @@
 
 - changing the beneficiary (**referred to as the right of revocation**)
   
-  - **revocable beneficiary** : the designation of revocation benefitciary can be changed at any time before policyowner died. 
+  - **revocable beneficiary** : the designation of revocation benefitciary can be changed at any time before **policyowner** died. 
   - **irrevocable beneficiary**: can not change the beneficiary design without irrevocable benefitciary's consent. 
-    - the policyowner also can not have the policy load without without irrevocable benefitciary's consent.
+    - the policyowner also can not have the policy loan without without irrevocable benefitciary's consent.
     - **But if the irrevocable die before policyowner, the policyowner have the right to design a new one.**
 
 ###### Premium payment mode
 
 - typically annual, semiannual, quarterly and monthly
 
-- can be changed after policy in force.
+- **can be changed after policy in force.**
 
 - more frequent the payment mode is, the greater premium needed to charge, because of the administration cost.
 
@@ -109,13 +109,11 @@
       
       - the assignee's right is limited to the amount of the assignor's debt.
       
-      - the collateral assignee's right is temporary, until the debt is paid.
+      - the collateral assignee's right is temporary, will end when the debt is paid.
   
   - **the insurance company is not obligated to act until receive the assignment notification from "assignee".**
 
 - **transfer by endorsement**
-
-
 
 ###### death of policyowner
 
@@ -125,12 +123,9 @@
 
 - when all policyowner died, the ownership typically pass to the estate of the policyowner.
 
-
-
 ###### Right to receive policy preceeds.
 
 - **Identify who is entitle to receive policy proceed**
-  
   - No surviving beneficiary: 
     
     - the policy proceed typically paid to the policyowner. **If the policyowner died, paid to the policyowner's estate**.
@@ -146,8 +141,6 @@
     - **survivorship clause**: the beneficiary must survive a specified period of time to be entitle to get the death benefit.
   
   - Beneficiary wrongfully kill the insured : the beneficiary will be disqualified to get the death benefit.
-
-
 
 ###### Calculate the policy proceeds
 
@@ -171,12 +164,9 @@
   
   - **premium due and unpaid**
 
-
-
 ###### Paying Policy Proceed under a settlement option
 
 - settelment option :
-  
   - interest option:
     
     - use the policy proceed to do investment and use the interest to pay to the  payee
@@ -200,43 +190,3 @@
   - life income option
     
     - will pay the proceed to payee over the his life time.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
