@@ -84,7 +84,7 @@
   
   - the minimum of **initial premium** is **larger** than **subsequent premium**.
   
-  - the contract owner can shoose not to pay any premium in a given years.
+  - the contract owner can choose not to pay any premium in a given years.
 
 - **Fixed Annuity**
   
