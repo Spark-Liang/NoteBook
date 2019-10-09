@@ -6,7 +6,7 @@ kinds of health insurance products :
 
 - disability income coverage
 
-- long-term asre coverage
+- long-term care coverage
 
 ###### Medical expense coverage
 
@@ -40,9 +40,9 @@ kinds of health insurance products :
     
     - surgical expenses :
     
-    - physicaian's expense
+    - physician's expense
   
-  - provides **first-dollar coverage**, which means the reimburses not required the **out-of-pocker contribution**,
+  - provides **first-dollar coverage**, which means the reimburses not required the **out-of-pocker contribution**, That means insurer cover all the expense.
   
   - typically limit the maximum medical expense.
 
@@ -59,7 +59,7 @@ kinds of health insurance products :
   - detail of the above covered expense (**allowable expense**):
     
     - hosptial charge for room  and board.
-    - miscellaneous inoatient hospital charges, such as X-rays
+    - miscellaneous inpatient hospital charges, such as X-rays
     - surgical supplies and service
     - anesthesia and oxygen
     - physical, occupational and speech therapy
@@ -284,8 +284,6 @@ kinds of health insurance products :
 
 - **instrumental activities of daily living (IADLs)** : the activities are necessary for daily living but not essentil to daily functionning.
 
-
-
 **Important feature of Long-term Care Insurance (LTCI)**
 
 - **benefit trigger**:  the insured met one of the following condition can reveice the benefit
@@ -301,7 +299,7 @@ kinds of health insurance products :
     2. select a benefit period
   
   . typical maximum lifetime benefit
-    
+  
     . maximum time period over benefit
-    
+  
     . maximum dollar amount of benefit

@@ -82,7 +82,8 @@
 
 ###### ch11
 
-- custodial : means keeping 
+- custodial : means keeping.
+- custodian : people or party to keep who something.
 
 ###### ch12
 

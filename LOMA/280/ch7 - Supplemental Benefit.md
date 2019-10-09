@@ -24,7 +24,7 @@
 
 **Waiver of Premium and Disability income benefit is not conflict.**
 
-###### What coverage of the Accidental Death Benefit will provide and the exclusion of the coverage.
+###### What coverage of the Accidental Death Benefit will provide and the exclusion of the coverage.
 
 - coverage:
   
