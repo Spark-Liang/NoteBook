@@ -129,3 +129,8 @@
 
 - probationary : 试用期
 - discriminatory : making or showing an unfair.
+
+###### ch14
+
+- exempt : free from an obligation or liability imposed on others.
+- mandatory : equired by law or rules; compulsory.

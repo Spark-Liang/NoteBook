@@ -110,39 +110,39 @@ kinds of health insurance products :
 - **How to manage access to health care serivce**
   - manage access through **provider network** which is a group of physicians, hospitals and ancillary.
   - require the plan member to select the **primary care provider (PCP)** which serve as the member's entry point to managed care system and additinal service.
-- **How to manage the cose of health care service**
+- **How to manage the cost of health care service**
   - plan mus pay a fixed, periodic premium to get the health care serivce, the permium is fixed regardless how many time the member use the service.
   - plan member need to pay a specified fixed amount as a **copayment** to provider for **certain medical service**.
 
 ###### Consumer-Driven Health Plan (CDHP)
 
-- is an empluyer-sponsored health benefit plan that **give the individual freedom to choose the provider**.
+- is an employer-sponsored health benefit plan that **give the individual freedom to choose the provider**.
 
 - key components of the **CDHP**
   
-  - financial incentive for individual to manage the health care cost.
+  - keep the financial incentive for individual to manage the health care cost.
   
-  - information for individuals to make informed information about basic health care.
+  - provide the information for individuals to make the choice on basic health care provide.
 
-- **the CDHP provide the specified amount that can reimburse, the exceed part must paid by individual himself.**
+- **the CDHP provide the specified amount of benefit to reimburse expense, the exceed part of expense must paid by individual himself.**
 
 - **high-deductive health plan (HDHP)**
   
   - mostly same as **CDHP**, but if the amount of the individual pay for the exceed part is satisfied an specified amount, the HDHP will pay the rest of the expense.
   
-  - In **CDHP** but not in **HDHP** , the out-of-pocket cost are likely to be greater than in **CDHP** and in **HDHP**.
+  - The member in **CDHP** but not in **HDHP** , this out-of-pocket cost are likely to be greater than the member in **CDHP** and in **HDHP**.
 
 - the comparison of different form of **CDHP**
   
   - Health Saving Account (HSA) : a tax-advantage account for accumulating the momey to pay for qualified medical expense.
   
-  - Health Reimbursement Arrangement (HRA) : a employer-sponsored health plan that is used to pay for qualified medical expense.
+  - Health Reimbursement Arrangement (HRA) : a employer-sponsored health plan.
   
-  - Health Care Flexible Sending Account (HCFSA) : moslty same as HSA, but can predetermined the amout of pretax wage to saving in the account
+  - Health Care Flexible Sending Account (HCFSA) : moslty same as HSA, but can predetermine the amount of pretax salary to save in the account.
 
 |                                                | HSA                                            | HRA                                                     | HCFSA                                                   |
 | ---------------------------------------------- | ---------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| Id HDHP required                               | Yes                                            | No, but must be covered by group-sponsored health plan. | No, but must be covered by group-sponsored health plan. |
+| Is HDHP required                               | Yes                                            | No, but must be covered by group-sponsored health plan. | No, but must be covered by group-sponsored health plan. |
 | Must an employer be involved                   | no                                             | yes                                                     | yes                                                     |
 | Who can contribute                             | employer and employee                          | employer                                                | employer and employee                                   |
 | Are the contrubtion limits                     | Yes, (limits the sum of employer and employee) | No                                                      | Yes, (limits the sum of employer and employee)          |
@@ -153,7 +153,7 @@ kinds of health insurance products :
 
 ###### Patient Protection and Affordable Care Act (ACA)
 
-- intention of ACA : make health care moew afforable and accessible
+- intention of ACA : make health care more afforable and accessible
 
 - **the result of the ACA**
   
@@ -180,11 +180,11 @@ kinds of health insurance products :
 - classified by **benefit period** and classified by for individual or group
   - **short-term inidividual disability income coverage** : provide a maximum benefit period of one to five year.
   
-  - **long-term inidividual disability income coverage** : provide a maximum benefit period of more than five year.
+  - **long-term inidividual disability income coverage** : provide a maximum benefit period of more than five year and commonly extend to reach age 65.
   
   - **short-term group disability income coverage** : provide a maximum benefit period of up to one year.
   
-  - **long-term group disability income coverage** : provide a maximum benefit period of more than one year.
+  - **long-term group disability income coverage** : provide a maximum benefit period of more than one year and extend to normal retirement age or to age 70.
 
 **definition of total disability**
 
@@ -192,21 +192,21 @@ kinds of health insurance products :
 
 - **current usual definition** : (must common used in today)
   
-  1. at he start of a disablity, the disability pervent insured from her regular occupation
+  - at he start of a disablity, the disability pervent insured from her regular occupation
   
-  2. after a specified period of time, the disability still prevent insured from **any** occupation, even with the reasonable education or training.
+  - after a specified period of time, the disability still prevent insured from **any** occupation, even with the reasonable education or training.
 
-. **own prevision occupation** : 
+.  **own prevision occupation** : 
+  
+  -  same as item 1 in **current usual definition**.
+  
+  - the difference from item 2 in **current usual definition** is not **any** occupation, is **previous** occupation, which means the disability prevent insured from previous occupation.
 
-1. same as item 1 in **current usual definition**.
-
-2. the difference from item 2 in **current usual definition** is not **any** occupation, is **previous** occupation, which means the disability prevent insured from previous occupation.
-
-. **presumpative disability** :
-
-  . is a state condition that, if present, automatically consider the insured is total disability
-
-  . even if the insured resumes full-time occupation.
+-  **presumpative disability** :
+  
+  -  is a state condition that, if present, automatically consider the insured is total disability
+  
+  - even if the insured resumes full-time occupation.
 
 **Elimination Period (wating period or benefit waiting benefit period )**
 
@@ -222,7 +222,7 @@ kinds of health insurance products :
 
 **Benefit Amount**
 
-- **purpose of benefit amount design** : insurer will restrict the benefit, so that the insured will have the financial incentive to back to work.
+- **benefit amount design** : insurer will restrict the benefit, so that the insured will have the financial incentive to back to work.
 
 - methods to calculate the amount of disability income amount:
   
@@ -238,7 +238,7 @@ kinds of health insurance products :
     
     - the insurer also limit the maximum amount an applicant can purchase.
 
-**Supplemental Bsiability Benefit**
+**Supplemental Disability Benefit**
 
 - **partical disability benefit**
   
@@ -280,15 +280,15 @@ kinds of health insurance products :
 
 - **physical impairment** : is a treatable but incurable, chronic condition.
 
-- **acitvities of daily living (ADLs)** : the activities to measure a person's functional status, such as eating.
+- **acitvities of daily living (ADLs)** : the activities to measure a person's functional status, such as eating, bathing, dresing.
 
-- **instrumental activities of daily living (IADLs)** : the activities are necessary for daily living but not essentil to daily functionning.
+- **instrumental activities of daily living (IADLs)** : the activities are necessary for daily living but not essentil to daily functionning, such as cooking, shopping.
 
 **Important feature of Long-term Care Insurance (LTCI)**
 
 - **benefit trigger**:  the insured met one of the following condition can reveice the benefit
   - inability to perform at least two **ADLs** without assistance for at lease 90 days.
-  - need for supervision to pretect person from threat due to severe cognitive impairment.
+  - need for supervision to pretect person from threat because of the cognitive impairment.
 - **elimination period**
   - common elimination period is 30 to 90 days, some insurer might provide 0 elimination period policy.
   - **longer elimination period, lower permium.**

@@ -64,8 +64,6 @@ the new member must meet the certain requirement to become a eligible for covera
     
     - beneficiary named by insured group member.
 
-
-
 ###### Group Insurance Underwriting
 
 **the objective of group underwriting**
@@ -144,8 +142,6 @@ the new member must meet the certain requirement to become a eligible for covera
   
   - the type of work that group member perform will effect the risk.
 
-
-
 ###### Group Insurance Premium
 
 - methods to calculate the premium rate
@@ -180,8 +176,6 @@ the new member must meet the certain requirement to become a eligible for covera
   
   - If the amount of the refund greater than the portion of the group premium that was paid to the policyholder's fund, the exceed part must be used for the benefit of hte individual participate in the plan
 
-
-
 ###### Group Plan Administration
 
 - the expense of group insurance is lower than individual insurance for each individual the following reason:
@@ -199,5 +193,3 @@ the new member must meet the certain requirement to become a eligible for covera
 - **insured-administratered group plan**
   
   - insurance company is responsible for handling the administrative and the recordkeeping of the plan
-
-
