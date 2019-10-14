@@ -6,7 +6,7 @@
   
   - void contract : invalid contract
   
-  - voidable contract : the contract can be withdrawed.
+  - voidable contract : the contract can be cancel.
 
 - formal or not：
   

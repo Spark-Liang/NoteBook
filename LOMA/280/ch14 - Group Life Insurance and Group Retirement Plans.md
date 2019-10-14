@@ -86,7 +86,7 @@ most of the provision in group life insurance is similar to the provision in ind
         
         - is portable
         
-        - is chapter than individual UL and individual UVL.
+        - is cheaper than individual UL and individual UVL.
     
     - **group creditor life insurance**
       
@@ -106,13 +106,13 @@ most of the provision in group life insurance is similar to the provision in ind
 
 - **plan sponsor**: the entity to establish a retirement plan for the benefit of their member.
 
-- **plan participant** : the member who is eligible to patticipate in a trtirement plan.
+- **plan participant** : the member who is eligible to patticipate in a retrtirement plan.
 
 **the tax benefit provided by retirement plan**:
 
 - can deduct a limit taxable income to fee the contribution of the plan, which can reduce the tax payment.
 
-- the payment of income taxed on the contribution is deferred until the fund withdraw.
+- the tax on the part of income for the contribution is deferred until the fund withdraw.
 
 - the contribution to the plan typically made on tax-deferred basis.
 
@@ -177,10 +177,8 @@ types of **benefit formula**
 - **Employee Stock Ownership Plans (ESOP)**
   
   - the contribution invest primarily into employer's stock. Ant then the employee can sell the stock for profit.
-
-    **the pension plan is defined benefit plan. 401(k) plan, profit sharing plan and ESOP is defined contribution plan**.
-
-
+    
+    **the pension plan is defined benefit plan. 401(k) plan, profit sharing plan and ESOP is defined contribution plan**.
 
 **other type of tax-advantage retirement plan**
 
@@ -194,8 +192,6 @@ types of **benefit formula**
 
 - **467(b) plan** : same as 403(b)
 
-
-
 **Government-Sponsored Retirement Plan**
 
 - provide monthly income benefit to qualified residents
@@ -204,11 +200,9 @@ types of **benefit formula**
 
 - funded by mandatory contributions from covered workers and their employer.
 
-
-
 **government-sponsored retirement plan in canada**
 
-- **Old Age Security act** :   
+- **Old Age Security act** :   
   
   - provide to nearly all the canadian reach age 65, regardkess the preretirement wages.
   

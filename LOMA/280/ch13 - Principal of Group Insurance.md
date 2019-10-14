@@ -24,7 +24,7 @@
 
 Because the group insured is not the party in the group insurance contract, so the contract not contain the information of the group insured. So the policyholder must provide the document called **cerificate of insurance** to describe following items:
 
-- the coverage master group insurance provided
+- the coverage that master group insurance provided
 
 - the group insured's right under the contract.
 

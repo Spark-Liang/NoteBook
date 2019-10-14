@@ -44,6 +44,6 @@ Assets = Liabilities + Owners' Equity
 $$
 
 - Owner's Euqity contains:
-  - Captial part: company's sotck
+  - Captial part: company's stcck
   
   - Surplus part :  the remain part of the owner's equity
