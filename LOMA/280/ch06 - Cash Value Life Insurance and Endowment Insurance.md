@@ -24,11 +24,13 @@ joint whole life insurance :
 
 ###### different between Universial Life and whole Life Insurance
 
-- in terms of separate policy element
+- in terms of separate element in policy premium
   
   - mortality charge : to pay for the life insurance part
   
-  - interest rate : the minimum rate the insure must pay to the insured
+  - charge for investment 
+    
+    - interest rate : the minimum rate the insure must pay to the insured
   
   - expense charge 
 
@@ -40,11 +42,11 @@ joint whole life insurance :
 
 - in terms of flexible premium：
   
-  - the flexible premium means the ability to add the additional premium to cash value.
+  - the flexible premium means the ability to add the additional premium to cash value or not pay the premium until the additional part of premium paid before can't affort the premium charge.
 
 ###### different between UL and indexed UL
 
-Indexed UL offered the additional earnings beased on ca published index, such as Nasdaq 100. The creaditing rate is determined by the changes in an index.
+Indexed UL offered the additional earnings beased on a published index, such as Nasdaq 100. The creaditing rate is determined by the changes in an index.
 
 ###### how the variable insurance allows the policyowner to decide how the premiums and cash value are invested.
 
@@ -60,13 +62,13 @@ VUL and VL :
 
 VUL and UL :
 
-- the policyonwer can choose teh premium amount and face amount.
+- the policyonwer can choose the premium amount and face amount.
 
 ###### Characteristics of Endowment Insurance
 
-- will pay the face amount to policyonwer when the maturity date reach.
+- will pay the face amount to policyonwer when the maturity date reach.(always for retirment)
 
-- usually level throughout the term of policy.
+- usually level premium throughout the term of policy.
 
 ###### Chapter knowledge tree
 

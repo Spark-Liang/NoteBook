@@ -16,7 +16,7 @@
 
 - asset : wealth, ( simply means the money you own )
 - substantial : larger number of 
-- affliate / subsidiaries : the company which under other company's management. 
+- affliate / subsidiary : the company which under other company's management. 
 - prudential : think twicely 
 - walfare : the health, happiness, and fortunes of a person or group.
 

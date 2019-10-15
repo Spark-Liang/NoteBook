@@ -24,13 +24,13 @@ principal of developing the product premium rate:
     
     - often has four categories : separated by gender and smoking status.
 
-- insurer;s investment earnings
+- insurer's investment earnings
   
   - interest:
     
     - simple interest : the interest only influence by principal
     
-    - compoinding interest : the interest will influence by pricipal and time
+    - compounding interest : the interest will influence by pricipal and time
   
   - rate of return : the percentage of the investment earning of the principal
 
@@ -45,6 +45,6 @@ principal of developing the product premium rate:
 
 how the level premium system operate? <br>
 
-1. In early policy year, the dead is lower, so the benefit payable is lower. The insures can use the money to invest.
+1. In early policy year, the probability of death is lower, so the benefit payable is lower. The insures can use the money to do investment.
 
-2. In later policy year, although the dead is higher, the insures can use the investment earning money to pay the benefit.
+2. In later policy year, although the probability of death is higher, the insures can use the investment earning to pay the benefit.
