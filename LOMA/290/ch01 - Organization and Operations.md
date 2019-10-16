@@ -4,7 +4,7 @@
 
 - **stakeholder**: is a party that has an interest in or reason to concern the conpany's busimess 
 
-- **security** : is a tradable document or certificate that represent the ownership interest in business and a debt owed by business.
+- **security** : is a tradable document or certificate that represent the ownership of the interest in business and a debt owed by business.
 
 - **insider director** or **outsider director** : whether the board member(member in the board of directors) not hold the position in company or not.
 
@@ -50,19 +50,19 @@
 
 - middle-level management
   
-  - are typically functional experts for the area they manage.
+  - the managers in this level are typically functional experts for the area they manage.
 
 - first-level or supervisory management
   
-  - supervisors have less latitude interpreting the directive of top management and spend more time in direct supervision of employee.
+  - supervisors have less latitude interpreting the directive of top management and spend more time in directing supervision of employee.
 
 **four types of the management functions**
 
 - planning : set goals and strategies
 
-- organization : coordinates resource to accomplish goals
+- organizing : coordinates resource to accomplish goals
 
-- directing : leads, influences and motivate
+- directing : leads, influences and motivate employee
 
 - controlling : monitors and corrects
 
@@ -72,7 +72,7 @@
 
 - **responsibility** : a duty or a task assigned to an employee
 
-- **accountability** : an employee is answerable for how well he carry out his responsibilities.
+- **accountability** : an employee is answerable for how well he carry out his responsibilities. (performance  measurement)
 
 - **division of labor** : a process to divide the large task into smaller activities.
 
@@ -155,9 +155,7 @@
   
   - evaluate on its profitability
   
-  - responsible for ite own revenues and expense
-  
-  - make many of its own decision on its operation.
+  - responsible for its own revenues and expense
 
 - **SBU**: (act more lke a independent business)
   
@@ -167,7 +165,7 @@
 
 **Committee**
 
-- is a group of people to chosen to make some decision that is apply to whole company to solve some problem.
+- is a group of people chosen to make some decision that is apply to whole company to solve some problem.
 
 - consider as the source advices of the company
 

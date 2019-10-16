@@ -25,3 +25,13 @@
 - confidential : intended to be kept secret.
 
 - arbitration : 仲裁
+
+- account reconciliation ： 对账
+
+- performance appraisal：an act of assessing something or someone.
+
+###### ch3
+
+- dispute : means argue.
+
+- domestic : not international.
