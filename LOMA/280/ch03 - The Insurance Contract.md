@@ -54,3 +54,13 @@
 - aleatory contract
 
 - contract of adhesion
+
+
+
+###### Property rights the policyowner have
+
+- right to use and enjoy property
+
+- right to dispose of property
+
+

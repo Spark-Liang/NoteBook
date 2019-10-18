@@ -8,6 +8,9 @@
   - partnership: owned by two or more people.
   
   - corporation: is seperate and disctinct from the people who own it.
+- reason why insurance must be corporation
+  - corporation is separate from its owner.
+  - corporation continue beyond the death of any or all of its owner.
 
 ###### type of Insurance Company Organization
 
@@ -25,6 +28,8 @@
 - fraternal beneift societies : is a noprofit organization.
 
 ###### Evolution of the Financial Serivce Industry
+
+financial service industry is an industry that offers financial product and service to help individual and business meet their financial goal.
 
 1. Convergence : 
 
