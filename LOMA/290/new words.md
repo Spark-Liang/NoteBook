@@ -35,3 +35,29 @@
 - dispute : means argue.
 
 - domestic : not international.
+
+###### ch4
+
+- morale : 士气
+- possess : means someone or something have somthing
+- appraisal : means evaluate
+- anchored : 锚定
+
+###### ch5
+
+- legacy : an amount of money or property left to someone in a will.
+- portfolio : a range of investments held by a person or organization.
+- complementary : means the contrary kind of something. means the occurance probability of these event sum up to 1.
+- reputation : the public image on whose honesty
+
+###### ch7
+
+- segregation : means isolation
+
+- emphasize ： means focus on
+
+- conceal : means hide something
+
+- remit : transfer money
+
+- liaison : means communication and build the relationship
