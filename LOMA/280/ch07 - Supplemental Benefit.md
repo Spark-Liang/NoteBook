@@ -38,7 +38,7 @@
   
   - aviation-related accident (such as plane crash)
   
-  - accident result from crime.
+  - accident result from crime. 
 
 ###### Indentify three kinds of the accelerated death benefit rider and tell the difference
 

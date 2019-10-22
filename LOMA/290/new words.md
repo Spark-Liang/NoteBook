@@ -61,3 +61,8 @@
 - remit : transfer money
 
 - liaison : means communication and build the relationship
+
+###### ch8
+
+- purchase bond : 购买债券
+- pledge : a kind of promise
