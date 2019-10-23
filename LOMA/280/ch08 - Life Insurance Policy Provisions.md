@@ -88,7 +88,7 @@
       - **Extended Term Insurance**:
         - use the **net cash surrender value** to purchase a term life insurance with **full coverage amount provide under original policy**.
         - **the premium is calculated based on the attained age.**
-    - **Automatic Premium Load Option**
+    - **Automatic Premium Loan Option**
       - automatically making a policy loan against the unpaid premium, as long as the unpaid premium not exceed the cash value.
       - **The UL policy will not have this option, because the UL policy already provide the similar benefit.**
 
