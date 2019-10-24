@@ -60,8 +60,6 @@
 
 - if the investor held many types of the asset in their investment portfolio, the bad investment performance on one type of asset will have the minimal bad impact on investor.
 
-
-
 ###### Types of investment
 
 **bond**
@@ -145,5 +143,40 @@
 - because of the high risk and irregular cash flows associated with stocks, the investor regularly limit the amount on stock investment
 
 **real estate**
+
+- **real estate** investment provide insurers with return in the form of rental income
+
+- advantage : 
+  
+  - the rate of return is generally greater than common stock.
+
+- disadvantage:
+  
+  - the income stream is unpredictable
+  
+  - has less liquidity 
+
+- **real estate investment trust (REIT)** 
+  
+  - is a corporation or trust pools the capital to purchase and manage real estate.
+
+- **sale-and-leaseback transaction**
+  
+  - the owner of the building sell the building to investor and immediately lease back the building from investor.
+  
+  - **lessee** : the entity responsible for maintaining the building. (is the buyer of the building)
+  
+  - leasor : the entity lease the building, who free from the maintaindency.
+
+**the comparison of different investment method**
+
+|                         | bond        | mortgage                               | stocks                                      | real estate        |
+| ----------------------- | ----------- | -------------------------------------- | ------------------------------------------- | ------------------ |
+| predictiblity of income | predictable | less than bond                         | so less than bond.somthing is unpredictable | so less than bond. |
+| agency rating           | yes         | no, except the mortage-backed security | no                                          | no                 |
+| provides collateral     | yes or no   | no                                     | no                                          | no                 |
+| degree of liquidity     | gooe        | less than bond                         | good                                        | illiquid           |
+
+
 
 

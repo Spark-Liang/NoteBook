@@ -66,3 +66,4 @@
 
 - purchase bond : 购买债券
 - pledge : a kind of promise
+- lease : rental

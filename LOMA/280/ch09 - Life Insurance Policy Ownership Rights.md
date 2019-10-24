@@ -27,7 +27,7 @@
 
 - participating policy **(par policy)** or nonparticipating policy **(non-par policy)**:
   
-  - for par policy, insurer will guranteed to shard the company;s divisible surplus with policyowner. And the non-par policy will not
+  - for par policy, insurer will guranteed to shard the company's divisible surplus with policyowner. And the non-par policy will not
   
   - the insurance company's board of directors will decide the amount of dividends.
   
