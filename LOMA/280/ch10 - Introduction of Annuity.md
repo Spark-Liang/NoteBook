@@ -130,8 +130,6 @@
   
   - **Fixed Indexed Annuity**
 
-
-
 ###### Annuity Contract Provision
 
 most of the provision is similar to the life insurance contract.
@@ -151,7 +149,6 @@ most of the provision is similar to the life insurance contract.
 the unique provision for annuity contract:
 
 - withdrawal provision
-  
   - give the contract owner right to withdraw part of the accumulation value
   
   - inssurer always restrict the maximum precentage of the accumulate value can withdraw. The insurer will charge the **surrender charge** for the exceed part of withdraw money.

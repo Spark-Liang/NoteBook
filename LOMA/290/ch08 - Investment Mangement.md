@@ -178,5 +178,3 @@
 | degree of liquidity     | gooe        | less than bond                         | good                                        | illiquid           |
 
 
-
-
