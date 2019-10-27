@@ -177,4 +177,34 @@
 | provides collateral     | yes or no   | no                                     | no                                          | no                 |
 | degree of liquidity     | gooe        | less than bond                         | good                                        | illiquid           |
 
+###### Investment management activities
 
+**investment strategy**
+
+- **passive management strategy**: 
+  
+  - known as buy-and-hold strategy,expected to hold the investment for a long period or until it mature.
+
+- **active management strategy** : 
+  
+  - consider all the investment would profitable as tradable, and tend to do investment
+
+**Buying and selling security**
+
+- **equity security** : an ownership interest in a buisness
+
+- **debt security** : the debt the a entity such as business owned to the investor
+
+- **primary security** : is the market can buy the new issued security
+
+- **public offering** : which means the security is avaliable to public
+
+- **private placement** : only allow limited investor to purchase
+
+- **secondary market** : can buy the security which is not offered first time.
+
+###### Investment portfolio
+
+- **general account** : the account with the asset to do investment to make the guarantee benefit payment.
+
+- **separate account** : one or more asset portfolio support insurer's variable product.

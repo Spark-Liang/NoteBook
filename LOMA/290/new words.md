@@ -67,3 +67,15 @@
 - purchase bond : 购买债券
 - pledge : a kind of promise
 - lease : rental
+- prudent : think twicely
+
+###### ch9
+
+- tatical : 战术的
+- tailor something : customize somthing
+- pursue : 追求
+
+###### ch11
+
+- cease : something stop
+- behalf : represent
