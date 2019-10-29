@@ -79,3 +79,7 @@
 
 - cease : something stop
 - behalf : represent
+
+###### ch12
+
+- paramedical : the people engaging in medical care and health care.

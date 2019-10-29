@@ -102,39 +102,39 @@
     
     - **current interest-crediting rate** : the interest that insurer declare will pay for a specified period of time. This interest rate will change from time to time, but will always higher than **guranteed miinmum interest-crediting rate**.
   
-  - **Variable Annuity** : (is similar to variable Life insurance)
-    
-    - The premium will be allocated into subaccounts
-    
-    - contract owner's rights:
-      
-      - transfer money from one subaccount to another
-      
-      - change the percentage to allocate the premium
-      
-      - change the subaccount the future premium will invested into.
-    
-    - the way to allocate premium is use the premium to purchase different **accumulation unit**. Premium paid into the subaccount, **minus the expense charge**, than buy the accumulation unit.
-    
-    - **subaccount value** = **current vqalue of accumulation unit** X **tital number of accumulation unit**.
-    
-    - **Total accumulation value of variable annuity** = **Total value of subaccounts** + **total value of fixed account**.
-    
-    - **fixed account** : the account guranteed payment of fixed rate of interest.
-  
-  - **Deferrd Income Annuity (DIA)** and **Longevity Annuity** 
-    
-    - provide the guranteed stream of income during retirement.
-    
-    - the different between these two annuity is that, **Longevity Annuity** is specially designed for longevity risk, so ofter start tha payment at age of 80-85.
-  
   - **Fixed Indexed Annuity**
+
+- **Variable Annuity** : (is similar to variable Life insurance)
+  
+  - The premium will be allocated into subaccounts
+  
+  - contract owner's rights:
+    
+    - transfer money from one subaccount to another
+    
+    - change the percentage to allocate the premium
+    
+    - change the subaccount the future premium will invested into.
+  
+  - the way to allocate premium is use the premium to purchase different **accumulation unit**. Premium paid into the subaccount, **minus the expense charge**, than buy the accumulation unit.
+  
+  - **subaccount value** = **current vqalue of accumulation unit** X **tital number of accumulation unit**.
+  
+  - **Total accumulation value of variable annuity** = **Total value of subaccounts** + **total value of fixed account**.
+  
+  - **fixed account** : the account guranteed payment of fixed rate of interest.
+
+- **Deferrd Income Annuity (DIA)** and **Longevity Annuity** 
+  
+  - provide the guranteed stream of income during retirement.
+  
+  - the different between these two annuity is that, **Longevity Annuity** is specially designed for longevity risk, so ofter start tha payment at age of 80-85.
 
 ###### Annuity Contract Provision
 
 most of the provision is similar to the life insurance contract.
 
-- entrie contract provision
+- entire contract provision
 
 - free-look provision
 
