@@ -153,5 +153,3 @@ comparison on **traditional IRA** and **Roth IRA**
 | withdram taxable                             | Yes, unless the owner made nondeductible contribution.                       | No, provided certain requirements are met. |
 | Contributions dedcutible from taxable income | Yes, up to certain limits, unless the owner make nondeductible contributions | No                                         |
 | Pentalty for early withdraw.                 | yes, with certain exception                                                  | yes, with certain exception                |
-
-

@@ -42,7 +42,7 @@ kinds of health insurance products :
     
     - physician's expense
   
-  - provides **first-dollar coverage**, which means the reimburses not required the **out-of-pocker contribution**, That means insurer cover all the expense.
+  - provides **first-dollar coverage**, which means the reimburses not required the **out-of-pocket contribution**, That means insurer cover all the expense.
   
   - typically limit the maximum medical expense.
 
@@ -197,14 +197,14 @@ kinds of health insurance products :
   - after a specified period of time, the disability still prevent insured from **any** occupation, even with the reasonable education or training.
 
 .  **own prevision occupation** : 
-  
-  -  same as item 1 in **current usual definition**.
-  
-  - the difference from item 2 in **current usual definition** is not **any** occupation, is **previous** occupation, which means the disability prevent insured from previous occupation.
 
--  **presumpative disability** :
+- same as item 1 in **current usual definition**.
+
+- the difference from item 2 in **current usual definition** is not **any** occupation, is **previous** occupation, which means the disability prevent insured from previous occupation.
+
+- **presumpative disability** :
   
-  -  is a state condition that, if present, automatically consider the insured is total disability
+  - is a state condition that, if present, automatically consider the insured is total disability
   
   - even if the insured resumes full-time occupation.
 
