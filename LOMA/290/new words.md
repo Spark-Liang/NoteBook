@@ -83,3 +83,7 @@
 ###### ch12
 
 - paramedical : the people engaging in medical care and health care.
+
+###### ch14
+
+- courteous : polite, respectful, or considerate in manner.
