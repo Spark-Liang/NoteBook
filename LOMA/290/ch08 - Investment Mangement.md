@@ -116,7 +116,7 @@
   
   - corporation bond
   
-  - covernment bond
+  - government bond
 
 **mortgage**
 
@@ -131,12 +131,12 @@
   - the borrower likely to pay all the loan back, which will cause the loss of income
   
   - there is no rating agency for rating the mortgage borrower.
+
+- **mortgage-backed securities** : which are the bond secured by a pool of mortgage loans
   
-  - **mortgage-backed securities** : which are the bond secured by a pool of mortgage loans
-    
-    - **residential mortgage-back securities**
-    
-    - **commorcial mortgage-back securities**
+  - **residential mortgage-back securities**
+  
+  - **commorcial mortgage-back securities**
 
 **stock**
 

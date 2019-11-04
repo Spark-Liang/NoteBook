@@ -26,10 +26,10 @@
     
     - liquidity management
 
-- **Invertment Management**
+- **Investment Management**
   
   - some concept :
-    - **portifolio** :  is a clolection of assets assembled to meet a defined set of financial goals.
+    - **portifolio** :  is a collection of assets assembled to meet a defined set of financial goals.
     
     - **Asset/liability management (ALM)** : the practice to manage the insurer's asset portfolio and liability portfolio to manage risk and make sure the adequate level or return.
 
@@ -188,11 +188,9 @@
     
     - **basic accounting equation** : **Asset** = **Liabilities** + **Capital and surplus**
 
-- **Annual Report** : a financial ducument issue to stakeholder and other interested parties
+- **Annual Report** : a financial document issue to stakeholder and other interested parties
 
 - **Rating Agency** 
-
-
 
 ###### Financial Compliance
 
@@ -219,7 +217,3 @@
 - **financial condition examination** : the fromal investigation to identify and monitor any threats to solvency.
 
 - **External Audit**
-
-
-
-

@@ -127,22 +127,22 @@
 - **cash management** : manage the cash via electronic system
 
 - **liquidty management** : this management is close to the solvency and make sure have enough cash to pay the debt
+
+- other treasury operation included in liquity management:
   
-  - other treasury operation included in liquity management:
-    
-    - manage the balance
-    
-    - anticipating the short-term and long-term debt, make sure the cash is avaliable for the debt
-    
-    - manage the risk of foreign exchange
-    
-    - establish international banking relationship and ensure the smooth transaction across jurisdiction
-    
-    - ensuring the compliance with rating agencies' requirement
-    
-    - uncovering fraudulent activities
-    
-    - develop business continuity plan
+  - manage the balance
+  
+  - anticipating the short-term and long-term debt, make sure the cash is avaliable for the debt
+  
+  - manage the risk of foreign exchange
+  
+  - establish international banking relationship and ensure the smooth transaction across jurisdiction
+  
+  - ensuring the compliance with rating agencies' requirement
+  
+  - uncovering fraudulent activities
+  
+  - develop business continuity plan
 
 ###### Audting
 

@@ -97,7 +97,7 @@
 
 - **support function** are the functions except line functin that provide support service to line function.
   
-  - example : actuarial, invertment, accounting, HR and legal and compliance.
+  - example : actuarial, investment, accounting, HR and legal and compliance.
 
 **types of typical functional areas**:
 

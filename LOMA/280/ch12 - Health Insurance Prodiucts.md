@@ -111,7 +111,7 @@ kinds of health insurance products :
   - manage access through **provider network** which is a group of physicians, hospitals and ancillary.
   - require the plan member to select the **primary care provider (PCP)** which serve as the member's entry point to managed care system and additinal service.
 - **How to manage the cost of health care service**
-  - plan mus pay a fixed, periodic premium to get the health care serivce, the permium is fixed regardless how many time the member use the service.
+  - plan member must pay a fixed, periodic premium to get the health care serivce, the permium is fixed regardless how many time the member use the service.
   - plan member need to pay a specified fixed amount as a **copayment** to provider for **certain medical service**.
 
 ###### Consumer-Driven Health Plan (CDHP)
@@ -196,11 +196,11 @@ kinds of health insurance products :
   
   - after a specified period of time, the disability still prevent insured from **any** occupation, even with the reasonable education or training.
 
-.  **own prevision occupation** : 
-
-- same as item 1 in **current usual definition**.
-
-- the difference from item 2 in **current usual definition** is not **any** occupation, is **previous** occupation, which means the disability prevent insured from previous occupation.
+- **own prevision occupation** : 
+  
+  - same as item 1 in **current usual definition**.
+  
+  - the difference from item 2 in **current usual definition** is not **any** occupation, is **previous** occupation, which means the disability prevent insured from previous occupation.
 
 - **presumpative disability** :
   

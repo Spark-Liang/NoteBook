@@ -126,7 +126,7 @@
   
   - ensure the employee comply with law that relative to claim
   
-  - adhere insurer's claim philosophy and claim practices.
+  - adhere (follow) insurer's claim philosophy and claim practices.
 
 - control mechanism
   

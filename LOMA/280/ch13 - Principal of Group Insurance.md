@@ -20,7 +20,7 @@
   
   - the group member not need to pay the permium is **noncontributory plan**, need to pay the premium is **contributory plan**.
 
-**Certificate the Insurance**
+**Certificate of Insurance**
 
 Because the group insured is not the party in the group insurance contract, so the contract not contain the information of the group insured. So the policyholder must provide the document called **cerificate of insurance** to describe following items:
 
@@ -174,7 +174,7 @@ the new member must meet the certain requirement to become a eligible for covera
   
   - the refund is payable to policyholder not group member, even if the contributory plan
   
-  - If the amount of the refund greater than the portion of the group premium that was paid to the policyholder's fund, the exceed part must be used for the benefit of hte individual participate in the plan
+  - If the amount of the refund greater than the portion of the group premium that was paid to the policyholder's fund, the exceed part must be used for the benefit of the individual participate in the plan
 
 ###### Group Plan Administration
 

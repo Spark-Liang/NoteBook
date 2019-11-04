@@ -90,13 +90,13 @@
   
   - the common principal of the amount of annuity payment
     
-    - **higher** estimation or return, **higher** annuity payment
+    - **higher** estimation of return, **higher** annuity payment
     
     - the **older** a person is, the **larger** amount of each period payment will be
     
     - man's payment is **larger** than woman's payment.
     
-    - the **longer** of the guarantee period, the **smaller**amount of each period payment will be
+    - the **longer** of the guarantee period, the **smaller** amount of each period payment will be
     
     - **less** frequently payment, the **larger**amount of each period payment
 
