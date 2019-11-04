@@ -156,7 +156,7 @@ two kinds of marketing activities
     
     - cost saving
 
-- **concetrated marketing**
+- **concentrated marketing**
   
   - develop the product only focus on a single segment of market.
   

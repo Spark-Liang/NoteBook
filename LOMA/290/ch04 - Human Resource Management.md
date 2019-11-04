@@ -42,8 +42,6 @@
 
 - **Third-country nationals** : hire the employee from the country other the home country and host country.
 
-
-
 ###### The factors to determine whether to outsourcing
 
 **what is outsourcing**
@@ -150,15 +148,11 @@
 
 - **job rotation** :move periodically from one job to other.
 
-
-
 | Traninig approach   | advantage                                                                                                                                                                               | disadvantage                                                                                                                                         |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| On-the-Job traning  | 1. trainee learn by doing actual job<br/>2. can immediately get the feedback from work<br/>3. can help trainee build relationship<br/>4. the trainee can receive personalized attention | 1. mentor will away from his own work<br/>2. trainee's error might create big problem<br/>3. informal training structure might lead to inconsistence |
-| Classrome traning   | 1. perfessional training increase quality<br/>2. trainee can learn without distraction<br/>3. the trainee can receive personalized attention                                            | 1. can not get the information from real work<br/>2. is more expensive                                                                               |
-| self-study traninig | 1. trainee can determine the schedule<br/>2. might learn better when study alone                                                                                                        | 1. not receive information from real work<br/>2. not receive personlized attention<br/>3/ require self-discipline                                    |
-
-
+| On-the-Job training | 1. trainee learn by doing actual job<br/>2. can immediately get the feedback from work<br/>3. can help trainee build relationship<br/>4. the trainee can receive personalized attention | 1. mentor will away from his own work<br/>2. trainee's error might create big problem<br/>3. informal training structure might lead to inconsistence |
+| Classrome training  | 1. perfessional training increase quality<br/>2. trainee can learn without distraction<br/>3. the trainee can receive personalized attention                                            | 1. can not get the information from real work<br/>2. is more expensive                                                                               |
+| self-study training | 1. trainee can determine the schedule<br/>2. might learn better when study alone                                                                                                        | 1. not receive information from real work<br/>2. not receive personlized attention<br/>3/ require self-discipline                                    |
 
 ###### Performance evaluation
 
@@ -180,8 +174,6 @@
 | Critical Incident evaluation              | supervisor record down the example of employee's work              | provide the evidence of employee's work                | will subjective because tend record negative record then positive record |
 | ranking                                   | supervisor rank the performance of employee                        | provide the clear picture of the performance           | subjective and diffcult to accomplish in large employee group            |
 | 360-degree feedback                       | supervisor, colleague and customer to evaluation the performacne   | help to avoid the bias                                 | expensive and time-consuming                                             |
-
-
 
 ###### Compensation and Employee benefit
 
@@ -216,8 +208,6 @@
 **Fair Labor Standards Act (FLSA)** : set the minimum hourly wage
 
 **Retirement Income Security Security Act (ERISA)** : require the employer to inform their employee pension plan, and make sure it is easy enough to understand by all employee.
-
-
 
 ###### Compliance
 

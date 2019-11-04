@@ -43,17 +43,17 @@ ethic : is a system of accepted standards of conduct and moral judgment.
 - establish a code of conduct
   - **code of business** : a formal statement of a company and its expectation for how the employee should behave.
   - the code of business should refer to specific practies.
-- stablish a ethics office and ombudsman
+- establish a ethics office and ombudsman
   - **ombudsmane** : an independent and confidential professional who provide assistance to stakeholders.
-  - To maintain neatrality, the ombusman will report to board of directors or CEO.`
-- promote empolyee education and training, 
+  - To maintain neatrality, the ombusman will report to board of directors or CEO.
+- promote employee education and training, 
 - encouraging employee membership in industry associations.
 
 **Two important area that insurance companies are often perforn traning**
 
 - **Insider Trading**: buy or sell a company's securities based on inside information
   
-  - **inside information** : contain nonpublic information and material ifnormation
+  - **inside information** : contain nonpublic information and material information
   
   - **nonpublic information** : the company information has not been disclose to public.
   

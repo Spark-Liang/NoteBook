@@ -160,8 +160,6 @@ are the different approach to gather underwriting information.
   
   - **table rating method is approprated to the risk will remain constant or decrease with age** .
 
-
-
 ###### Underwriting Control mechanism
 
 - **authority level** 
@@ -170,7 +168,7 @@ are the different approach to gather underwriting information.
   
   - specify the degree to which the underwriter may rate or decline the application not require approval.
 
-- **producttivity mertic**
+- **productivity metric**
   
   - monitor the number and types of insurance a underwriter underwrited and their time spend
   
@@ -185,8 +183,6 @@ are the different approach to gather underwriting information.
 - **market conduct examination**
   
   - include a evaluation of the insuer's practice regarding premium rate and underwrtiting
-
-
 
 ###### Group Underwriting
 
@@ -235,11 +231,3 @@ are the different approach to gather underwriting information.
   - **NAIC model privacy act**
   
   - **personal information protection and electronic doucments act**
-  
-  
-
-
-
-
-
-

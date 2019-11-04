@@ -132,7 +132,7 @@ the potential customer is called as **prospect**
     
     - **unfair sales preactice**
       
-      - **churing** : to induce the customer to place the product multi-times to earn the first-year commission.
+      - **churing** : to induce the customer to replace the product multi-times to earn the first-year commission.
       
       - **twisting** : misrepresent the feature of policy
       
@@ -214,5 +214,3 @@ the potential customer is called as **prospect**
 - **external marketing environment**
   
   - condition in external marketing environment can make one product sell better than other.
-
-
