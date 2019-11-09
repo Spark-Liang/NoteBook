@@ -15,6 +15,8 @@ sudo wget -O /etc/yum.repos.d/CentOS-Base.repo  http://mirrors.aliyun.com/repo/C
 #其中 iso9660 是挂在后文件系统的类型
 当不知道挂载后的文件系统类型，可以先挂载了，然后用下面的命令查看
 df -T
+
+# 使用 mount -a 使得修改生效
 ```
 
 #### 设置 CentOS-Media.repo (本地源配置文件)

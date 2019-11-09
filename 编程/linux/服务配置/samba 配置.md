@@ -47,7 +47,7 @@ samba的主配置文件在 /etc/samba/smb.conf 。该文件主要分为两个部
   
   说明：设置Samba Server监听哪些网卡，可以写网卡名，也可以写该网卡的IP地址。
 
-- hosts allow = 127. 192.168.1. 192.168.10.1  
+- hosts allow =  192.168.1.0/24 192.168.10.1  
   
   说明：表示允许连接到Samba Server的客户端，多个参数以空格隔开。可以用一个IP表示，也可以用一个网段表示。含义于 hosts deny 相反
 
@@ -198,6 +198,9 @@ samba的主配置文件在 /etc/samba/smb.conf 。该文件主要分为两个部
   - 在配置正确，samba所在server能够 ping 通并且 telnet 也能连接成功。则此时错误出现有可能是因为某个资源对应的目录没有被创建。
   
   - 在配置正确，samba所在server能够 ping 通并且 telnet 也能连接成功，对应的文件夹也存在。并且错误提示为 "protocol negotiation failed: NT_STATUS_IO_TIMEOUT"。则有可能是因为使用了外网的DNS。
+- NT_STATUS_LOGON_FAILURE
+  - 原因是没有对应的smb用户或者对应的smb 密码不正确
+- NT_STATUS_INVALID_NETWORK_RESPONSE
 
 #### smbclient 使用
 
