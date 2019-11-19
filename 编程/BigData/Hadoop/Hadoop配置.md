@@ -90,4 +90,22 @@
 
 - yarn.resourcemanager.webapp.address：resource manager的 UI端口
 
-- yarn.log-aggregation-enable：开启yarn的日志聚合功能，默认各个container 是放置在各个主机的 \${HADOOP_HOME}/logs 上 
+- 日志聚合相关
+  
+  - yarn.log-aggregation-enable：开启yarn的日志聚合功能，默认各个container 是放置在各个主机的 \${HADOOP_HOME}/logs 上 
+  
+  - yarn.log.server.url ：配置聚合日志的重定向url。不配置该url，在resource manager中点击 container 对应的 “logs” 时依旧会直接访问该container的本地日志。
+    
+    - 例子：http://www.spark-liang.top:19888/jobhistory/logs
+  
+  - yarn.nodemanager.remote-app-log-dir 和 yarn.nodemanager.remote-app-log-dir-suffix
+    
+    - 这两个参数共同决定用户的日志目录
+    
+    - \${yarn.nodemanager.remote-app-log-dir}/\${user}/\${yarn.nodemanager.remote-app-log-dir-suffix}
+  
+  - yarn.log-aggregation.retain-seconds ： 聚合日志保留时间
+  
+  - yarn.log-aggregation.retain-check-interval-seconds ： 检测超时日志的时间间隔。
+
+
