@@ -31,3 +31,4 @@
 - possible reason:
   
   - 如果wating status 是 ASYNC_NETWORK_IO，有可能是网络带宽，有可能是hadoop的每个task接收record的速度没有发送的快。
+  - 在写入时，等待 SLEEP_TASK，MEMORY_ALLOCATION_EXT，PAGELATCH_EX，LOGBUFFER
