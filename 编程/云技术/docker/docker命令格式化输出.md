@@ -31,8 +31,6 @@ test
 '{{index <pipeline path> <index num>}}' 
 ```
 
-
-
 ##### 参考文档
 
 - [https://www.cnblogs.com/kevingrace/p/6424476.html](https://www.cnblogs.com/kevingrace/p/6424476.html)

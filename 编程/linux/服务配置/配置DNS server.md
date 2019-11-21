@@ -77,7 +77,7 @@ zone "named-test.com" { #被解析的域名。任何匹配到该模式的都会�
 <font color='red'>在编写完成之后可以使用 named-checkconf 命令检查格式及配置是否正确。</font>
 
 ```bash
-named-checkconf -t /var/named/chroont 
+named-checkconf -t /var/named/chroot 
 # -t 表示修改后运行的根目录。
 ```
 
@@ -142,7 +142,9 @@ dns记录最重要是配置 name，type 和value。<br>
 
 #### dns server测试
 
-在linux中可以采用dig命令测试dns server是否能够正常解析域名
+在linux中可以采用dig命令测试dns server是否能够正常解析域名。
+
+**需要安装对应的软件包 bind-utils。**
 
 ```bash
 dig <domain name>
