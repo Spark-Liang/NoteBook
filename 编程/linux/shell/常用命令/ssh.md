@@ -15,8 +15,6 @@ Are you sure you want to continue connecting (yes/no)? yes
 
 但其实我们可以在ssh_config配置文件中配置此项. 配置 StrictHostKeyChecking no。配置文件路径为 /etc/ssh/ssh_config
 
-
-
 ###### Permission denied (publickey,gssapi-keyex,gssapi-with-mic)
 
 出现这种错误主要是因为 root 用户配置了 ssh 公钥登录，而对应主机的公钥却没有在对应用户目录下的 .ssh/authorized_keys 中有对应记录。
@@ -27,15 +25,3 @@ Are you sure you want to continue connecting (yes/no)? yes
 # 公钥用三个部分
 <加密算法> 内容 <用户>@<server名>
 ```
-
-
-
-
-
-
-
-
-
-
-
-
