@@ -60,7 +60,7 @@ rpm -ivh epel-release-7-11.noarch.rpm
 
 #### 通过yum 下载软件所有的依赖包
 
-通过repotrack命令，可以使用 yum 下载某个软件包对应的所有依赖的包。
+通过repotrack命令，可以使用 yum 下载某个软件包对应的所有依赖的包。使用之前需要安装 yum -y install yum-utils。
 
 ```bash
 repotrack <software nane> -p <path to store packages>
