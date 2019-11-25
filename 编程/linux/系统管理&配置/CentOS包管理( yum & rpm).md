@@ -66,6 +66,12 @@ rpm -ivh epel-release-7-11.noarch.rpm
 repotrack <software nane> -p <path to store packages>
 ```
 
+并且在需要离线安装的机器上调用以下命令
+
+```bash
+rpm -Uvh --force --nodeps *.rpm
+```
+
 #### 使用 rpm
 
 命令模板：

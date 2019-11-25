@@ -74,5 +74,3 @@ implicit val str :String = "implicit value"
 
   getImplicitValue
 ```
-
-

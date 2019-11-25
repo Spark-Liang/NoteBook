@@ -20,6 +20,8 @@ sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=<YourStrong@Passw0rd>" \
 sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=<YourStrong@Passw0rd>" \
  -p 1433:1433 --name sqlserver-container \
  -d microsoft/mssql-server-linux
+ -v <host path>:/var/opt/mssql
+#  容器放置数据的位置在/var/opt/mssql
 ```
 
 ###### mysql on docker
