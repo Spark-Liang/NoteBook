@@ -107,5 +107,3 @@
   - yarn.log-aggregation.retain-seconds ： 聚合日志保留时间
   
   - yarn.log-aggregation.retain-check-interval-seconds ： 检测超时日志的时间间隔。
-
-
