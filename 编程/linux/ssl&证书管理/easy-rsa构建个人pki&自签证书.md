@@ -21,8 +21,6 @@ set_var EASYRSA_REQ_EMAIL       "brian@@qq.com"
 set_var EASYRSA_REQ_OU          "YUEXINJIAOYU"
 ```
 
-
-
 #### easy-rsa 生成证书文件的位置
 
 - ca 公钥：pki/ca.crt
