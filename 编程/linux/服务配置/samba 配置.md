@@ -201,6 +201,8 @@ samba的主配置文件在 /etc/samba/smb.conf 。该文件主要分为两个部
 - NT_STATUS_LOGON_FAILURE
   - 原因是没有对应的smb用户或者对应的smb 密码不正确
 - NT_STATUS_INVALID_NETWORK_RESPONSE
+- NT_STATUS_BAD_NETWORK_NAME
+  - 原因是resource对应的实际目录没有创建。
 
 #### smbclient 使用
 

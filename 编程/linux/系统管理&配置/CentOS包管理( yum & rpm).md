@@ -1,8 +1,22 @@
 ### 设置 阿里云 源
 
+**centos 7**
+
 ```bash
 sudo mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
 sudo wget -O /etc/yum.repos.d/CentOS-Base.repo  http://mirrors.aliyun.com/repo/Centos-7.repo
+```
+
+**centos 8**
+
+```bash
+cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
+cp /etc/yum.repos.d/CentOS-AppStream.repo /etc/yum.repos.d/CentOS-AppStream.repo.bak
+cp /etc/yum.repos.d/CentOS-Extras.repo /etc/yum.repos.d/CentOS-Extras.repo.bak
+
+sed -i 's/mirrorlist=/#mirrorlist=/g' /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-AppStream.repo /etc/yum.repos.d/CentOS-Extras.repo
+sed -i 's/#baseurl=/baseurl=/g' /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-AppStream.repo /etc/yum.repos.d/CentOS-Extras.repo
+sed -i 's/http:\/\/mirror.centos.org/https:\/\/mirrors.aliyun.com/g' /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-AppStream.repo /etc/yum.repos.d/CentOS-Extras.repo
 ```
 
 ### 配置本地 yum 镜像
@@ -93,3 +107,7 @@ rpm -Uvh --force --nodeps *.rpm
 - \-v：等价于 --verbose
 
 - \-h ：等价于 --hash
+
+##### 使用 dnf
+
+
