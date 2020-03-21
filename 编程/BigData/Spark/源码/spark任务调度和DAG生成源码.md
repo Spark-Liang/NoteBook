@@ -24,7 +24,7 @@
 
 5. task scheduler 就会把提交过来的task set 分配到指定的机器去执行。分配的方式主要根据 getPreferredLocs获取比较好的执行task 的机器。
 
-![](img/SparkJobStartProcess.PNG)
+![](../img/SparkJobStartProcess.PNG)
 
 ###### spark DAG 生成过程
 
@@ -32,7 +32,7 @@
 
 该图对应的是一个job，其中每个虚线框代表一个stage，每个stage内的一条线就代表的是一个task。一个实线方框代表一个RDD，一个RDD内的块代表一个partition。
 
-![](img/SparkStageExample.png)
+![](../img/SparkStageExample.png)
 
 1. 通过RDD的action 触发
 
@@ -42,11 +42,11 @@
 
 4. 当一个stage 没有 missing stage 的时候就会通过 submitMissingTask 方法把 stage 根据partition 切分成task 去运行。
 
-![](img/submitStage.PNG)
+![](../img/submitStage.PNG)
 
 5. 其中getMissingParentStages 方法做得事情就是根据 stage 对应的RDD，遍历该RDD对应的所有dependent RDD。遍历的时候做以下事情
    1. 对于shuffleDependency就添加到missing中，即这些 RDD是属于依赖到的并且还没提交的stage。这些stage 返回后就会在submitStage中继续递归解析。
    
    2. 对于 NarrowDependency，继续对窄依赖的dependency进行搜索，知道找到没有依赖的RDD，即source。
 
-![](img/getMissingParentStages.PNG)
+![](../img/getMissingParentStages.PNG)
