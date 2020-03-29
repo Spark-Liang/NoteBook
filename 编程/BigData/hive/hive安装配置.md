@@ -2,8 +2,6 @@ Hive 安装配置
 
 - linux
 
-
-
 ###### linux
 
 安装路径https://hive.apache.org/downloads.html
@@ -54,10 +52,16 @@ Hive 安装配置
        <description>Location of Hive run time structured log file</description>
      </property>
    ```
-   
-   
 
 8. 在mysql中配置对应的db和用户
+   
+   使用下面的命令在mysql 创建对应的用户
+   
+   ```sql
+   CREATE USER 'hive'@'%'  IDENTIFIED BY   'hive'
+   ```
+   
+   **需要注意的是xml 中 & 需要用$\&amp;$进行替换**
    
    ```<property>xml
    <property>
@@ -80,10 +84,54 @@ Hive 安装配置
 
 9. 启动hadoop和mysql
 
-10. 初始化hive schema 。
+10. 拷贝 jdbc driver到lib目录下
+
+11. 初始化hive schema 。
     
     ```
     schematool -dbType mysql -initSchema
     ```
 
-11. 执行hive命令进入
+12. 执行hive命令进入
+
+###### 配置hiveserver2
+
+启动hiveserver2 需要在hive-site.xml中添加下列的配置项
+
+```<!-- 这是hiveserver2 -->xml
+<!-- 这是hiveserver2 -->
+<property>
+    <name>hive.server2.thrift.port</name>
+    <value>10000</value>
+</property>
+
+<property>
+    <name>hive.server2.thrift.bind.host</name>
+    <value>your host name</value>
+</property>
+
+
+```
+
+
+
+
+
+##### 错误收集
+
+###### hive schema 版本和数据库不对应:"message:Hive Schema version 2.1.0 does not match metastore's schema version 1.2.0 Metastore is not upgraded or corrupt"
+
+直接到hive对应的metadata 数据库，把 VERSION 表下的 SCHEMA_VERSION update 成对应版本的。
+
+另外可以直接禁用schema 版本检查
+
+```xml
+<property>
+    <name>hive.metastore.schema.verification</name>
+    <value>false</value>
+</property>
+```
+
+
+
+

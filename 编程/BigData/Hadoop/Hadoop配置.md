@@ -10,6 +10,8 @@
 
 - 配在 yarn-site.xml (主要是配置 yarn相关选项，比如resource manager 的界面端口)
 
+- 配置完成后执行 hdfs namenode –format 命令格式化 hdfs。
+
 ###### hadoop-env.sh
 
 一般只需要配置内的 JAVA_HOME。而且一般都需要在此处配置 JAVA_HOME， 因为hadoop调用脚本时不会从 /etc/profile 中加载环境变量。
@@ -59,6 +61,10 @@
     - timeout  = 2 * heartbeat.recheck.interval + 10 * dfs.heartbeat.interval
 
 - **dfs.datanode.max.xcievers**：相当于linux下的打开文件最大数量，文档中无此参数，当出现DataXceiver报错的时候，需要调大。默认256
+
+- dfs.permissions.enabled： 是否打开 hdfs 权限控制
+
+- dfs.namenode.acls.enabled： 是否打开 hdfs 的 acl权限控制
 
 ###### mapred-site.xml
 

@@ -15,24 +15,6 @@
 
 原因是环境变量 HADOOP_CONF_DIR 配置错误。该变量的配置在 hadoop-env.sh 中配置。
 
-
-
-##### 错误信息： Exception in thread "main" java.lang.IllegalArgumentException: Invalid URI for NameNode address (check fs.defaultFS): file:/// has no authority.
+##### 错误信息： Exception in thread "main" java.lang.IllegalArgumentException: Invalid URI for NameNode address (check fs.defaultFS): file:/// has no authority.
 
 修改core-site.xml 的 fs.defaultFS，改为 fs.default.name。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,3 +1,7 @@
+#### 服务端配置
+
+[配置教程](ref/ssr_blog.html)
+
 #### 客户端配置
 
 [客户端配置教程](https://blog.liuguofeng.com/p/4010)
