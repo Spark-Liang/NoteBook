@@ -75,6 +75,33 @@
 
 - NAME：打开文件的确切名称
 
-常用选项：
+**常用选项（其中筛选相关的选项只能同时使用一个）：**
 
-- -p：筛选指定进程打开的文件。
+- -p：筛选指定进程打开的文件。例子：lsof -p \$\$
+- -u：筛选指定用户打开的文件
+- -c：查看指定程序打开的文件
+- 文件相关
+  - -d：使用文件描述符进行筛选，
+  - +d：递归筛选文件目录。如 -d /home 则筛选的是在home 目录下，所有被打开的目录
+  - +D：递归筛选文件。筛选某个目录下被打开的文件
+- 网络相关
+  - -i：查看任何程序打开的网络连接
+    
+    用法： lsof -i [46][protocol][@hostname|hostaddr][:serivce|port]     
+    
+    说明：　4 6　　IPv4 或 IPv6
+    
+    注意点：每个选项之间没有空格。比如需要TCP 4 的80端口，-i 4:80
+    
+    protocol TCP or UDP     
+    
+    hostname internet host name     
+    
+    hostaddr IPv4地址     
+    
+    service /etc/service中的service name     
+    
+    port 端口
+- 显示相关：
+  - -R：增加PPID 列，显示父进程。
+  - -r：按照指定时间间隔刷新页面。
