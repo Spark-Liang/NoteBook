@@ -72,8 +72,61 @@ az deployment group create \
 
 - resources：定义所有需要的资源。
 
+- outputs：定义执行完之后返回的值
 
 
 
 
 
+###### 模板引用
+
+[https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/linked-templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/linked-templates)
+
+模板引用主要有两种方式，一种是在当前文本中直接嵌套。另一种是通过uri 引用外部模板文件。
+
+使用模板引用有以下优点：
+
+- 外部模板能够得到内部模板的返回值。
+  
+  - 例子
+    
+    ```json
+    {
+      "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+      },
+      "variables": {
+        "exampleVar": "from parent template"
+      },
+      "resources": [
+        {
+          ...
+            "template": {
+              "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+              "contentVersion": "1.0.0.0",
+              "variables": {
+                "exampleVar": "from nested template"
+              },
+              "resources": [
+              ],
+              "outputs": {
+                "testVar": {
+                  "type": "string",
+                  "value": "[variables('exampleVar')]"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "outputs": {
+        "messageFromLinkedTemplate": {
+          "type": "string",
+          "value": "[reference('nestedTemplate1').outputs.testVar.value]"
+        }
+      }
+    }
+    ```
+
+- 
