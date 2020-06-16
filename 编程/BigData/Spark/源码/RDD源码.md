@@ -28,15 +28,11 @@ Spark在运行任务时，会把 task 提交到 Executor 中的线程池中，�
 
 从上面的代码中看出最终的计算是调用 rdd 的 Iterator 方法或者结果的迭代器，然后不断迭代得到全部结果。
 
-
-
 ###### RDD 的 Iterator 的方法
 
 RDD 的 iterator 方法是 final 方法，代码如下。RDD会首先判断结果是否存在与cache（通过 getOrCompute ）或存在 checkPoint （通过 computeOrReadCheckpoint），如果没有就会去调用 rdd 的compute 方法。compute 是抽象方法由各个 RDD 子类负责实现。
 
 ![](img/RDD_iterator.png)
-
-
 
 ###### MapPartitionsRDD 的 compute 方法
 

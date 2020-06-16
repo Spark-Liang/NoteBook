@@ -10,6 +10,18 @@
 
 ##### 
 
+##### Join算法的选择
+
+经过优化后的 LogicalPlan 只会包含由 basicOperator 组成的计划树，这些basicOperator都定义在 basicLogicalOperators.scala 中。其中Join的数据结构如下。
+
+![](img/basicLogicalOperators_Join.png)
+
+
+
+然后Join算法选择的源码是在JoinSelection 的 apply 方法。其中需要调用 ExtractEquiJoinKeys 和 ExtractFiltersAndInnerJoins 的 unapply 方法对join 类型进行细分。最终根据给定的 rule 选择join 的算法。
+
+
+
 ##### broadcast side 选择
 
 ###### broadcast side 源码
@@ -45,11 +57,10 @@ JoinSelection#apply
 3. 对于 canBroadcastByHints 来说，能够 build某一侧的表的条件是 sql 中使用了 hint
    
    ![](img/canBroadcastByHints_SourceCode.png)
+
 4. 对于 canBroadcastBySizes 来说，需要文件大小小于 autoBroadcastThreshold
    
    ![](img/canBroadcastBySizes_SourceCode.png)
-
-
 
 ###### 数据大小判断源码
 
@@ -59,8 +70,6 @@ JoinSelection#apply
 
 ![](img/LogicalPlan_stats.png)
 
-
-
 **SizeInBytesOnlyStatsPlanVisitor会对不同节点的数据进行估算，但是最终所有的数据大小来源都会从LogicalPlan的叶子结点开始汇总，叶子结点的大小通过 computeStats 进行计算。以下是源码**<br>
 
 ![](img/SizeInBytesOnlyStatsPlanVisitor_default.png)
@@ -68,8 +77,6 @@ JoinSelection#apply
 **此外，Project 和 Filter 等都是通过 visitUnaryNode方法进行估算的，大致的算法只和输入输出字段的数据大小比例有关**
 
 ![](img/SizeInBytesOnlyStatsPlanVisitor_visitUnaryNode.png)
-
-
 
 LeafNode 通常是读取source 的执行计划，下面是常见的 Hive 数据源**HiveTableRelation**。获取 HiveTable 的统计信息是在 DetermineTableStats 这个类中，源码如下：<br>
 
@@ -81,20 +88,10 @@ LeafNode 通常是读取source 的执行计划，下面是常见的 Hive 数据�
   
   - 用于控制是否从 HDFS 中获取HiveTable 的所在路径的大小当做 HiveTable 的大小
 
--  **spark.sql.defaultSizeInBytes**
+- **spark.sql.defaultSizeInBytes**
   
   - 默认值是 Long.MaxValue。
   
   - 当不启用fallBackToHdfs是，所有 HiveTable 的大小都会取该值。
 
 ![](img/DetermineTableStats.png)
-
-
-
-
-
-
-
-
-
-
