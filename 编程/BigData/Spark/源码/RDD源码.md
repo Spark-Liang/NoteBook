@@ -51,5 +51,3 @@ Iterator 的 map，flatMap 和 filter 的源码如下，都是使用了包装器
 ![](img/Iterator_flatMap.png)
 
 ![](img/Iterator_filter.png)
-
-
