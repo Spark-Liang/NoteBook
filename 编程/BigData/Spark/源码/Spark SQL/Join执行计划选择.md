@@ -1,6 +1,10 @@
 #### Join 执行计划选择
 
 - join 算法选择
+  
+  - Join Operator 结构
+  
+  - ExtractEquiJoinKeys
 
 - broadcast side 选择
   
@@ -12,13 +16,47 @@
 
 ##### Join算法的选择
 
+###### Join Operator 结构
+
 经过优化后的 LogicalPlan 只会包含由 basicOperator 组成的计划树，这些basicOperator都定义在 basicLogicalOperators.scala 中。其中Join的数据结构如下。
 
 ![](img/basicLogicalOperators_Join.png)
 
-
-
 然后Join算法选择的源码是在JoinSelection 的 apply 方法。其中需要调用 ExtractEquiJoinKeys 和 ExtractFiltersAndInnerJoins 的 unapply 方法对join 类型进行细分。最终根据给定的 rule 选择join 的算法。
+
+###### ExtractEquiJoinKeys
+
+该模式是判断join的条件是否都是等于，并且各个条件之间是否都是 and。然后提取出key和其他filter条件。<br>
+
+![](img/ExtractEquiJoinKeys_unapply.png)
+
+
+
+**源码中的splitConjunctivePredicates方法用于把表达式以最顶层的and为边界拆分成一个个子表达式。**
+
+```textile
+用于把一下的 AST 拆分成 Seq[Condition]
+  AND
+ /   \
+A     AND        ===> A :: B :: C :: ... :: Nil
+     /   \
+    B    AND
+        /   \
+       C    ...
+
+```
+
+![](img/splitConjunctivePredicates.png)
+
+
+
+**源码中，canEvaluate 方法是判断，某一侧的plan是否能够处理**
+
+![](img/PredicateHelper_canEnvalute.png)
+
+
+
+###### ExtractFiltersAndInnerJoins
 
 
 
