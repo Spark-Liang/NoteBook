@@ -5,6 +5,8 @@
   - Join Operator 结构
   
   - ExtractEquiJoinKeys
+  
+  - 具体执行计划选择
 
 - broadcast side 选择
   
@@ -50,13 +52,41 @@ A     AND        ===> A :: B :: C :: ... :: Nil
 
 
 
-**源码中，canEvaluate 方法是判断，某一侧的plan是否能够处理**
+**源码中，canEvaluate 方法是判断，某一侧的plan是否能够处理，即该表达式中所有用到的字段都来源于对应的LogicalPlan。**
 
 ![](img/PredicateHelper_canEnvalute.png)
 
 
 
-###### ExtractFiltersAndInnerJoins
+
+
+###### 具体执行计划选择
+
+1. 首先会判断 join 是否能够提取出 joinKey
+
+2. 如果可以则
+   
+   1. 判断是否有 hint 去强制使用 broadcast join和join的类型，去判断是否使用broadcast
+   
+   2. 判断logicalPlan 的output大小和join的类型，判断是否存在可以 broadcast 的logicalPlan
+   
+   3. 是否存在不允许排序的字段，如果存在则使用 shuffleHashJoin
+   
+   4. 否则采用 SortMergeJoin
+
+3. 如果不可以提取出key则
+   
+   1. 判断是否有 hint 去强制使用 broadcast join和join的类型，此时使用 broadcast nested loop join
+   
+   2- 判断logicalPlan 的output大小和join的类型，判断是否存在可以 broadcast 的logicalPlan，此时使用 broadcast nested loop join
+   
+   3- 如果是 inner join 则采用 CartesianProductExec
+   
+   4- 最后如果存在outer join则采用 Broadcast Nested Loop join。
+
+![](img/JoinSelection_apply_1.png)
+
+![](img/JoinSelection_apply_2.png)
 
 
 
