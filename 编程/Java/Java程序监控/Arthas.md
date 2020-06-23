@@ -24,9 +24,13 @@
   
   - web console
 
-- 常用命令
+- 常用信息获取命令
   
   -  
+
+- ognl
+
+- 
 
 
 
@@ -172,13 +176,91 @@ web console 的作用是通过浏览器访问 arthas 的命令行工具。<br>
 
 ###### sc
 
-用于查看当前已加载的类
+sc（show class），用于查看当前已加载的类，支持通过某个类及其所有子类。其中class-pattern支持通配符 \*
+
+```bash
+USAGE:
+   sc [-c <value>] [-d] [-x <value>] [-f] [-h] [-E] class-pattern
+```
+
+- -c \< classloader hashcode \>：限定classloader
+
+- -d：查看类的详细信息
+
+- -f：查看类的成员变量
+
+- -x \< number of layer \>：展开折叠的信息，默认展开0层
+
+- -E ：class-pattern 使用正则表达式进行匹配，此时需要注意转义**.** 
+
+
+
+###### sm
+
+sm（show methid），用于查看具体的方法
+
+```bash
+USAGE:
+   sm [-c <value>] [-d] [-h] [-E] class-pattern [method-pattern]
+```
+
+sm 的 -c，-d，-E 选项和 sc相同 
 
 
 
 ###### jad
 
 用于查看某个类或者某个方法的反编译代码
+
+```bash
+USAGE:
+   jad [-c <value>] [-h] [--hideUnicode] [-E] [--source-only] class-pattern [method-name]
+```
+
+jad 的 -c，-E 选项和 sc相同
+
+- --source-only：仅显示source code
+
+
+
+###### JVM信息查看
+
+**sysprop**
+
+- 输入该命令，可以查看 System properties 的信息
+
+- sysprop \< property key \> ：查看单个key 的value
+
+- sysprop \< property key \> \< new value \> ： 给某个可以设置新的value
+
+**sysenv**<br>
+
+查看环境变量,作用和 sysprop 类似
+
+**jvm**,<br>
+
+查看JVM 的各种详细信息
+
+
+
+###### ognl
+
+用于动态执行代码并返回对应的结果
+
+```bash
+SAGE:
+   ognl [-c <value>] [-x <value>] [-h] express
+EXAMPLES:
+   ognl '@java.lang.System@out.println("hello")'
+   ognl -x 2 '@Singleton@getInstance()'
+   ognl '@Demo@staticFiled'
+   ognl '#value1=@System@getProperty("java.home"), #value2=@System@getProperty("java.runtime.name"), {#value1, #value2}'
+   ognl -c 5d113a51 '@com.taobao.arthas.core.GlobalOptions@isDump'
+
+ WIKI:
+   https://alibaba.github.io/arthas/ognl
+   https://commons.apache.org/proper/commons-ognl/language-guide.html
+```
 
 
 
