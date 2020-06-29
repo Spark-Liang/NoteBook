@@ -16,8 +16,6 @@ unified memory管理机制主要用于管理spark executor 的JVM堆内存。下
 
 - spark.storage.storageFraction：用于配置初始时期storage内存的占比
 
-
-
 ###### Spark on Yarn内存管理配置
 
 ![](img/SparkOnYarnMemory.webp)
@@ -29,5 +27,3 @@ unified memory管理机制主要用于管理spark executor 的JVM堆内存。下
 - spark.yarn.executor.memoryOverHead：配置JVM的堆外内存大小
 
 - yarn.scheduler.maximum-allocation-mb：是yarn 集群上配置每个container能够拿到的最大内存。**这个内存大小，包含从JVM产生的子进程的内存。**
-
-

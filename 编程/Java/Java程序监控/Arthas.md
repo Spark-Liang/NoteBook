@@ -26,15 +26,11 @@
 
 - 常用信息获取命令
   
-  -  
+  - 
 
 - ognl
 
 - 
-
-
-
-
 
 ##### 安装教程
 
@@ -83,8 +79,6 @@ java -jar arthas-boot.jar
 
 移除对应user的home目录下的**.arthas** 的文件夹
 
-
-
 ##### 运行
 
 ###### 命令行
@@ -96,8 +90,6 @@ java -jar arthas-boot.jar
 - 如果使用 install-local.sh 的方式，可以直接使用 as.sh 进行启动
 
 **注意：需要使用和JVM进程相同的用户才能正常attach，否则会报无法attach的错误**
-
-
 
 ###### web console
 
@@ -113,7 +105,7 @@ web console 的作用是通过浏览器访问 arthas 的命令行工具。<br>
 
 2. 使用 java -jar arthas-tunnel-server.jar 启动. 
    
-   1. **在启动过程中会返回一个password**，这个是用于登录查看agent list
+   1. **在启动过程中会返回一个password**，这个是用于登录查看agent list，其用户名是arthas
       
       ![](img/arthas-tunnel-server_password.png)
    
@@ -132,9 +124,9 @@ web console 的作用是通过浏览器访问 arthas 的命令行工具。<br>
    16110'
    ```
    
-   1.  --telnet-port代表监听命令请求的端口，--http-port 表示http访问的端口，server 和 agent 沟通需要用到这两个端口。
+   1. --telnet-port代表监听命令请求的端口，--http-port 表示http访问的端口，server 和 agent 沟通需要用到这两个端口。
    
-   2.  --attach-only，表示仅仅attach 到 JVM 进程上，但是不打开arthas命令行
+   2. --attach-only，表示仅仅attach 到 JVM 进程上，但是不打开arthas命令行
    
    3. --tunnel-server：tunnel-server 的 url，格式是 ws://\<host name\>:\<server port\>/ws
    
@@ -148,19 +140,11 @@ web console 的作用是通过浏览器访问 arthas 的命令行工具。<br>
 
 5. 
 
-
-
-
-
-
-
 ##### 常用命令
 
 ###### dashboard
 
 监控指定JVM进行的实时数据面板
-
-
 
 ###### thread
 
@@ -171,8 +155,6 @@ web console 的作用是通过浏览器访问 arthas 的命令行工具。<br>
 **thread \<thread id\>** 查看该线程的栈
 
 ![](img/arthas-command-thread-1.png)
-
-
 
 ###### sc
 
@@ -193,8 +175,6 @@ USAGE:
 
 - -E ：class-pattern 使用正则表达式进行匹配，此时需要注意转义**.** 
 
-
-
 ###### sm
 
 sm（show methid），用于查看具体的方法
@@ -205,8 +185,6 @@ USAGE:
 ```
 
 sm 的 -c，-d，-E 选项和 sc相同 
-
-
 
 ###### jad
 
@@ -220,8 +198,6 @@ USAGE:
 jad 的 -c，-E 选项和 sc相同
 
 - --source-only：仅显示source code
-
-
 
 ###### JVM信息查看
 
@@ -241,8 +217,6 @@ jad 的 -c，-E 选项和 sc相同
 
 查看JVM 的各种详细信息
 
-
-
 ###### ognl
 
 用于动态执行代码并返回对应的结果
@@ -261,7 +235,3 @@ EXAMPLES:
    https://alibaba.github.io/arthas/ognl
    https://commons.apache.org/proper/commons-ognl/language-guide.html
 ```
-
-
-
-

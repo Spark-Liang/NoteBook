@@ -10,7 +10,7 @@
   
   - HadoopRDD 的 compute的方法
   
-  - Shuffle
+  - ShuffleRDD的 compute 方法
 
 ##### task中如何调用rdd进行运算
 
@@ -30,7 +30,9 @@ Spark在运行任务时，会把 task 提交到 Executor 中的线程池中，�
 
 ###### RDD 的 Iterator 的方法
 
-RDD 的 iterator 方法是 final 方法，代码如下。RDD会首先判断结果是否存在与cache（通过 getOrCompute ）或存在 checkPoint （通过 computeOrReadCheckpoint），如果没有就会去调用 rdd 的compute 方法。compute 是抽象方法由各个 RDD 子类负责实现。
+RDD 的 iterator 方法是 final 方法，代码如下。RDD会首先判断结果是否存在与cache（通过 getOrCompute ）或存在 checkPoint （通过 computeOrReadCheckpoint），如果没有就会去调用 rdd 的compute 方法。compute 是抽象方法由各个 RDD 子类负责实现。<br>
+
+**compute(split: Partition, context: TaskContext): Iterator[T]，从compute的方法签名可以看出，传入的split和context共同代表了需要获取某个具体的task 的计算结果，可以通过返回的 Iterator 遍历计算出的结果。**
 
 ![](img/RDD_iterator.png)
 
@@ -51,3 +53,13 @@ Iterator 的 map，flatMap 和 filter 的源码如下，都是使用了包装器
 ![](img/Iterator_flatMap.png)
 
 ![](img/Iterator_filter.png)
+
+
+
+
+
+###### ShuffledRDD的compute方法
+
+shuffledRDD 的compute 方法主要的作用是从ShuffleManager中获取Shuffled之后的某一个分区的数据的Iterator
+
+![](img/ShuffledRDD_compute.png)
