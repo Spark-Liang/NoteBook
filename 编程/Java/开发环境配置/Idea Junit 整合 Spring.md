@@ -2,8 +2,6 @@
 
 ![](img/Junit_Spring_Combination_1.png)
 
-
-
 并且需要配置相应的配置文件的路径
 
 ![](img/Junit_Spring_Combination_2.png)

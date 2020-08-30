@@ -10,8 +10,6 @@
 
 4.配置激活spring的Aop管理
 
-
-
 **在ref/applicationContext(spring与mybatis整合).xml 有样例配置。**
 
 ##### spring事务事务管理重点：
