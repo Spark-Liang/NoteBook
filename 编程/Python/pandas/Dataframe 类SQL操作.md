@@ -1,6 +1,14 @@
-**需要注意的是：当 column 名包含“%”会造成dataframe 操作失效。**
-
 #### sql like 操作
+
+- select
+
+- where
+
+- group by 和聚合计算
+
+- union
+
+**需要注意的是：当 column 名包含“%”会造成dataframe 操作失效。**
 
 ##### select
 

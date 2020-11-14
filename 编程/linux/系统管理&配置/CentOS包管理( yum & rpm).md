@@ -70,7 +70,11 @@ yum install -y epel-release
 # 下载 rpm 进行安装
 wget https://mirrors.ustc.edu.cn/epel//7/x86_64/Packages/e/epel-release-7-11.noarch.rpm
 rpm -ivh epel-release-7-11.noarch.rpm
+
+
 ```
+
+ [epel repo文件](ref/epel-centos7.repo)
 
 #### 通过yum 下载软件所有的依赖包
 
@@ -109,5 +113,3 @@ rpm -Uvh --force --nodeps *.rpm
 - \-h ：等价于 --hash
 
 ##### 使用 dnf
-
-
