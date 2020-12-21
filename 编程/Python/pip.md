@@ -22,15 +22,14 @@ pip config  set global.trusted-host mirrors.aliyun.com
 
 ```textile
 extra-index-url=http://pypi.douban.com/pypi/simple/
-	http://pypi.hustunique.com/pypi/simple/
-	http://pypi.tuna.tsinghua.edu.cn/pypi/simple/
-	http://pypi.python.org/pypi/simple/
+    http://pypi.hustunique.com/pypi/simple/
+    http://pypi.tuna.tsinghua.edu.cn/pypi/simple/
+    http://pypi.python.org/pypi/simple/
 trusted-host = mirrors.aliyun.com
-	pypi.douban.com
-	pypi.hustunique.com
-	pypi.tuna.tsinghua.edu.cn
-	pypi.python.org
-
+    pypi.douban.com
+    pypi.hustunique.com
+    pypi.tuna.tsinghua.edu.cn
+    pypi.python.org
 ```
 
 ##### pip 配置代理
@@ -38,8 +37,6 @@ trusted-host = mirrors.aliyun.com
 ```batch
 pip config set global.https_proxy http://ip:port
 ```
-
-
 
 ##### 配置文件位置
 

@@ -9,8 +9,6 @@ conda 安装包时，首先在一系列仓库搜索包，然后根据规则进�
 3. 根据build number排序；
 4. 选取优先级最高的包进行安装；
 
-
-
 ###### 在config中channels的相关配置
 
 ```bash
@@ -25,5 +23,4 @@ conda config --add channels new_channel
 
 # 添加新的channel到最低优先级
 conda config --append channels new_channel
-
 ```
