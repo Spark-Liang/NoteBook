@@ -6,7 +6,7 @@
   
   - 例子
 
--  属性访问顺序
+- 属性访问顺序
 
 - 继承关系
   
@@ -100,8 +100,6 @@ super方法的意义可以理解为，以第一个变量开始**但不包含本�
 
 实例代码：[Python super 详解 | 菜鸟教程](https://www.runoob.com/w3cnote/python-super-detail-intro.html)
 
-
-
 ##### 属性访问顺序
 
 顺序：
@@ -127,5 +125,3 @@ super方法的意义可以理解为，以第一个变量开始**但不包含本�
 - `非数据描述符`是指只定义了`__get__`方法的类的实例
 
 参考博客：[Python描述符 (descriptor) 详解 - Jimmy_Nie - 博客园](https://www.cnblogs.com/Jimmy1988/p/6808237.html)
-
-
