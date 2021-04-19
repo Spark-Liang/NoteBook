@@ -59,6 +59,7 @@
 ![](img/submitStage.PNG)
 
 5. 其中getMissingParentStages 方法做得事情就是根据 stage 对应的RDD，遍历该RDD对应的所有dependent RDD。遍历的时候做以下事情
+   
    1. 对于shuffleDependency就添加到missing中，即这些 RDD是属于依赖到的并且还没提交的stage。这些stage 返回后就会在submitStage中继续递归解析。
    
    2. 对于 NarrowDependency，继续对窄依赖的dependency进行搜索，知道找到没有依赖的RDD，即source。
