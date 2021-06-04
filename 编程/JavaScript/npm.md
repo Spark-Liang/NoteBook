@@ -13,5 +13,3 @@ npm config set cache "<path to cache>"
 :: 配置全局包路径
 NODE_PATH = "<global path of the modules>"
 ```
-
-
