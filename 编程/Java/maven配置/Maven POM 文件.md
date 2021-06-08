@@ -71,3 +71,9 @@ maven插件的作用就是通过在不同阶段添加对应的插件，实现对
 - maven-dependency-plugin：将依赖包导出到指定文件夹
 - maven-resources-plugin：将资源文件导出到指定目录
 - maven-antrun-plugin：使用ant构建工具，执行复杂的构建逻辑。[更多ant构建命令](https://ant.apache.org/)
+
+#### 其他问题
+
+##### 使用maven构件非公共父项目的项目。
+
+当pom文件中配置了依赖其他本地的maven项目，需要先把依赖公共项目install成jar包才能编译和install自身。
