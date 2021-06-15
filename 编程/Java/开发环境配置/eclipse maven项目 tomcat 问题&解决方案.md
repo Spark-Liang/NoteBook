@@ -12,8 +12,6 @@
 
 ![](img/config_to_fix_404_in_eclipse_2.png)
 
-
-
 #### 出现component could not startte
 
 ![](img/tomcat_component_not_start.PNG)<br>
