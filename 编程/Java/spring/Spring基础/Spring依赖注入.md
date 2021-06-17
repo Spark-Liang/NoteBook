@@ -61,8 +61,6 @@ beans 可选的配置项如下：
 
 - `import`子节点用于从其他xml文件中引入配置
 
-
-
 ##### `bean`节点配置
 
 bean节点主要用于配置某个或某系列的bean，主要通过`bean`节点中的如`contractor-arg`，`property`等子节点，定义出该bean组件依赖的字面值或者对象。<br>
@@ -114,8 +112,6 @@ bean节点主要用于配置某个或某系列的bean，主要通过`bean`节点
   - bean：
 
 - props：配置属性中的多个子属性。
-
-
 
 ##### bean 配置文件参考文档
 
