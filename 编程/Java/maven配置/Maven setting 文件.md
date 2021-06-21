@@ -10,13 +10,9 @@
   
   - 仓库相关配置
 
-
-
 ##### 基本配置
 
 maven 的setting文件主要用于提供仓库相关的信息，包括本地仓库、中央仓库和远程仓库的信息。
-
-
 
 setting文件主要有以下配置项：
 
@@ -29,8 +25,6 @@ setting文件主要有以下配置项：
 - `mirrors`：用于配置仓库的镜像。相当于某个repository的可以访问的镜像。**注意，只有当一个镜像无法连接时才会选择下一个镜像，无法查找到包不会切换镜像查找。**
 
 - `profiles`：用于定义各种配置项的集合。
-
-
 
 ###### servers配置项
 
@@ -51,8 +45,6 @@ servers 中的每个server都有两种配置方式，一种是提供用户名和
 
 [需要在setting文件中配置加密密码，可以参考此链接。](http://maven.apache.org/guides/mini/guide-encryption.html)
 
-
-
 ###### mirrors配置项
 
 - mirrors用于配置指定仓库的镜像，对于同一个仓库配置多个镜像相当于repository的灾备服务器。因为**只有当一个镜像无法连接时才会选择下一个镜像，无法查找到包不会切换镜像查找。**
@@ -64,8 +56,6 @@ servers 中的每个server都有两种配置方式，一种是提供用户名和
 - 每个mirror是通过`url`元素去指定镜像的url。
 
 - `mirrorOf`参数可以放复杂的表达式，如，`repo1,repo2`，`*`或者`*,!repo1`。更多复杂表达式参考，[Maven &#x2013; Guide to Mirror Settings](http://maven.apache.org/guides/mini/guide-mirror-settings.html)。
-
-
 
 ###### profiles配置项
 
@@ -100,5 +90,3 @@ profiles用于全局配置一些选项需要在不同的条件下有不同的值
 - `plugin repositories`：同`repository`
 
 **repositories和plugin repositories中位置越靠前，优先级越高。**
-
-
