@@ -4,7 +4,25 @@ Stream API 主要的目的是把对集合的操作抽象成了流水线，通过
 
 ###### 构建流水线
 
-常见的构建方式是通过 collection 对象的 stream() 获取 或者 直接 
+常见的构建方式
+
+1. 是通过 collection 对象的 stream() 获取
+
+2. 通过迭代器获取
+   
+   步骤是：`Iterator -> Spliterators -> Stream`
+   
+   例子：
+   
+   ```java
+   StreamSupport.stream(
+                   Spliterators.spliteratorUnknownSize
+                       (iterator, Spliterator.ORDERED), false)
+                   .map(x -> x.length())
+                   .collect(Collectors.toList());
+   ```
+
+3.  通过Iterable获取：通过调用`spliterator`方法
 
 Stream 流水线中主要有两种类型的操作：中间操作和最终操作
 
