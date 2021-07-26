@@ -42,7 +42,7 @@
 3- 对于 yarn 添加节点调用 yarn rmadmin -refreshNodes
 
 4- 对于hdfs 下线还需要检查节点是否处于 discommissioning 的状态。可以通过命令下面检查
-   
+
    1-  hdfs dfsadmin -report -decommissioning
-   
+
    2- 当返回结果中包含 “Decommissioning datanodes (0):” 则可以停止节点上的 datanode。
