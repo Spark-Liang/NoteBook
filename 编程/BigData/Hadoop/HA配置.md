@@ -1,9 +1,3 @@
-
-
-
-
-
-
 ##### HDFS HA配置例子
 
 ```xml
@@ -71,13 +65,13 @@
     <name>dfs.ha.fencing.ssh.private-key-files</name>
     <value>/root/.ssh/id_rsa</value>
 </property>
- 
+
 <!-- 配置sshfence隔离机制超时时间，这个属性同上，如果你是用脚本的方法切换，这个应该是可以不配置的 -->
 <property>
     <name>dfs.ha.fencing.ssh.connect-timeout</name>
     <value>30000</value>
 </property>
- 
+
 <!-- 这个是开启自动故障转移，如果你没有自动故障转移，这个可以先不配 -->
 <property>
     <name>dfs.ha.automatic-failover.enabled</name>
