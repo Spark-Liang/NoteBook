@@ -66,6 +66,22 @@
 
 - dfs.namenode.acls.enabled： 是否打开 hdfs 的 acl权限控制
 
+地址相关选项：
+
+- namenode相关地址：（namenode的地址需要所有节点保持一致，不同namenode配置通过不同命名配置）
+  
+  - HA下的namenode配置，`{配置项前缀}.{集群id}.{namenodeid}`
+
+- datanode相关地址：（datanode地址的修改需要修改datanode机器上的hdfs-site.xml）
+  
+  - dfs.datanode.address：datanode数据传输的地址
+  
+  - dfs.datanode.http.address：datanode 的http端口
+  
+  - dfs.datanode.ipc.address：datanode的ipc端口
+  
+  - dfs.datanode.https.address：datanode的https端口
+
 ###### mapred-site.xml
 
 常用选项：

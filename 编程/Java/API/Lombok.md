@@ -14,8 +14,6 @@
 
 - 自定义
 
-
-
 #### 配置
 
 ##### maven配置
@@ -23,7 +21,6 @@
 依赖配置
 
 ```xml
-
 <dependency>
     <groupId>org.projectlombok</groupId>
     <artifactId>lombok</artifactId>
@@ -39,21 +36,19 @@
 
 ```xml
 <plugin>
-	<groupId>org.apache.maven.plugins</groupId>
-	<artifactId>maven-compiler-plugin</artifactId>
-	<configuration>
-	<annotationProcessorPaths>
-		<path>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>${lombok.version}</version>
-		</path>
-	</annotationProcessorPaths>
-	</configuration>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <configuration>
+    <annotationProcessorPaths>
+        <path>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </path>
+    </annotationProcessorPaths>
+    </configuration>
 </plugin>
 ```
-
-
 
 #### 常用注解
 
@@ -62,8 +57,6 @@
 `@Getter`和`@Setter`注解可以用于实体和字段。可配置属性有：
 
 - value：用于配置getter和setter的访问级别
-
-
 
 **NonNull**
 
@@ -109,10 +102,6 @@
 
 除此之外，还可以通过`EqualsAndHashCode.Include`和`EqualsAndHashCode.Exclude`直接在字段上进行配置。
 
-
-
 ##### 日志相关
 
 `@Slf4j`和`@Log4j`都可用于注入一个static的log变量。用于日志输出。
-
-
