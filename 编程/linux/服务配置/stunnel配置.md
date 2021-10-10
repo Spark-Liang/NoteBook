@@ -16,8 +16,6 @@ yum install stunnel
 
 可以通过telnet测试stunnel端口是否能够连接
 
-
-
 ##### 错误
 
 ###### Connection closed by foreign host
@@ -35,8 +33,6 @@ yum install stunnel
     - 找到openssl.cnf后，查看`openssl_conf = `指向的配置项中`MinProtocol`和`MaxProtocol`的允许范围。一般是`TLSv1.0`到`TLSv1.3`
     
     - 然后重启stunnel即可
-
-
 
 #### 配置stunnel自启动
 

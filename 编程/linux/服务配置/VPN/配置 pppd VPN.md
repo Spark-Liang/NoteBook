@@ -70,3 +70,15 @@ Modem hangup
 
 require-mppe-128
 ```
+
+##### unknown authentication type 26; Naking
+
+在配置文件`/etc/ppp/options`或者`/etc/ppp/options.pptp`添加以下选项
+
+```textile
+refuse-pap
+refuse-eap
+refuse-chap
+refuse-mschap
+require-mppe
+```

@@ -4,7 +4,7 @@ easy-rsa主要是用于openvpn中的服务器和客户端的证书管理。
 
 安装方式：下载对应版本的zip文件，直接解压使用
 
-- 在GitHub上下载 “wget https://github.com/OpenVPN/easy-rsa/archive/v3.0.6.zip”
+- 在GitHub上下载 “wget https://github.com/OpenVPN/easy-rsa/archive/v3.0.6.zip
 
 - 或者[在attachements文件夹下下载](attachements/easy-rsa-3.0.6.zip)
 
