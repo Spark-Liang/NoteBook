@@ -1,3 +1,13 @@
+### 环境变量配置
+
+#### 配置环境变量
+
+在`/etc/profile`和`/etc/bashrc`中通过export语句配置
+
+[linux中环境变量和系统加载环境变量的顺序 - JackGIS - 博客园](https://www.cnblogs.com/tiandi/p/11317083.html)
+
+
+
 ### 设置 yum 源
 
 ```bash

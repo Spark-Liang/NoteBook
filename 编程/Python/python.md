@@ -6,13 +6,35 @@
 
 ##### Linux
 
-1. 在官网上下载对应版本的源码包，并解压。[源码包网址](https://www.python.org/ftp/)
+###### python依赖库
 
-2. 安装对应的依赖包 ：zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel
+<style>
+</style>
 
-3. 使用 configure 配置，并使用 make 和make install 安装
+| 缺少库名称    | centos包名                       | alpine包名     |
+| -------- | ------------------------------ | ------------ |
+| _uuid    | libuuid-devel                  | libuuid      |
+| readline | readline-devel                 | readline-dev |
+| _tkinter | tk-devel                       | tk-dev       |
+| _ffi     | libffi-devel                   | libffi-dev   |
+| _curses  | ncurses-libs                   | ncurses-libs |
+| _sqlite  | sqlite-devel                   | sqlite-dev   |
+| _bz2     | bzip2-devel                    | bzip2-dev    |
+| _ssl     | openssl-devel                  | openssl-dev  |
+| _gdbm    | gdbm-devel                     | gdbm-dev     |
+| _dbi     | libdbi-devel                   | libdbi-dev   |
+| _zlib    | zlib-devel                     | zlib-dev     |
+| _lzma    | xz-devel python-backports-lzma | xz-dev       |
 
-4. 建立软连接，使得可以使用 “python3" 命令调用 python3.
+1. 
+
+2. 在官网上下载对应版本的源码包，并解压。[源码包网址](https://www.python.org/ftp/)
+
+3. 安装对应的依赖包 ：zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel
+
+4. 使用 configure 配置，并使用 make 和make install 安装
+
+5. 建立软连接，使得可以使用 “python3" 命令调用 python3.
 
 ```bash
 ln -s $PYTHON3_HOME/bin/python3.7 /usr/bin/python3 

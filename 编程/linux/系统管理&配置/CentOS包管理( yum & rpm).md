@@ -1,3 +1,9 @@
+#### yum配置文件
+
+路径为`/etc/yum.conf`，用于配置yum命令的一些属性，常用属性有
+
+- 
+
 #### 设置 阿里云 源
 
 **centos 7**
@@ -27,7 +33,7 @@ sed -i 's/http:\/\/mirror.centos.org/https:\/\/mirrors.aliyun.com/g' /etc/yum.re
 # 在 fstab 中添加如下内容，使得开机自动挂载 iso 文件
 /data/FilesForVMM/CentOS-7-x86_64-Everything-1810.iso /media/CentOS iso9660 defaults,ro,loop 0 0
 #其中 iso9660 是挂在后文件系统的类型
-当不知道挂载后的文件系统类型，可以先挂载了，然后用下面的命令查看
+# 当不知道挂载后的文件系统类型，可以先挂载了，然后用下面的命令查看
 df -T
 
 # 使用 mount -a 使得修改生效
@@ -124,14 +130,11 @@ rpm -Uvh --force --nodeps *.rpm
    ```shell
    LOCAL_SOFTWARE_PATH=...
    
-   
    export PATH="${LOCAL_SOFTWARE_PATH}/usr/bin:${LOCAL_SOFTWARE_PATH}/usr/sbin:$PATH"
    export LD_LIBRARY_PATH="${LOCAL_SOFTWARE_PATH}/usr/lib:${LOCAL_SOFTWARE_PATH}/usr/lib64:$LD_LIBRARY_PATH"
    export CFLAGS="-I${LOCAL_SOFTWARE_PATH}/usr/include "
    export LDFLAGS="-L${LOCAL_SOFTWARE_PATH}/usr/lib64 -L${LOCAL_SOFTWARE_PATH}/usr/lib -L${LOCAL_SOFTWARE_PATH}/lib"
    ```
-
-4. 
 
 #### 使用 rpm
 

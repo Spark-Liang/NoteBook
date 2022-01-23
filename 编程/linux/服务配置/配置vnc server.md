@@ -45,6 +45,37 @@ systemctl set-default graphical.target # 切换到图形界面
 systemctl set-default multi-user.target # 切换到命令行界面
 ```
 
+##### 其他配置
+
+###### 配置中文界面
+
+1. 安装汉语选项
+   
+   ```bash
+   yum install kde-l10n-Chinese
+   # 检查是否安装
+   yum list installed |grep glibc
+   ```
+
+2. 修改配置文件`/etc/locale.conf`
+   
+   ```bash
+   # 修改成
+   LANG="zh_CN.UTF-8"
+   ```
+
+3. 安装中文字体
+   
+   ```bash
+   # 看字体相关的安装项
+   yum list|grep fonts |grep chinese
+   # 安装显示的安装项
+   ```
+
+4. 重启系统
+
+
+
 ##### 使用客户端进行连接
 
 #### 错误处理
