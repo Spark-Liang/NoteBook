@@ -11,3 +11,12 @@ Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
 
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux 
 ```
+
+
+
+##### 卸载
+
+```powershell
+Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+Disable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform 
+```
