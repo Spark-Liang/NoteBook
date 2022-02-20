@@ -106,6 +106,8 @@ Your new CA certificate file for publishing is at:
 
 ##### 3.构建服务器私钥和请求
 
+其中`server`参数是指证书的文件名和默认的common name。
+
 ```bash
 # 过程中需要设置server的私钥密码，nopass 参数可以使easy-rsa自动生成私钥。
 >>> ./easyrsa gen-req server 
@@ -194,3 +196,17 @@ This is going to take a long time
 ...........................................+.
 DH parameters of size 2048 created at /etc/openvpn/easy-rsa/easyrsa3/pki/dh.pem
 ```
+
+##### 6. 客户端添加ca证书为受信任ca
+
+1. 将ca文件拷贝到`/etc/pki/ca-trust/source/anchors/`
+
+2. 调用`update-ca-trust`，更新受信任列表
+
+3. 检查`/etc/pki/tls/certs/ca-bundle.crt`是否包含指定名称的公钥
+
+
+
+#### 创建中间ca
+
+[Sub-CA example · GitHub](https://gist.github.com/QueuingKoala/e2c1c067a312384915b5)

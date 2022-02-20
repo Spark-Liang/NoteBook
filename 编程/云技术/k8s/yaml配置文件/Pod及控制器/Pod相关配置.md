@@ -62,6 +62,18 @@ volumes用于配置声明可被容器挂载的文件系统，pod中的容器可�
 
 - hostPath：挂载pod运行节点上的路径。
 
+##### imagePullSecrets
+
+需要通过命令`kubectl create secret docker-registry`在**pod对应的命名空间**创建访问目标私有仓库的秘钥。命令格式是：
+
+```bash
+kubectl create secret docker-registry \
+<secret name> --namespace=<target namespace> \
+--docker-server='<server address>' \
+--docker-username='admin' --docker-password='admin' \
+--docker-email='op@test.cn'
+```
+
 #### container级别配置
 
 ##### image和imagePullPolicy

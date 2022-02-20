@@ -1,14 +1,22 @@
-#### 时间同步
+### NTPD
 
-- 安装
+- 安装配置
+  
+  - 安装
+  
+  - 服务架构和配置项解析
+  
+  - 服务端配置
+  
+  - 客户端配置
+  
+  - 公共同步服务器
 
-- 状态检查
+- 客户端使用
+  
+  - 状态检查
 
-- 配置
-
-- 公共同步服务器
-
-
+#### 安装配置
 
 ##### 安装
 
@@ -27,36 +35,22 @@ yum install ntp
 开机自启动
 
 ```bash
-chkconfig ntpd on
+systemctl enable ntpd
 ```
 
-##### 状态检查
+##### 服务架构和配置项解析
 
-###### 检查时间服务器状态
+ntp是分层架构，最顶层是最权威的时间源，用于提供精确时间。下层客户端通过查询获取时间，并且也可以作为更下层服务器的时间源。
 
-通过`ntpq -p`命令查看所有配置了的候选的时间同步服务器的状态，如是否可用，延迟等。
+![](E:\Notebook\Personal\NoteBook\img\d901072cc44a5b9d74a86887ad9c5e69d85d2985.jpeg)
 
-![](img/ntpq_p.png)
+ntp和ntpd的配置文件位于`/etc/ntp.conf`，常用的配置项有：
 
-最开始的字符表示该ntp服务器的状态，有`*`表示正在使用，`+`表示可以连接，`-`表示无法连接。
+- restrict：用于限制客户端访问
 
-- refid：该ntp参考的远程ntp地址。
+- server：用于配置当前ntpd的时间源服务器
 
-- st：ntp对应的startnum，当startnum为16时，表示该ntp不能连接。
-
-- when：几秒前左的同步
-
-- poll：下次更新在几秒后
-
-- reach：连接到该ntp的次数
-
-- delay：连接的延迟。单位是微妙
-
-- offset：时间不长，单位是毫秒
-
-- jitter：系统时间和硬件时间的差异。单位是微妙
-
-##### 配置文件
+- 
 
 ###### restrict选项
 
@@ -145,3 +139,31 @@ server 192.168.245.130 iburst  minpoll 3 maxpoll 3 #（maxpoll表示客户端向
 restrict 192.168.245.128
 restrict 192.168.245.130
 ```
+
+#### 客户端使用
+
+状态检查
+
+###### 检查时间服务器状态
+
+通过`ntpq -p`命令查看所有配置了的候选的时间同步服务器的状态，如是否可用，延迟等。
+
+最开始的字符表示该ntp服务器的状态，有`*`表示正在使用，`+`表示可以连接，`-`表示无法连接。
+
+- refid：该ntp参考的远程ntp地址。
+
+- st：ntp对应的startnum，当startnum为16时，表示该ntp不能连接。
+
+- when：几秒前左的同步
+
+- poll：下次更新在几秒后
+
+- reach：连接到该ntp的次数
+
+- delay：连接的延迟。单位是微妙
+
+- offset：时间不长，单位是毫秒
+
+- jitter：系统时间和硬件时间的差异。单位是微妙
+
+![](E:\Notebook\Personal\NoteBook\img\d991a617cde2f8edb3ae00cb5443d89772dbd82b.png)

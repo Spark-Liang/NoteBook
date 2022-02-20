@@ -10,6 +10,8 @@
   
   - 仓库相关配置
 
+- mvn命令运行时选项
+
 ##### 基本配置
 
 maven 的setting文件主要用于提供仓库相关的信息，包括本地仓库、中央仓库和远程仓库的信息。
@@ -90,3 +92,13 @@ profiles用于全局配置一些选项需要在不同的条件下有不同的值
 - `plugin repositories`：同`repository`
 
 **repositories和plugin repositories中位置越靠前，优先级越高。**
+
+#### mvn命令运行时选项
+
+- 禁用ssl检查：
+  
+  ```
+  -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true
+  ```
+
+- 
