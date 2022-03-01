@@ -205,8 +205,16 @@ DH parameters of size 2048 created at /etc/openvpn/easy-rsa/easyrsa3/pki/dh.pem
 
 3. 检查`/etc/pki/tls/certs/ca-bundle.crt`是否包含指定名称的公钥
 
-
-
 #### 创建中间ca
 
 [Sub-CA example · GitHub](https://gist.github.com/QueuingKoala/e2c1c067a312384915b5)
+
+#### 生成多域名证书
+
+通过`--subject-alt-name`选项和`build-server-full`选项生成多域名的server类型证书。`build-server-full`选项代表一次过生成 key， req和crt。
+
+```bash
+./easyrsa \
+    --subject-alt-name="IP:192.168.188.73,DNS:k8s-master-003,DNS:k8s-master-003.spark-liang,DNS:etcd-node-3,DNS:etcd-node-3.spark-liang" \
+	build-server-full etcd-node-3 
+```

@@ -4,14 +4,6 @@
 
 - 常用命令
 
-
-
-
-
-
-
-
-
 ##### 安装
 
 ###### 前置条件
@@ -19,8 +11,6 @@
 - 每一台主机都互相ssh 互信。并且每台主机对自己互信
 
 - 配置环境变量 `KAFKA_HOME` 和 `PATH=${KAFKA_HOME}/bin:$PATH`
-
-
 
 ###### 配置kafka配置文件
 
@@ -42,8 +32,6 @@
    
    4. `broker.id.generation.enable`：是否自动生成 broker id，当enable时，自动从`reserved.broker.max.id`开始生成broker id
 
-
-
 ###### 启动服务
 
 **注意：每调用一个该命令只是根据给定的配置文件启动一个broker进程。当需要启动多个broker进程时，必须调用多次**
@@ -52,12 +40,4 @@
 ./bin/kafka-server-start.sh -daemon config/server.properties
 ```
 
-
-
-
-
 ##### 常用命令
-
-
-
-

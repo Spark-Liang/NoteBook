@@ -113,19 +113,19 @@ WantedBy=multi-user.target
 
 几个常见配置项：
 
-- $remote_addr 与 $http_x_forwarded_for 用以记录客户端的ip地址；
-- $remote_user ：用来记录客户端用户名称；
-- $time_local ： 用来记录访问时间与时区；
-- $request ： 用来记录请求的url与http协议；
-- $status ： 用来记录请求状态；成功是200；
-- $body_bytes_s ent ：记录发送给客户端文件主体内容大小；
-- $http_referer ：用来记录从那个页面链接访问过来的；
-- $http_user_agent ：记录客户端浏览器的相关信息；
+- `$remote_addr` 与 `$http_x_forwarded_for` 用以记录客户端的ip地址；
+- `$remote_user` ：用来记录客户端用户名称；
+- `$time_local`： 用来记录访问时间与时区；
+- `$request` ： 用来记录请求的url与http协议；
+- `$status` ： 用来记录请求状态；成功是200；
+- `$body_bytes_sent` ：记录发送给客户端文件主体内容大小；
+- `$http_referer` ：用来记录从那个页面链接访问过来的；
+- `$http_user_agent` ：记录客户端浏览器的相关信息；
 
 示例`log_format`，配置好的`log_format`可以在`access_log`中引用:
 
 ```
-log_format myFormat '$remote_addr–$remote_user [$time_local] $request $status $body_bytes_sent $http_referer $http_user_agent $http_x_forwarded_for'; #自定义格式
+log_format accessLogFormat '$remote_addr–$remote_user [$time_local] $request $status $body_bytes_sent $http_referer $http_user_agent $http_x_forwarded_for'; #自定义格式
 access_log log/access.log myFormat;  #combined为日志格式的默认值
 ```
 
