@@ -74,6 +74,33 @@ kubectl create secret docker-registry \
 --docker-email='op@test.cn'
 ```
 
+##### 调度相关
+
+- `nodeName`:直接手动指定pod运行的node
+
+- `nodeSelector`：通过label选择满足条件的node
+
+- `nodeAffinity`：通过更加精细化的条件筛选节点。其中`requiredDuringSchedulingIgnoredDuringExecution`代表必须满足的条件，`preferredDuringSchedulingIgnoredDuringExecution`用于对满足条件的节点进行筛选
+
+- `tolerations`：代表pod对节点的容忍度，通常用于限制调度或者驱逐pod。
+
+###### nodeSelector
+
+nodeSelector使用key-value的方式选择节点，格式是：
+
+```yaml
+spec:
+  nodeSelector:
+    label1:value1
+    ...
+```
+
+###### nodeAffinity
+
+
+
+
+
 #### container级别配置
 
 ##### image和imagePullPolicy

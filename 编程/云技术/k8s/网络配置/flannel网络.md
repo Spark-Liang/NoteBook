@@ -19,6 +19,8 @@ ip link set flannel.1 down
 ip link delete flannel.1
 rm -rf /var/lib/cni/
 rm -f /etc/cni/net.d/*
+rm -f /run/flannel/*
 ```
 
-3. 重启kubelet服务。
+3. 检查
+4. 重启kubelet服务。

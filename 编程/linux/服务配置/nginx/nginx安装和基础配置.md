@@ -168,9 +168,9 @@ upstream favresin{
 
 server级配置项:
 
-- listen: 监听的端口
+- listen: 虚拟服务器对应监听的端口
 
-- server_name: 当前服务器的FQDN，或者是当前服务器FQDN的子域`{子服务名称}.{FQDN}`。
+- server_name: 虚拟服务器的FQDN。是不同服务器的
 
 - access_log：访问日志配置，配置文件路径及使用的日志格式
 
