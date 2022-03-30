@@ -43,3 +43,45 @@ openssl version -a
 ```bash
 openssl x509 -in <证书文件> -pubkey  -noout
 ```
+
+#### 创建自签证书
+
+1. 创立根证书密钥文件(自己做CA)root.key：
+   
+   ```bash
+   openssl genrsa -des3 -out root.key
+   ```
+
+2. 创立根证书的申请文件root.csr：
+   
+   ```bash
+   openssl req -new -key root.key -out root.csr
+   ```
+
+3. 创立一个自目前日期起为期十年的根证书root.crt：
+   
+   ```bash
+   openssl x509 -req -days 3650 -sha1 -extensions v3_ca -signkey root.key -in root.csr -out root.crt
+   ```
+
+4. 创立服务器证书密钥server.key：
+   
+   ```bash
+   openssl genrsa –des3 -out server.key 2048
+   ```
+   
+   5.创立服务器证书的申请文件server.csr：
+   
+   ```bash
+   openssl req -new -key server.key -out server.csr
+   ```
+
+5. 创立自目前日期起管用期为期两年的服务器证书server.crt：
+   
+   ```bash
+   openssl x509 -req -days 730 -md5 -extensions v3_req -CA root.crt -CAkey root.key -CAcreateserial -in server.csr -out server.crt
+   ```
+
+### 修改证书请求模板
+
+修改 /etc/pki/tls/openssl.cnf 该文件里面的 "_default" 结尾的选项。

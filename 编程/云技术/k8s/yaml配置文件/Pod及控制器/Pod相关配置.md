@@ -20,7 +20,7 @@ pod主要包含两个级别的配置。一个是pod级别的配置，通常直�
 
 - imagePullSecrets：配置拉取镜像时使用的密码信息
 
-- 网络路由相关配置：dnaConfig、dnsPolicy、hostIPC、hostNetwork、hostPID、hostname
+- 网络路由相关配置：dnsConfig、dnsPolicy、hostIPC、hostNetwork、hostPID、hostname
 
 - 调度相关配置：
   
@@ -31,6 +31,8 @@ pod主要包含两个级别的配置。一个是pod级别的配置，通常直�
   - 优先级：preemptionPolicy、priority、priorityClassName
 
 - restartPolicy：容器的重启逻辑
+
+- serviceAccountName：控制容器操作集群的权限
 
 ##### 常见container级别配置：
 
@@ -96,10 +98,6 @@ spec:
 ```
 
 ###### nodeAffinity
-
-
-
-
 
 #### container级别配置
 

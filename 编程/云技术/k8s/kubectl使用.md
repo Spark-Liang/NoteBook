@@ -12,13 +12,9 @@
 
 - 查看kubelet配置：查看kube-system下的kubelet-config-xxx 配置
 
-
-
 ##### 查看当前用户上下文信息
 
 使用`kubectl config`命令
-
-
 
 #### 输出控制
 
@@ -37,5 +33,3 @@
 - 值列表判断：`in ()`，`not in ()`
 
 - 多个逻辑表达式进行连接：`,`代表and
-
-

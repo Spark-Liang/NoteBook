@@ -2,15 +2,14 @@
 
 路径为`/etc/yum.conf`，用于配置yum命令的一些属性，常用属性有
 
-- 
-
-#### 设置 阿里云 源
+- #### 设置 阿里云 源
 
 **centos 7**
 
 ```bash
-sudo mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
-sudo wget -O /etc/yum.repos.d/CentOS-Base.repo  http://mirrors.aliyun.com/repo/Centos-7.repo
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
+wget -O /etc/yum.repos.d/CentOS-Base.repo  http://mirrors.aliyun.com/repo/Centos-7.repo
+#  curl http://mirrors.aliyun.com/repo/Centos-7.repo -o /etc/yum.repos.d/CentOS-Base.repo
 ```
 
 **centos 8**
@@ -107,6 +106,14 @@ repotrack <software nane> -p <path to store packages>
 ```bash
 rpm -Uvh --force --nodeps *.rpm
 ```
+
+**注意，上述命令只建议在裸机上运行，否则可能负载当前系统配置**
+
+##### 使用python脚本进行下载
+
+依赖 yum的deplist和download插件。
+
+脚本文件参考[](ref/search_packages.py)
 
 #### 非root用户使用yum安装软件
 

@@ -4,6 +4,8 @@
 
 - 配置
 
+- 集群容灾
+
 #### 安装
 
 1. 下载etcd 二进制文件
@@ -90,8 +92,14 @@ sudo systemctl restart etcd
 sudo systemctl status etcd
 ```
 
+#### 集群容灾
+
+[运维指南 - 灾难恢复 - 《Etcd官方文档中文版》 - 书栈网 · BookStack](https://www.bookstack.cn/read/etcd/documentation-op-guide-recovery.md)
+
 #### 参考文档
 
 - [如何设置一个生产级别的高可用etcd集群 - k3s中文社区 - 博客园](https://www.cnblogs.com/k3s2019/p/13731527.html)
 
 - [etcd install&amp;configuration_期待幸福-CSDN博客](https://blog.csdn.net/sinat_24092079/article/details/121433664)
+
+- [运维指南 - 配置 - 《Etcd官方文档中文版》 - 书栈网 · BookStack](https://www.bookstack.cn/read/etcd/documentation-op-guide-configuration.md)

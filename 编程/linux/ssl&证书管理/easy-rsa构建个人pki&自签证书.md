@@ -216,5 +216,5 @@ DH parameters of size 2048 created at /etc/openvpn/easy-rsa/easyrsa3/pki/dh.pem
 ```bash
 ./easyrsa \
     --subject-alt-name="IP:192.168.188.73,DNS:k8s-master-003,DNS:k8s-master-003.spark-liang,DNS:etcd-node-3,DNS:etcd-node-3.spark-liang" \
-	build-server-full etcd-node-3 
+    build-server-full etcd-node-3 
 ```

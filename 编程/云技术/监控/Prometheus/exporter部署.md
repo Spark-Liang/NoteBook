@@ -66,6 +66,20 @@ spec:
               hostPort: 39100
 ```
 
+##### 直接主机部署
+
+1. 从[Releases · prometheus/node_exporter · GitHub](https://github.com/prometheus/node_exporter/releases)下载对应的二进制包
+
+2. 增加运行权限
+
+3. 直接运行启动
+   
+   ```bash
+   nohup /root/node_exporter --web.listen-address=:9100 2>&1 > /root/node_exporter.log &
+   ```
+
+4. 
+
 
 
 #### JMX exporter
@@ -113,7 +127,9 @@ java进程支持启动时通过启动参数开启jmx端口，或者通过jcmd动
      
      ```bash
      jcmd pid ManagementAgent.start jmxremote.port=9999 jmxremote.ssl=false jmxremote.authenticate=false
+     ```
      
+     ```
      
      ```
 
@@ -127,17 +143,11 @@ java进程支持启动时通过启动参数开启jmx端口，或者通过jcmd动
 
 - [java jmx 开启_动态开启jmx服务_静待天时的博客-CSDN博客](https://blog.csdn.net/weixin_42389770/article/details/114216823)
 
-
-
 #### 大数据框架
 
 ##### ceph
 
-
-
 ##### kafka
-
-
 
 ##### hadoop
 
