@@ -30,13 +30,7 @@ Helm主要是把按照一定目录结构编排好的yaml作为模板，然后通
 
 - template：本地渲染Chart的输出。用法`helm template <release name> <chart 目录>`
 
-
-
 ##### Release管理
-
-
-
-
 
 #### 参考文献
 

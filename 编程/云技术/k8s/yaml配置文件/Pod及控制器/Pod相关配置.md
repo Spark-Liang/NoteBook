@@ -7,8 +7,20 @@
   - 常见container级别配置
 
 - pod级别配置
+  
+  - 持久化相关
+  
+  - 镜像拉取相关
+  
+  - 进程隔离相关配置
+  
+  - 调度相关配置
+  
+  - Pod主体权限
 
 - container级别配置
+  
+  - 
 
 #### 配置分类
 
@@ -16,45 +28,57 @@ pod主要包含两个级别的配置。一个是pod级别的配置，通常直�
 
 ##### 常见pod级别配置有：
 
-- volumes：与container目录挂载相关
+- 持久化相关：volumes
 
-- imagePullSecrets：配置拉取镜像时使用的密码信息
+- 镜像拉取相关：imagePullSecret
 
-- 网络路由相关配置：dnsConfig、dnsPolicy、hostIPC、hostNetwork、hostPID、hostname
+- 进程隔离相关配置：
+  
+  - DNS：dnsConfig、dnsPolicy、hostAliases、setHostnameAsFQDN、hostname、subdomain
+  
+  - 网络通信：hostIPC、hostNetwork
+  
+  - PID空间：hostPID、shareProcessNamespace
+  
+  - 用户和权限空间：securityContext
 
 - 调度相关配置：
+  
+  - 容器调度：activeDeadlineSeconds、restartPolicy，terminationGracePeriodSeconds
   
   - 调度方式：schedulerName
   
   - 节点选择：affinity、nodeName、nodeSelector、tolerations、topologySpreadConstraints
   
-  - 优先级：preemptionPolicy、priority、priorityClassName
+  - 调度优先级：preemptionPolicy、priority、priorityClassName
 
-- restartPolicy：容器的重启逻辑
-
-- serviceAccountName：控制容器操作集群的权限
+- Pod主体权限：serviceAccountName、automountServiceAccountToken
 
 ##### 常见container级别配置：
 
-- name：container名称，在pod中必须唯一
+- 容器标识：name，container名称，在pod中必须唯一
 
-- 镜像拉取相关：image和imagePullPolicy
+- 镜像拉取相关：image和imagePullPolicy，其中imagePullPolicy，可选Never、IfNotPresent和Always，其中Always不是每次都更新，而是每次都向registry发出请求检查本地的镜像是否是最新。
 
-- 端口暴露：ports
+- 端口暴露：ports，只是用于声明，没有声明的也能被访问到。
 
-- 容器状态检测：readinessProbe、livenessProbe、startupProbe
+- 容器入口：args、command、workingDir。
 
-- 容器入口：args和command
+- 环境变量配置：env和envFrom，**注意，环境变量不是直接注入到系统配置中，所以只对容器的主进程有效。这两个配置项只是等价于k8s自动通过export命令在启动容器进程前注册环境变量。**
 
-- 环境变量配置：env和envFrom
+- 资源设备相关：resources、volumeMounts和volumeDevices、tty
 
-- 资源相关：resources、volumeMounts和volumeDevices
+- 用户权限空间映射：securityContext
 
-- 生命周期回调：lifecycle
+- 生命周期
+  
+  - 状态检测：readinessProbe、livenessProbe、startupProbe
+  
+  - 回调钩子：lifecycle
 
 #### pod级别配置
 
-##### volumes
+##### 持久化相关
 
 volumes用于配置声明可被容器挂载的文件系统，pod中的容器可以通过名称进行引用挂载。k8s提供了各种volume插件，其中常用的有
 
@@ -64,7 +88,7 @@ volumes用于配置声明可被容器挂载的文件系统，pod中的容器可�
 
 - hostPath：挂载pod运行节点上的路径。
 
-##### imagePullSecrets
+##### 镜像拉取相关
 
 需要通过命令`kubectl create secret docker-registry`在**pod对应的命名空间**创建访问目标私有仓库的秘钥。命令格式是：
 
@@ -78,26 +102,46 @@ kubectl create secret docker-registry \
 
 ##### 调度相关
 
+###### 容器调度
+
+用于控制pod内容器的总体生命周期。
+
+- restartPolicy：控制容器主进程退出后是否重启容器。
+  
+  - 可选`Always`，`OnFailure`和 `Never`
+  
+  - 重试间隔时间为，10s、20s、40s指数增加，其最长延迟为 5 分钟。
+  
+  - 重试间隔时间会在容器正常运行10分钟后重置为10s
+
+- activeDeadlineSeconds：控制容器在转为`Running`后最多能运行多久。
+
+- terminationGracePeriodSeconds：在Pod转为`Terminating` 后多久将强制删除pod，不管是否有还在运行的容器。
+
+###### 节点选择
+
 - `nodeName`:直接手动指定pod运行的node
 
-- `nodeSelector`：通过label选择满足条件的node
+- `nodeSelector`：通过label按照key-value的形式选择满足条件的node。
+  
+  ```yaml
+  spec:
+    nodeSelector:
+      label1:value1
+      ...
+  ```
 
-- `nodeAffinity`：通过更加精细化的条件筛选节点。其中`requiredDuringSchedulingIgnoredDuringExecution`代表必须满足的条件，`preferredDuringSchedulingIgnoredDuringExecution`用于对满足条件的节点进行筛选
+- `affinity`：通过更加精细化的条件筛选节点。
+  
+  - 其中包含`nodeAffinity`（节点亲和性）,`nodeAntiAffinity`（节点反亲和性）,`podAntiAffinity`（当某个节点存在满足条件的pod时，不调度到该节点上）。
+  
+  - 每个字段`requiredDuringSchedulingIgnoredDuringExecution`代表必须满足的条件，`preferredDuringSchedulingIgnoredDuringExecution`用于对满足条件的节点进行筛选
 
 - `tolerations`：代表pod对节点的容忍度，通常用于限制调度或者驱逐pod。
 
-###### nodeSelector
+- `topologySpreadConstraints`：用于均匀地将pod分散到不同节点上。
 
-nodeSelector使用key-value的方式选择节点，格式是：
-
-```yaml
-spec:
-  nodeSelector:
-    label1:value1
-    ...
-```
-
-###### nodeAffinity
+##### Pod主体权限
 
 #### container级别配置
 

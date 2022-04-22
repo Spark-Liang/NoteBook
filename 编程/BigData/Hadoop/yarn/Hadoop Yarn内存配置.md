@@ -29,5 +29,3 @@
 - **yarn.scheduler.maximum-allocation-mb**
 
 单个任务可申请的最多物理内存量，默认是8192（MB）。
-
-

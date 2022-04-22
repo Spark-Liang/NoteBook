@@ -74,8 +74,6 @@ systemctl set-default multi-user.target # 切换到命令行界面
 
 4. 重启系统
 
-
-
 ##### 使用客户端进行连接
 
 #### 错误处理

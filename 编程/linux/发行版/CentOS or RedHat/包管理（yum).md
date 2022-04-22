@@ -115,6 +115,16 @@ mv -f /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
 curl http://mirrors.aliyun.com/repo/Centos-altarch-7.repo -o /etc/yum.repos.d/CentOS-Base.repo
 ```
 
+##### 命令行管理仓库
+
+- 添加仓库配置文件，从指定的url下载仓库源配置文件。
+  
+  ```bash
+  yum-config-manager --add-repo <repo file url>
+  ```
+
+- 
+
 #### yum错误收集
 
 ##### repository are already installed but they are not correct
@@ -130,6 +140,12 @@ curl http://mirrors.aliyun.com/repo/Centos-altarch-7.repo -o /etc/yum.repos.d/Ce
 - 软件包在更新时出现了错误，某些已存在的包无法正常卸载。
   
   - 如`audit-lib`包更新，由于系统中同时存在`audit`和`audit-lib`导致audit无法正常更新。
+
+##### "Encountered end of file"
+
+原因：
+
+- 使用了代理导致无法访问到仓库
 
 #### 安装包资源网站
 

@@ -116,8 +116,6 @@ Executor配置有：
 
 **默认每个connector创建自己的线程池。**
 
-
-
 ##### Host 配置
 
 Host配置属性有：
@@ -136,8 +134,6 @@ Host配置属性有：
 </Host>  
 ```
 
-
-
 ##### 安全相关配置
 
 tomcat通过`域(Realm)`定义可以进行访问控制的范围，通过Resource提供用户密码等信息，最后通过在`web.xml`中配置`security-constraint`定义需要进行访问控制的资源
@@ -146,17 +142,11 @@ tomcat通过`域(Realm)`定义可以进行访问控制的范围，通过Resource
 
 所有的resource都定义在`GlobalNamingResources`中，在。
 
-
-
 resource相关文章参考：[Apache Tomcat 8 (8.5.66) - JNDI Resources How-To](https://tomcat.apache.org/tomcat-8.5-doc/jndi-resources-howto.html)
-
-
 
 ##### 其他配置
 
 - c
-
-
 
 #### Tomcat 类加载机制
 
@@ -167,10 +157,15 @@ tomcat 的类加载器父子关系如下:
 其中各个类加载器的作用如下：
 
 - Common类加载器，负责加载Tomcat和Web应用都复用的类。
+  
   - 加载位置如下：
+    
     - `$CATALINA_BASE/lib`
+    
     - `$CATALINA_BASE/lib/*.jar`
+    
     - `$CATALINA_HOME/lib`
+    
     - `$CATALINA_HOME/lib/*.jar`
       
       其中CATALINA_HOME是tomcat的安装路径。通常CATALINA_HOME和CATALINA_BASE相同。但是单机多实例的话可以通过下面的方式配置不同的CATALINA_BASE。
@@ -178,10 +173,15 @@ tomcat 的类加载器父子关系如下:
       ```shell
       CATALINA_BASE=/tmp/tomcat_base1 bin/catalina.sh start
       ```
+
 - Catalina类加载器，负责加载Tomcat专用的类，而**这些被加载的类在Web应用中将不可见**
+
 - Shared类加载器，负责加载Tomcat下所有的Web应用程序都复用的类，而这些被加载的类在Tomcat中将不可见
+
 - WebApp类加载器，**每个webapp独立一个**。负责加载具体的某个Web应用程序所使用到的类，而这些被加载的类在Tomcat和其他的Web应用程序都将不可见
+  
   - 用于加载 `/WEB-INF/classes`和 `/WEB-INF/lib`下的类。
+
 - Jsp类加载器，每个jsp页面一个类加载器，不同的jsp页面有不同的类加载器，方便实现jsp页面的热插拔
 
 参考：

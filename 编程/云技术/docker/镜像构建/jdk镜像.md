@@ -10,8 +10,6 @@ jdk环境依赖：
 
 - glibc：GNU Linux的c运行时库，下载地址是[glibc-2.29-rc0.apk](https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.29-r0/glibc-2.29-r0.apk)
 
-
-
 ##### Dockerfile
 
 ```dockerfile
@@ -27,7 +25,3 @@ RUN sh /tmp/setup.sh
 ```bash
 
 ```
-
-
-
-
