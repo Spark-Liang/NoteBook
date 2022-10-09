@@ -113,8 +113,6 @@
 | //li[1]/following::*         | 获取当前子节之后的所有节点 |
 | //li[1]/following-sibling::* | 获取当前节点的所有同级节点 |
 
-
-
 ##### 实例xml
 
 ```xml

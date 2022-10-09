@@ -18,8 +18,6 @@
     
     - 2.0.0 开始使用Java SPI机制
 
-
-
 #### 使用
 
 ##### maven配置
@@ -30,9 +28,9 @@ api：
 
 ```xml
 <dependency>
-	<groupId>org.slf4j</groupId>
-	<artifactId>slf4j-api</artifactId>
-	<version>1.6.1</version>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>1.6.1</version>
 </dependency>
 ```
 
@@ -97,10 +95,6 @@ api：
   </dependency>
   ```
 
-
-
-
-
 #### Logger获取
 
 ```java
@@ -108,11 +102,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 private static final Logger logger = LoggerFactory.getLogger(PluginService.class);
-
-
 ```
-
-
 
 ##### 消息级别
 
@@ -125,5 +115,3 @@ SLF4J将日志分为trace、debug、info、warn、error五个级别，每个级�
 | info  | info记录的是整个系统的运行信息，比如系统运行到了哪一个阶段，到达了哪一个状态。                        |
 | warn  | 警告信息表示，程序进入了一个特殊的状态，在该状态下程序可以继续运行，但是不建议让程序进入该状态，因为该状态可能导致结果出现问题。 |
 | error |                                                                  |
-
-

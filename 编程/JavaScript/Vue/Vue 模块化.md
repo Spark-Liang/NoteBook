@@ -63,8 +63,6 @@ new Vue({
 
 slot机制主要是使得组件能成为一个布局框架，通过使用时在组件节点内部配置template，去动态替换组件内的占位符。
 
-
-
 详细文档：[插槽 — Vue.js](https://cn.vuejs.org/v2/guide/components-slots.html)
 
 ##### props
@@ -145,5 +143,3 @@ export default {
   - 缺点：如果没有定义项目的总线标准，不利于多人协作。
 
 解决方法：通过`v-bind="$attrs"`向下传递当前组件没有使用的props，通过`v-on="$listeners"`向上传递当前组件没有监听的事件。
-
-

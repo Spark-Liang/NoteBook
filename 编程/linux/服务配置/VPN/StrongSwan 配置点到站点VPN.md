@@ -188,8 +188,6 @@ wget --no-check-certificate https://download.strongswan.org/strongswan-5.5.3.tar
 
 - EAP: `[ <id selectors> ] : EAP <secret>`
 
-
-
 ##### 配置步骤
 
 1. server端配置
@@ -216,8 +214,6 @@ wget --no-check-certificate https://download.strongswan.org/strongswan-5.5.3.tar
 ###### 配置教程
 
 [https://blog.itnmg.net/2015/04/03/centos7-ipsec-vpn/](https://blog.itnmg.net/2015/04/03/centos7-ipsec-vpn/)
-
-
 
 ##### 其他各种配置场景的官方教程
 

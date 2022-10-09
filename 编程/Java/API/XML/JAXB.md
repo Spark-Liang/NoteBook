@@ -12,10 +12,6 @@
   
   - 循环依赖解决
 
-
-
-
-
 #### 常用注解
 
 ##### 类级别
@@ -60,8 +56,6 @@
 
 - `XmlAccessOrder.UNDEFINED`（默认值）：按照字段定义的顺序排序。**只有在XmlAccessorType是FIeld时才起作用。**
 
-
-
 ###### `@XmlAccessorType`
 
 控制扫描需要转化的属性的方式，可选有：
@@ -86,8 +80,6 @@
 
 - `XmlAccessType.NONE`：不映射任何字段，除非加上`@XmlElement`注解
 
-
-
 ##### 字段级别
 
 ###### `@XmlElement`
@@ -98,16 +90,10 @@
 
 把字段映射成根xml的属性。
 
-
-
 ###### `@XmlValue`
 
 定义映射到xml节点文本的字段。使用了该注解后，其他字段必须使用`@XmlAttribute`进行映射。
 
-
-
 `@XmlJavaTypeAdapter`
 
 控制复杂类型的转化。需要配置转化类的类型。
-
-

@@ -44,6 +44,18 @@ ssh-keygen -q -t rsa1     -N ''  -C 'host-key' -f ssh_host_rsa1_key
 ssh-keygen -q -t rsa      -N ''  -C 'client-key' -f id_rsa
 ```
 
+私钥生成公钥：
+
+```bash
+# ssh-keygen -y 使用私钥生成公钥
+```
+
+注意点：
+
+- 私钥权限必须为`600`，拥有者必须是用户本身
+
+
+
 #### ssh互信
 
 互信步骤：

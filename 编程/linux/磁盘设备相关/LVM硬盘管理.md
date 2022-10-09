@@ -23,7 +23,7 @@ LVM通过三层结构的方式首先将底层的pv（物理分区）统一成多
 
 ##### PV创建
 
-在硬盘新插入到主机的时候，如果识别不出需要执行 echo "- - -" > /sys/class/scsi_host/host0/scan 来扫描新插入的硬盘。PV 的创建是通过 pvcreate 命令实现。下面是例子
+在硬盘新插入到主机的时候，如果识别不出需要执行 `echo "- - -" > /sys/class/scsi_host/host0/scan` 来扫描新插入的硬盘。PV 的创建是通过 pvcreate 命令实现。下面是例子
 
 ```bash
 # 对新添加的硬盘创建 PV

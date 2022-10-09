@@ -104,8 +104,6 @@ pom文件配置：
 
 - omitted for conflict with xxx：代表对应的依赖因为冲突而忽略，其中xxx是保留的版本号。
 
-
-
 #### maven 依赖解析逻辑
 
 规则：
@@ -117,5 +115,3 @@ pom文件配置：
 - 位置靠前优先采用
 
 **maven解析依赖是采用广度优先算法，采用最先成功解析到的包，整个项目中只会有唯一的groupId+artifactId组合。**
-
-
