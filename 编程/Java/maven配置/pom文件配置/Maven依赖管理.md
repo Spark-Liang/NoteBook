@@ -16,6 +16,26 @@
 
 #### 基础知识
 
+##### 配置格式
+
+```xml
+<dependency>
+  <groupId>dom4j</groupId>
+  <artifactId>dom4j</artifactId>
+  <version>1.6.1</version>   <!-- 当父工程有配置依赖继承时version也是可选 --> 
+  <!-- 可选 <scope>compile</scope> --> 
+  <!-- 可选 
+  <exclusions>
+    <exclusion>
+       <groupId>xxx</groupId>
+       <artifactId>xxx</artifactId>
+    </exclusion>
+  </exclusions>
+  <!-- 可选 <classifier>jdk8</classifier> --> 
+  <!-- 可选 <classifier>jdk8</classifier> --> 
+</dependency>
+```
+
 ##### scope
 
 ###### 分类

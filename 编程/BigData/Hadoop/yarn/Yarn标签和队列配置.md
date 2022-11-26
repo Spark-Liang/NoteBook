@@ -223,8 +223,6 @@ yarn rmadmin -refreshQueues
 
 - 一个nodemanager只能有一个标签
 
-
-
 参考文档：
 
 - [Apache Hadoop 2.7.7 &#x2013; YARN Node Labels](https://hadoop.apache.org/docs/r2.7.7/hadoop-yarn/hadoop-yarn-site/NodeLabel.html)
