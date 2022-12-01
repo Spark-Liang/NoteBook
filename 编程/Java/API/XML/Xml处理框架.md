@@ -12,8 +12,6 @@
   
   - 示例
 
-
-
 #### dom4j
 
 ##### 依赖
@@ -30,8 +28,10 @@ maven依赖
 
 ###### 读取API
 
-
-
 ##### 输出API
 
 
+
+##### 参考文档
+
+- [【Dom4j】Dom4j完整教程详解_fckey的博客-CSDN博客_dom4j](https://blog.csdn.net/qq_41860497/article/details/84339091)

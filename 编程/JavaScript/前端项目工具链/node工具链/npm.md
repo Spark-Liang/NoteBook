@@ -44,14 +44,6 @@
    npm install -g cnpm --registry=https://registry.npm.taobao.org
    ```
 
-###### 压缩包安装
-
-当需要一台设备安装多个版本的nodejs最好采用压缩包安装，然后设置环境变量，相关环境变量有
-
-- PATH
-
-- 
-
 ##### 配置
 
 ###### 配置文件
