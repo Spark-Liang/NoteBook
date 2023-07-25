@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./一键脚本搭建ssr_files/push.js.下载"></script><script src="./一键脚本搭建ssr_files/hm.js.下载"></script><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+
+<link rel="dns-prefetch" href="https://apps.bdimg.com/">
+<meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-title" content="flyzy博客">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<title>一键脚本搭建ss 一键脚本搭建ssr 一键开启bbr ss/ssr一键 - Flyzy's Blog</title><link rel="stylesheet" href="./一键脚本搭建ssr_files/165d183ee8e1e2f92515f0d87d95b462.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" onerror="this.removeAttribute(&#39;data-rocket-async&#39;)" media="all" data-minify="1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO plugin v19.11 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="自己写的一键搭建shadowsocks/shadowsocksR的shell脚本，一键脚本适用Vultr的和搬瓦工所有机型（CentOS、Ubuntu、Debian），ss/ssr脚本都适用。一键脚本内容包括一键搭建shadowsocks/一键搭建shadowsocksR+一键开启bbr加速，适合新手小白。">
+	<link rel="canonical" href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="一键脚本搭建ss 一键脚本搭建ssr 一键开启bbr ss/ssr一键 - Flyzy&#39;s Blog">
+	<meta property="og:description" content="自己写的一键搭建shadowsocks/shadowsocksR的shell脚本，一键脚本适用Vultr的和搬瓦工所有机型（CentOS、Ubuntu、Debian），ss/ssr脚本都适用。一键脚本内容包括一键搭建shadowsocks/一键搭建shadowsocksR+一键开启bbr加速，适合新手小白。">
+	<meta property="og:url" content="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/">
+	<meta property="og:site_name" content="flyzy博客">
+	<meta property="article:published_time" content="2018-07-13T15:17:52+00:00">
+	<meta property="article:modified_time" content="2021-11-01T15:52:17+00:00">
+	<meta property="og:image" content="https://flyzyblog.net/wp-content/uploads/2018/07/ss-fly-success-new.png?v=1623860149">
+	<meta property="og:image:width" content="450">
+	<meta property="og:image:height" content="201">
+	<meta property="og:image:type" content="image/png">
+	<meta name="author" content="flyzyblog">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:label1" content="作者">
+	<meta name="twitter:data1" content="flyzyblog">
+	<meta name="twitter:label2" content="预计阅读时间">
+	<meta name="twitter:data2" content="2分">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/","url":"https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/","name":"一键脚本搭建ss 一键脚本搭建ssr 一键开启bbr ss/ssr一键 - Flyzy's Blog","isPartOf":{"@id":"https://flyzyblog.net/#website"},"primaryImageOfPage":{"@id":"https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#primaryimage"},"image":{"@id":"https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#primaryimage"},"thumbnailUrl":"https://flyzyblog.net/wp-content/uploads/2018/07/ss-fly-success-new.png?v=1623860149","datePublished":"2018-07-13T15:17:52+00:00","dateModified":"2021-11-01T15:52:17+00:00","author":{"@id":"https://flyzyblog.net/#/schema/person/e7fd3f9046ff536cdb0216cc4c68db68"},"description":"自己写的一键搭建shadowsocks/shadowsocksR的shell脚本，一键脚本适用Vultr的和搬瓦工所有机型（CentOS、Ubuntu、Debian），ss/ssr脚本都适用。一键脚本内容包括一键搭建shadowsocks/一键搭建shadowsocksR+一键开启bbr加速，适合新手小白。","breadcrumb":{"@id":"https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#breadcrumb"},"inLanguage":"zh-CN","potentialAction":[{"@type":"ReadAction","target":["https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/"]}]},{"@type":"ImageObject","inLanguage":"zh-CN","@id":"https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#primaryimage","url":"https://flyzyblog.net/wp-content/uploads/2018/07/ss-fly-success-new.png?v=1623860149","contentUrl":"https://flyzyblog.net/wp-content/uploads/2018/07/ss-fly-success-new.png?v=1623860149","width":450,"height":201,"caption":"ssr安装成功"},{"@type":"BreadcrumbList","@id":"https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"flyzy博客","item":"https://flyzyblog.net/"},{"@type":"ListItem","position":2,"name":"技术总结","item":"https://flyzyblog.net/tech/"},{"@type":"ListItem","position":3,"name":"一键脚本搭建SS/搭建SSR服务并开启BBR加速"}]},{"@type":"WebSite","@id":"https://flyzyblog.net/#website","url":"https://flyzyblog.net/","name":"flyzy博客","description":"便宜VPS推荐，Linux运维，优惠分享","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://flyzyblog.net/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"zh-CN"},{"@type":"Person","@id":"https://flyzyblog.net/#/schema/person/e7fd3f9046ff536cdb0216cc4c68db68","name":"flyzyblog","image":{"@type":"ImageObject","inLanguage":"zh-CN","@id":"https://flyzyblog.net/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/c5448f138330cd0d96c1d56d93eee594?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/c5448f138330cd0d96c1d56d93eee594?s=96&d=mm&r=g","caption":"flyzyblog"}}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+
+
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+
+<style id="ez-toc-inline-css" type="text/css">
+div#ez-toc-container p.ez-toc-title {font-size: 120%;}div#ez-toc-container p.ez-toc-title {font-weight: 500;}div#ez-toc-container ul li {font-size: 95%;}div#ez-toc-container nav ul ul li ul li {font-size: %!important;}
+</style>
+
+
+
+
+<style id="wpcd-style-inline-css" type="text/css">
+ .coupon-type { background-color: ; } .deal-type { background-color: ; } .wpcd-coupon { border-color: ; } 
+</style>
+<script type="text/javascript" src="./一键脚本搭建ssr_files/jquery.min.js.下载" id="jquery-js"></script>
+<script type="text/javascript" id="wpcd-main-js-js-extra">
+/* <![CDATA[ */
+var wpcd_object = {"ajaxurl":"https:\/\/flyzyblog.net\/wp-admin\/admin-ajax.php","security":"8cb5d1546a"};
+var wpcd_main_js = {"minutes":"minutes","seconds":"seconds","hours":"hours","day":"day","week":"week","expired_text":"This offer has expired!","word_count":"30","button_text":"Copy","after_copy":"Copied","vote_success":"You have voted successfully!","vote_fail":"Voting failed!","vote_already":"You have voted already!"};
+/* ]]> */
+</script>
+<script data-minify="1" type="text/javascript" src="./一键脚本搭建ssr_files/main.js.下载" id="wpcd-main-js-js" defer=""></script>
+<script type="text/javascript" src="./一键脚本搭建ssr_files/clipboard.min.js.下载" id="wpcd-clipboardjs-js" defer=""></script>
+<link rel="https://api.w.org/" href="https://flyzyblog.net/wp-json/"><link rel="alternate" type="application/json" href="https://flyzyblog.net/wp-json/wp/v2/posts/34"><link rel="alternate" type="application/json+oembed" href="https://flyzyblog.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflyzyblog.net%2Finstall-ss-ssr-bbr-in-one-command%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://flyzyblog.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflyzyblog.net%2Finstall-ss-ssr-bbr-in-one-command%2F&amp;format=xml">
+<script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		if (window.wfLogHumanRan) { return; }
+		window.wfLogHumanRan = true;
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//flyzyblog.net/?wordfence_lh=1&hid=BE98665B261604C0215D3AD31A6FDE6D');
+</script><style>.ez-toc-container-direction {direction: ltr;}.ez-toc-counter ul {direction: ltr;counter-reset: item;}.ez-toc-counter nav ul li a::before {content: counter(item, numeric) ". ";margin-right: .2em; counter-increment: item;flex-grow: 0;flex-shrink: 0;float: left;	}.ez-toc-widget-direction {direction: ltr;}.ez-toc-widget-container ul {direction: ltr;counter-reset: item;}.ez-toc-widget-container nav ul li a::before {content: counter(item, numeric) ". ";margin-right: .2em; counter-increment: item;flex-grow: 0;flex-shrink: 0;float: left;	}</style>
+<link rel="preload" as="font" href="https://flyzyblog.net/wp-content/themes/dux/fonts/fontawesome-webfont.woff?v=4.7.0" crossorigin=""><meta name="keywords" content="bbr脚本, ss/ssr加速, 技术总结">
+<link rel="icon" href="https://flyzyblog.net/wp-content/uploads/2018/07/avatar-220x150.jpg?v=1623860155" sizes="32x32">
+<link rel="icon" href="https://flyzyblog.net/wp-content/uploads/2018/07/avatar-220x150.jpg?v=1623860155" sizes="192x192">
+<link rel="apple-touch-icon" href="https://flyzyblog.net/wp-content/uploads/2018/07/avatar-220x150.jpg?v=1623860155">
+<meta name="msapplication-TileImage" content="https://flyzyblog.net/wp-content/uploads/2018/07/avatar.jpg?v=1623860155">
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script>
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script><script data-ad-client="ca-pub-6680896394489430" async="" src="./一键脚本搭建ssr_files/f.txt"></script>
+<link rel="shortcut icon" href="https://flyzyblog.net/favicon.ico">
+<!--[if lt IE 9]><script src="https://flyzyblog.net/wp-content/themes/dux/js/libs/html5.min.js"></script><![endif]-->
+<script src="./一键脚本搭建ssr_files/share.js.下载"></script><link href="https://pagead2.googlesyndication.com/" rel="preconnect"><script async="" data-tbquirecontext="_" data-tbquiremodule="main" src="./一键脚本搭建ssr_files/main.js(1).下载"></script><link href="./一键脚本搭建ssr_files/f.txt" rel="preload" as="script"><link href="./一键脚本搭建ssr_files/f.txt" rel="preload" as="script"><script type="text/javascript" async="" src="./一键脚本搭建ssr_files/saved_resource"></script><script async="" data-tbquirecontext="_" data-tbquiremodule="lazyload" src="./一键脚本搭建ssr_files/lazyload.min.js.下载"></script><script async="" data-tbquirecontext="_" data-tbquiremodule="prettyprint" src="./一键脚本搭建ssr_files/prettyprint.js.下载"></script><script async="" data-tbquirecontext="_" data-tbquiremodule="jquery.cookie" src="./一键脚本搭建ssr_files/jquery.cookie.min.js.下载"></script><link href="./一键脚本搭建ssr_files/share.css" rel="styleSheet" type="text/css"></head>
+<body class="post-template-default single single-post postid-34 single-format-standard nav_fixed m-excerpt-cat site-layout-2 nav-fixed">
+<header class="header">
+	<div class="container">
+		<div class="logo"><a href="https://flyzyblog.net/" title="flyzy博客-便宜VPS推荐，Linux运维，优惠分享"><img src="./一键脚本搭建ssr_files/flyzylbog-logo-final.png" alt="flyzy博客-便宜VPS推荐，Linux运维，优惠分享" width="140" height="32" style="width: auto" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2020/10/flyzylbog-logo-final.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://flyzyblog.net/wp-content/uploads/2020/10/flyzylbog-logo-final.png" alt="flyzy博客-便宜VPS推荐，Linux运维，优惠分享" width="140" height="32" style="width: auto"></noscript>flyzy博客</a></div>		<div class="brand">flyzy博客
+<br>分享便宜VPS与网络优惠</div>		<ul class="site-nav site-navbar">
+			<li id="menu-item-67" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-67"><a href="https://flyzyblog.net/"><i class="fa fa-home" aria-hidden="true"></i> 首页</a></li>
+<li id="menu-item-1575" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1575"><a href="https://flyzyblog.net/iherb/"><i class="fa fa-star"></i>iHerb</a></li>
+<li id="menu-item-274" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-274"><a href="https://flyzyblog.net/promotions/"><i class="fa fa-jpy" aria-hidden="true"></i>网络优惠</a></li>
+<li id="menu-item-96" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-96"><a href="https://flyzyblog.net/vps/"><i class="fa fa-cloud" aria-hidden="true"></i> 便宜VPS</a></li>
+<li id="menu-item-477" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-477"><a href="https://flyzyblog.net/vps-news/"><i class="fa fa-bookmark" aria-hidden="true"></i>VPS资讯</a></li>
+<li id="menu-item-32" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32"><a href="https://flyzyblog.net/tech/"><i class="fa fa-file-text-o" aria-hidden="true"></i> 技术总结</a></li>
+<li id="menu-item-1374" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1374"><a href="https://flyzyblog.net/ji-shu-fen-xiang/"><i class="fa fa-folder-open-o"></i>技术分享</a></li>
+							<li class="navto-search"><a href="javascript:;" class="search-show active"><i class="fa fa-search"></i></a></li>
+					</ul>
+				<div class="topbar">
+			<ul class="site-nav topmenu">
+				<li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="https://flyzyblog.net/about/">关于本站</a></li>
+								<li class="menusns">
+					<a href="javascript:;">关注本站 <i class="fa fa-angle-down"></i></a>
+					<ul class="sub-menu">
+						<li><a class="sns-wechat" href="javascript:;" title="关注“flyzy小站”" data-src="https://flyzyblog.net/wp-content/uploads/2018/07/flyzy.jpg"><i class="fa fa-wechat"></i> 微信</a></li>																														<li><a target="_blank" href="https://flyzyblog.net/feed/"><i class="fa fa-rss"></i> RSS订阅</a></li>					</ul>
+				</li>
+							</ul>
+					</div>
+						<i class="fa fa-bars m-icon-nav"></i>
+			</div>
+</header>
+<div class="site-search">
+	<div class="container">
+		<form method="get" class="site-search-form" action="https://flyzyblog.net/"><input class="search-input" name="s" type="text" placeholder="输入关键字" value=""><button class="search-btn" type="submit"><i class="fa fa-search"></i></button></form>	</div>
+</div>
+<div class="container">
+	<a href="https://bwg.wiki/" target="_blank">
+		<img src="./一键脚本搭建ssr_files/bandwagonhost-top.png" style="width: 100%; height: auto;margin-bottom: 2px" width="1200" height="80" alt="搬瓦工" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2019/11/bandwagonhost-top.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://flyzyblog.net/wp-content/uploads/2019/11/bandwagonhost-top.png" style="width: 100%; height: auto;margin-bottom: 2px" width='1200' height='80' alt="搬瓦工"></noscript>
+	</a>
+<ins class="adsbygoogle" style="display:inline-block;width:100%;height:90px" data-ad-client="ca-pub-6680896394489430" data-ad-slot="4361792311"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>	<div class="breadcrumbs">
+		<div class="container"><p id="breadcrumbs">	当前位置：
+<span><span><a href="https://flyzyblog.net/">flyzy博客</a> » <span><a href="https://flyzyblog.net/tech/">技术总结</a> » <span class="breadcrumb_last" aria-current="page">一键脚本搭建SS/搭建SSR服务并开启BBR加速</span></span></span></span></p></div>
+	</div>
+<section class="container">
+	<div class="content-wrap">
+	<div class="content">
+				<header class="article-header">
+			<h1 class="article-title"><a href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/">一键脚本搭建SS/搭建SSR服务并开启BBR加速</a></h1>
+			<div class="article-meta">
+				<span class="item">2018-07-13</span>
+												<span class="item">分类：<a href="https://flyzyblog.net/tech/" rel="category tag">技术总结</a></span>
+								<span class="item">评论(271)</span>
+				<span class="item"></span>
+			</div>
+		</header>
+				<article class="article-content">
+			<div class="asb asb-post asb-post-01"><a href="https://curl.qcloud.com/xfYJKn77" target="_blank" rel="nofollow noopener noreferrer"><img src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%201040%20100&#39;%3E%3C/svg%3E" style="width:100%;height:auto" width="1040" height="100" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2021/11/tencent-cloud-double11.jpg" data-tag="bdshare"><noscript><img src="https://flyzyblog.net/wp-content/uploads/2021/11/tencent-cloud-double11.jpg" style="width:100%;height:auto" width="1040" height="100"></noscript></a></div>			<div id="ez-toc-container" class="ez-toc-v2_0_39 ez-toc-wrap-right counter-hierarchy ez-toc-counter ez-toc-grey ez-toc-container-direction">
+<div class="ez-toc-title-container">
+<p class="ez-toc-title">本文目录</p>
+<span class="ez-toc-title-toggle"><a href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#" class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle" area-label="ez-toc-toggle-icon-1"><label for="item-63e2dd3bf3efa" aria-label="Table of Content"><span style="display: flex;align-items: center;width: 35px;height: 30px;justify-content: center;direction:ltr;"><svg style="fill: #999;color:#999" xmlns="http://www.w3.org/2000/svg" class="list-377408" width="20px" height="20px" viewBox="0 0 24 24" fill="none"><path d="M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z" fill="currentColor"></path></svg><svg style="fill: #999;color:#999" class="arrow-unsorted-368013" xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 24 24" version="1.2" baseProfile="tiny"><path d="M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z"></path></svg></span></label><input type="checkbox" id="item-63e2dd3bf3efa"></a></span></div>
+<nav><ul class="ez-toc-list ez-toc-list-level-1 "><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-1" href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#%E4%BB%80%E4%B9%88%E6%98%AFshadowsocks" title="什么是shadowsocks">什么是shadowsocks</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-2" href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%90%AD%E5%BB%BAssssr%E6%94%AF%E6%8C%81%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC" title="一键脚本搭建ss/ssr支持系统版本">一键脚本搭建ss/ssr支持系统版本</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-3" href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B4%AD%E4%B9%B0" title="代理服务器购买">代理服务器购买</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-4" href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8BLinux%E6%9C%8D%E5%8A%A1%E5%99%A8" title="连接远程Linux服务器">连接远程Linux服务器</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-5" href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BASS%E6%90%AD%E5%BB%BASSR%E6%9C%8D%E5%8A%A1" title="一键搭建SS/搭建SSR服务">一键搭建SS/搭建SSR服务</a><ul class="ez-toc-list-level-3"><li class="ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-6" href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BAshadowsocks" title="一键搭建shadowsocks">一键搭建shadowsocks</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-7" href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BAshadowsocksR" title="一键搭建shadowsocksR">一键搭建shadowsocksR</a></li></ul></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-8" href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#%E4%B8%80%E9%94%AE%E5%BC%80%E5%90%AFBBR%E5%8A%A0%E9%80%9F" title="一键开启BBR加速">一键开启BBR加速</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-9" href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BAshadowsocksshadowsockR" title="客户端搭建shadowsocks/shadowsockR">客户端搭建shadowsocks/shadowsockR</a><ul class="ez-toc-list-level-3"><li class="ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-10" href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BAss%E4%BB%A3%E7%90%86" title="客户端搭建ss代理">客户端搭建ss代理</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-11" href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BAssr%E4%BB%A3%E7%90%86" title="客户端搭建ssr代理">客户端搭建ssr代理</a></li></ul></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-12" href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#vultr%E6%90%AD%E5%BB%BAss%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B" title="vultr搭建ss视频教程">vultr搭建ss视频教程</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-13" href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97" title="一键脚本更新日志">一键脚本更新日志</a></li></ul></nav></div>
+<p>自己写的一键搭建shadowsocks/shadowsocksR的shell脚本，一键脚本适用Vultr的和搬瓦工所有机型（CentOS、Ubuntu、Debian），搭建的ss服务器支持所有<strong>客户端类型</strong>，本机你是iOS，Android，Windows，Mac，或者是Linux，ss/ssr脚本都适用。一键脚本搭建SS/SSR服务器，<strong>绝对没有任何问题</strong>，任何问题欢迎留言。一键脚本内容包括一键搭建shadowsocks/一键搭建shadowsocksR+一键开启bbr加速，适合新手小白。</p>
+<p><span style="font-size: 14pt;"><strong>纯新手</strong></span>也可以搭建ss/ssr，录了个<span style="font-size: 14pt;"><strong>视频教程</strong></span>，不想看文字的可以看视频，或者结合起来一起看：<a href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/#vultrss">搭建ss视频教程</a>。</p>
+<p>推荐使用<a target="_blank" rel="nofollow" href="https://justmysocks11.com/">Just My Socks</a>：</p>
+<p><a target="_blank" rel="nofollow" href="https://justmysocks11.com/"><img class="alignnone size-full wp-image-125349 entered lazyloaded" src="./一键脚本搭建ssr_files/justmysocks_logo.png" alt="Just My Socks" width="728" height="90" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2019/11/justmysocks_logo.png" data-ll-status="loaded" data-tag="bdshare"><noscript><img class="alignnone size-full wp-image-125349" src="https://flyzyblog.net/wp-content/uploads/2019/11/justmysocks_logo.png" alt="Just My Socks" width="728" height="90" /></noscript></a></p>
+<h2><span class="ez-toc-section" id="%E4%BB%80%E4%B9%88%E6%98%AFshadowsocks"></span><strong>什么是shadowsocks</strong><span class="ez-toc-section-end"></span></h2>
+<p>shadowsocks可以指一种SOCKS5的加密传输协议，也可以指基于这种加密协议的各种数据传输包。</p>
+<p><strong>shadowsocks实现科学上网原理？</strong>shadowsocks正常工作需要服务器端和客户端两端合作实现，首先，客户端（本机）通过ss（shadowsocks）对正常的访问请求进行SOCK5加密，将加密后的访问请求传输给ss服务器端，服务器端接收到客户端的加密请求后，解密得到原始的访问请求，根据请求内容访问指定的网站（例如Google，YouTube，Facebook，instagram等），得到网站的返回结果后，再利用SOCKS5加密并返回给客户端，客户端通过ss解密后得到正常的访问结果，于是就可以实现你直接访问该网站的“假象”。</p>
+<p><strong>为什么选择shadowsocks？</strong>不限终端（安卓，苹果，Windows，Mac都可用），流量便宜（服务器500G只要15元），方便（一键脚本，不需要专业知识）。</p>
+<p><strong>为什么要自己搭建ss/ssr？</strong>你也许会觉得买ss服务也很方便，但是你得要考虑以下几个问题。首先，买的ss服务，限制很多，终端可能只能同时在线2个，每个月就一点点流量可能价格却不便宜，有时候还被别人做手脚，流量跑的贼快；其次，别人收钱跑路怎么办？很多这种情况的；更重要的是，如第一个问题中描述的shadowsocks原理，如果有心人做了一点手脚，是可以得到你的访问记录的；而自己搭建ss/ssr服务，一键脚本也就10来分钟就可以搞定。</p>
+<p>&nbsp;</p>
+<h2><span class="ez-toc-section" id="%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%90%AD%E5%BB%BAssssr%E6%94%AF%E6%8C%81%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC"></span><strong>一键脚本搭建ss/ssr支持系统版本</strong><span class="ez-toc-section-end"></span></h2>
+<p>脚本系统支持：CentOS 6+，Debian 7+，Ubuntu 12+</p>
+<p><span style="color: #ff0000;">注：<span style="color: #000000;">这个脚本支持的系统版本是指ss服务器的版本（都没看过也没关系，不影响搭建），你本机是Windows、Mac、Linux，或者你想用手机端搭建ss/ssr服务器，安卓和苹果，都是可以的。</span></span></p>
+<p>&nbsp;</p>
+<h2><span class="ez-toc-section" id="%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B4%AD%E4%B9%B0"></span><strong>代理服务器购买</strong><span class="ez-toc-section-end"></span></h2>
+<p>作为跳板的代理服务器推荐Vultr和搬瓦工，一是因为本脚本在这两家的所有VPS都做了测试，二是因为都是老牌VPS服务商，不怕跑路。</p>
+<p>Vultr和搬瓦工比较：</p>
+<ol>
+<li>Vultr月付，3.5美元/月起步，搬瓦工年付，年付46.87美元起步；</li>
+<li>搬瓦工线路好，提供CN2 GT/CN2 GIA多条线路，并且保证开到的IP绝对可用；</li>
+</ol>
+<p><span style="color: #ff0000;">如果你是长期使用，那么推荐你使用搬瓦工</span>，线路比Vultr要好的，尤其是联通和电信用户，所谓线路好就是速度快的意思。</p>
+<p>搬瓦工提供CN2和CN2 GIA多种优化线路：</p>
+<ol>
+<li>速度自然是CN2 GIA &gt; CN2 &gt; KVM，相应的价格最贵的是CN2 GIA（包括CN2 GIA-E），但是CN2和KVM的价格却一样，所以如果不买CN2 GIA，则买CN2，不要考虑KVM；</li>
+<li>CN2 GIA的意思是三网CN2直连的意思，优势就是晚高峰也快，价格是最便宜的119.99美元/年，贵但是值。</li>
+</ol>
+<p>对于搬瓦工的推荐：</p>
+<ol>
+<li>不是很在乎120美元/年和50美元/年之间的差距，一年也就差500元其实，那么直接选择CN2 GIA-E，<span style="color: #ff0000;">用过的都说好</span>，<a target="_blank" rel="nofollow" href="https://yhgo.wang/bwg/87">立即购买&gt;&gt;&gt;</a></li>
+<li>如果不是很宽裕，则选择50美元/年的搬瓦工CN2，<a target="_blank" rel="nofollow" href="https://yhgo.wang/bwg/57">立即购买&gt;&gt;&gt;</a></li>
+</ol>
+<p>搬瓦工新手教程与搬瓦工优惠码也可以参考：<a target="_blank" rel="nofollow" href="https://bwg.wiki/">搬瓦工</a></p>
+<p>当然你也可以直接用<a target="_blank" rel="nofollow" href="https://www.vultryhw.cn/">Vultr</a>，Vultr支持月付，最低月付3.5美元，但是线路没有搬瓦工好（速度没有搬瓦工快），搬瓦工暂时不支持月付，Vultr最新活动可以参考：<a title="2020年1月最新Vultr优惠码，汇总Vultr新人优惠与老用户优惠-Vultr优惠网" target="_blank" rel="nofollow" href="https://www.vultryhw.cn/vultr-lastest-promo/">最新Vultr优惠码，汇总Vultr新人优惠与老用户优惠</a>，购买图文教程可以参考：<span style="color: #00ccff;"><a style="color: #00ccff;" target="_blank" rel="nofollow" href="https://www.vultryhw.cn/vultr-deploy-new/">Vultr购买图解步骤</a>。</span></p>
+<p>Vultr和搬瓦工上的所有机型是绝对可以一键脚本搭建shadowsocks/搭建shadowsocksR+开启bbr加速成功的，任何问题<strong>欢迎留言</strong>~</p>
+<p>&nbsp;</p>
+<h2><span class="ez-toc-section" id="%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8BLinux%E6%9C%8D%E5%8A%A1%E5%99%A8"></span><strong>连接远程Linux服务器</strong><span class="ez-toc-section-end"></span></h2>
+<p>购买完成后根据<a target="_blank" rel="nofollow" href="https://www.bwgyhw.cn/bandwagonhost-ssh-login/">Mac/Windows如何SSH远程搬瓦工vps</a>或者<a target="_blank" rel="nofollow" href="https://www.vultryhw.cn/vultr-ssh-login/">Mac/Windows如何SSH远程VULTR vps</a>即可。</p>
+<p>你如果身边没有电脑，一定要搞什么手机搭建ss服务器，也是可以的，毕竟一键脚本只需要复制几行脚本命令就行了。iOS用户可以使用Termius这个工具，直接在App Store下载就行。Android没有用过，反正能ssh连接的软件就行。</p>
+<p>&nbsp;</p>
+<h2><span class="ez-toc-section" id="%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BASS%E6%90%AD%E5%BB%BASSR%E6%9C%8D%E5%8A%A1"></span><strong>一键搭建SS/搭建SSR服务</strong><span class="ez-toc-section-end"></span></h2>
+<p>注意，shadowsocks/shadowsocksR这两个<span style="font-size: 14pt;"><strong><span style="color: #ff0000;">只需要搭建一个</span></strong></span>就可以了！！！！SS与SSR之间的比较一直是各有各的说法，王婆卖瓜自卖自夸。我用的是SS，因为SS的iOS版本比较容易下载，并且被没有觉得ss容易被探查到~</p>
+<h3><span class="ez-toc-section" id="%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BAshadowsocks"></span><strong>一键搭建shadowsocks</strong><span class="ez-toc-section-end"></span></h3>
+<p>连上购买的VPS后（以Xshell为例），你将看到如下图所示的界面：</p>
+<p><img class="size-full wp-image-40 aligncenter entered lazyloaded" src="./一键脚本搭建ssr_files/vutlr-connect-result.png" alt="连接Xshell结果" width="699" height="257" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2018/07/vutlr-connect-result.png" data-tag="bdshare" data-ll-status="loaded"><noscript><img class="size-full wp-image-40 aligncenter" src="https://flyzyblog.net/wp-content/uploads/2018/07/vutlr-connect-result.png" alt="连接Xshell结果" width="699" height="257" /></noscript></p>
+<p>如红框中所示，root@vult（root@ubuntu）说明已经连接成功了，之后你只需要<span style="color: #ff0000;"><strong>在绿色光标处直接复制以下代码并回车</strong></span>就可以了（直接复制即可，如每段代码下方截图中所示）。</p>
+<p>1.下载一键搭建ss脚本文件（直接在绿色光标处复制该行命令回车即可，<strong>只需要执行一次</strong>，卸载ss后也不需要重新下载）</p>
+<pre class="lang:default decode:true  prettyprint"><span class="pln">git clone </span><span class="pun">-</span><span class="pln">b master https</span><span class="pun">:</span><span class="com">//github.com/flyzy2005/ss-fly</span></pre>
+<p><img class="size-full wp-image-41 aligncenter entered lazyloaded" src="./一键脚本搭建ssr_files/shadowsocks-ss-fly-clone.png" alt="下载脚本" width="527" height="124" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2018/07/shadowsocks-ss-fly-clone.png" data-tag="bdshare" data-ll-status="loaded"><noscript><img class="size-full wp-image-41 aligncenter" src="https://flyzyblog.net/wp-content/uploads/2018/07/shadowsocks-ss-fly-clone.png" alt="下载脚本" width="527" height="124" /></noscript></p>
+<p>如果提示<code>bash: git: command not found</code>，则先安装git（你如果不知道自己是哪个系统，那就全部执行一次，然后再执行上面的那个下载命令）：</p>
+<pre class="lang:default decode:true prettyprint"><span class="typ">Centos</span><span class="pun">系统执行这个：</span><span class="pln"> yum </span><span class="pun">-</span><span class="pln">y install git
+</span><span class="typ">Ubuntu</span><span class="pun">/</span><span class="typ">Debian</span><span class="pun">系统执行这个：</span><span class="pln"> apt</span><span class="pun">-</span><span class="kwd">get</span><span class="pln"> </span><span class="pun">-</span><span class="pln">y install git</span></pre>
+<p>2.运行搭建ss脚本代码</p>
+<pre class="lang:default decode:true prettyprint"><span class="pln">ss</span><span class="pun">-</span><span class="pln">fly</span><span class="pun">/</span><span class="pln">ss</span><span class="pun">-</span><span class="pln">fly</span><span class="pun">.</span><span class="pln">sh </span><span class="pun">-</span><span class="pln">i flyzy2005</span><span class="pun">.</span><span class="pln">com </span><span class="lit">1024</span></pre>
+<p>其中<strong>flyzy2005.com</strong>换成你要设置的shadowsocks的密码即可（这个<strong>flyzy2005.com</strong>就是你ss的密码了，是需要填在客户端的密码那一栏的），密码随便设置，最好<strong>只包含字母+数字</strong>，一些特殊字符可能会导致冲突。而第二个参数<span style="font-size: 12pt;"><strong>1024</strong></span><span style="color: #000000; font-size: 18pt;"><span style="font-size: 12pt;">是</span></span><span style="font-size: 12pt;"><strong>端口号</strong></span>，也可以不加，不加默认是1024~（<strong>举个例子</strong>，脚本命令可以是ss-fly/ss-fly.sh -i qwerasd，也可以是ss-fly/ss-fly.sh -i qwerasd 8585，后者指定了服务器端口为8585，前者则是默认的端口号1024，两个命令设置的ss密码都是qwerasd）：</p>
+<p><img class="size-full wp-image-42 aligncenter entered lazyloaded" src="./一键脚本搭建ssr_files/shadowsocks-install.png" alt="ss安装" width="543" height="153" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2018/07/shadowsocks-install.png" data-tag="bdshare" data-ll-status="loaded"><noscript><img class="size-full wp-image-42 aligncenter" src="https://flyzyblog.net/wp-content/uploads/2018/07/shadowsocks-install.png" alt="ss安装" width="543" height="153" /></noscript></p>
+<p>界面如下就表示一键搭建ss成功了：</p>
+<p><img class="alignnone size-full wp-image-43 entered lazyloaded" src="./一键脚本搭建ssr_files/ss-fly-success-new.png" alt="ssr安装成功" width="450" height="201" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2018/07/ss-fly-success-new.png" data-tag="bdshare" data-ll-status="loaded"><noscript><img class="alignnone size-full wp-image-43" src="https://flyzyblog.net/wp-content/uploads/2018/07/ss-fly-success-new.png" alt="ssr安装成功" width="450" height="201" /></noscript></p>
+<p><span style="color: #ff0000;">注</span>：如果需要改密码或者改端口，只需要重新<strong>再执行一次搭建ss脚本代码</strong>就可以了，或者修改<code>/etc/shadowsocks.json</code>这个配置文件（如何修改在公众号回复<strong>vim编辑器使用</strong>）。</p>
+<p>3.相关ss操作</p>
+<pre class="lang:default decode:true prettyprint"><span class="pun">修改配置文件：</span><span class="pln">vim </span><span class="pun">/</span><span class="pln">etc</span><span class="pun">/</span><span class="pln">shadowsocks</span><span class="pun">.</span><span class="pln">json
+</span><span class="pun">停止</span><span class="pln">ss</span><span class="pun">服务：</span><span class="pln">ssserver </span><span class="pun">-</span><span class="pln">c </span><span class="pun">/</span><span class="pln">etc</span><span class="pun">/</span><span class="pln">shadowsocks</span><span class="pun">.</span><span class="pln">json </span><span class="pun">-</span><span class="pln">d stop
+</span><span class="pun">启动</span><span class="pln">ss</span><span class="pun">服务：</span><span class="pln">ssserver </span><span class="pun">-</span><span class="pln">c </span><span class="pun">/</span><span class="pln">etc</span><span class="pun">/</span><span class="pln">shadowsocks</span><span class="pun">.</span><span class="pln">json </span><span class="pun">-</span><span class="pln">d start
+</span><span class="pun">重启</span><span class="pln">ss</span><span class="pun">服务：</span><span class="pln">ssserver </span><span class="pun">-</span><span class="pln">c </span><span class="pun">/</span><span class="pln">etc</span><span class="pun">/</span><span class="pln">shadowsocks</span><span class="pun">.</span><span class="pln">json </span><span class="pun">-</span><span class="pln">d restart</span></pre>
+<p>4.卸载ss服务</p>
+<pre class="lang:default decode:true  prettyprint"><span class="pln">ss</span><span class="pun">-</span><span class="pln">fly</span><span class="pun">/</span><span class="pln">ss</span><span class="pun">-</span><span class="pln">fly</span><span class="pun">.</span><span class="pln">sh </span><span class="pun">-</span><span class="pln">uninstall</span></pre>
+<p>&nbsp;</p>
+<h3><span class="ez-toc-section" id="%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BAshadowsocksR"></span><strong>一键搭建shadowsocksR</strong><span class="ez-toc-section-end"></span></h3>
+<p><span style="color: #ff0000; font-size: 14pt;"><strong>再次提醒</strong></span>，如果安装了SS，就不需要再安装SSR了，如果要改装SSR，请按照上一部分内容的教程先卸载SS！！！</p>
+<p>1.下载一键搭建ssr脚本（<strong>只需要执行一次</strong>，卸载ssr后也不需要重新执行）</p>
+<p><code>git clone -b master https://github.com/flyzy2005/ss-fly</code>，此步骤与一键搭建ss一致，就是clone一键脚本代码。</p>
+<p>2.运行搭建ssr脚本代码</p>
+<pre class="lang:default decode:true  prettyprint"><span class="pln">ss</span><span class="pun">-</span><span class="pln">fly</span><span class="pun">/</span><span class="pln">ss</span><span class="pun">-</span><span class="pln">fly</span><span class="pun">.</span><span class="pln">sh </span><span class="pun">-</span><span class="pln">ssr</span></pre>
+<p><img class="alignnone size-full wp-image-44 entered lazyloaded" src="./一键脚本搭建ssr_files/ss-fly-insall-ssr.png" alt="ssr脚本安装" width="320" height="32" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2018/07/ss-fly-insall-ssr.png" data-tag="bdshare" data-ll-status="loaded"><noscript><img class="alignnone size-full wp-image-44" src="https://flyzyblog.net/wp-content/uploads/2018/07/ss-fly-insall-ssr.png" alt="ssr脚本安装" width="320" height="32" /></noscript></p>
+<p>3.输入对应的参数</p>
+<p>执行完上述的脚本代码后，会进入到输入参数的界面，包括服务器端口，密码，加密方式，协议，混淆。可以直接输入回车选择默认值，也可以输入相应的值选择对应的选项：</p>
+<p><img class="size-full wp-image-45 aligncenter entered lazyloaded" src="./一键脚本搭建ssr_files/ss-fly-bbr-options.png" alt="ssr脚本参数" width="777" height="673" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2018/07/ss-fly-bbr-options.png" data-tag="bdshare" data-ll-status="loaded"><noscript><img class="size-full wp-image-45 aligncenter" src="https://flyzyblog.net/wp-content/uploads/2018/07/ss-fly-bbr-options.png" alt="ssr脚本参数" width="777" height="673" /></noscript></p>
+<p>全部选择结束后，会看到如下界面，就说明搭建ssr成功了：</p>
+<pre class="lang:default decode:true  prettyprint"><span class="typ">Congratulations</span><span class="pun">,</span><span class="pln"> </span><span class="typ">ShadowsocksR</span><span class="pln"> server install completed</span><span class="pun">!</span><span class="pln">
+</span><span class="typ">Your</span><span class="pln"> </span><span class="typ">Server</span><span class="pln"> IP        </span><span class="pun">:你的服务器</span><span class="pln">ip
+</span><span class="typ">Your</span><span class="pln"> </span><span class="typ">Server</span><span class="pln"> </span><span class="typ">Port</span><span class="pln">      </span><span class="pun">:你的端口</span><span class="pln">
+</span><span class="typ">Your</span><span class="pln"> </span><span class="typ">Password</span><span class="pln">         </span><span class="pun">:你的密码</span><span class="pln">
+</span><span class="typ">Your</span><span class="pln"> </span><span class="typ">Protocol</span><span class="pln">         </span><span class="pun">:你的协议</span><span class="pln">
+</span><span class="typ">Your</span><span class="pln"> obfs             </span><span class="pun">:你的混淆</span><span class="pln">
+</span><span class="typ">Your</span><span class="pln"> </span><span class="typ">Encryption</span><span class="pln"> </span><span class="typ">Method</span><span class="pun">:</span><span class="pln">your_encryption_method
+
+</span><span class="typ">Welcome</span><span class="pln"> to visit</span><span class="pun">:</span><span class="pln">https</span><span class="pun">:</span><span class="com">//shadowsocks.be/9.html</span><span class="pln">
+</span><span class="typ">Enjoy</span><span class="pln"> it</span><span class="pun">!</span></pre>
+<p>4.相关操作ssr命令</p>
+<pre class="lang:default decode:true  prettyprint"><span class="pun">启动：/</span><span class="pln">etc</span><span class="pun">/</span><span class="pln">init</span><span class="pun">.</span><span class="pln">d</span><span class="pun">/</span><span class="pln">shadowsocks start
+</span><span class="pun">停止：/</span><span class="pln">etc</span><span class="pun">/</span><span class="pln">init</span><span class="pun">.</span><span class="pln">d</span><span class="pun">/</span><span class="pln">shadowsocks stop
+</span><span class="pun">重启：/</span><span class="pln">etc</span><span class="pun">/</span><span class="pln">init</span><span class="pun">.</span><span class="pln">d</span><span class="pun">/</span><span class="pln">shadowsocks restart
+</span><span class="pun">状态：/</span><span class="pln">etc</span><span class="pun">/</span><span class="pln">init</span><span class="pun">.</span><span class="pln">d</span><span class="pun">/</span><span class="pln">shadowsocks status
+
+</span><span class="pun">配置文件路径：/</span><span class="pln">etc</span><span class="pun">/</span><span class="pln">shadowsocks</span><span class="pun">.</span><span class="pln">json
+</span><span class="pun">日志文件路径：/</span><span class="kwd">var</span><span class="pun">/</span><span class="pln">log</span><span class="pun">/</span><span class="pln">shadowsocks</span><span class="pun">.</span><span class="pln">log
+</span><span class="pun">代码安装目录：/</span><span class="pln">usr</span><span class="pun">/</span><span class="kwd">local</span><span class="pun">/</span><span class="pln">shadowsocks</span></pre>
+<p>5.卸载ssr服务</p>
+<pre class="lang:default decode:true prettyprint"><span class="pun">./</span><span class="pln">shadowsocksR</span><span class="pun">.</span><span class="pln">sh uninstall</span></pre>
+<p>&nbsp;</p>
+<h2><span class="ez-toc-section" id="%E4%B8%80%E9%94%AE%E5%BC%80%E5%90%AFBBR%E5%8A%A0%E9%80%9F"></span><strong>一键开启BBR加速</strong><span class="ez-toc-section-end"></span></h2>
+<p>BBR是Google开源的一套内核加速算法，可以让你搭建的shadowsocks/shadowsocksR速度上一个台阶，本一键搭建ss/ssr脚本支持一键升级最新版本的内核并开启BBR加速。</p>
+<p>BBR支持4.9以上的，如果低于这个版本则会自动下载最新内容版本的内核后开启BBR加速并重启，如果高于4.9以上则自动开启BBR加速，执行如下脚本命令即可自动开启BBR加速：</p>
+<pre class="lang:default decode:true prettyprint"><span class="pln">ss</span><span class="pun">-</span><span class="pln">fly</span><span class="pun">/</span><span class="pln">ss</span><span class="pun">-</span><span class="pln">fly</span><span class="pun">.</span><span class="pln">sh </span><span class="pun">-</span><span class="pln">bbr</span></pre>
+<p><img class="size-full wp-image-46 aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20915%20274&#39;%3E%3C/svg%3E" alt="bbr脚本成功" width="915" height="274" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2018/07/ss-fly-bbr-success-new.png" data-tag="bdshare"><noscript><img class="size-full wp-image-46 aligncenter" src="https://flyzyblog.net/wp-content/uploads/2018/07/ss-fly-bbr-success-new.png" alt="bbr脚本成功" width="915" height="274" /></noscript></p>
+<p>装完后需要重启系统，输入y即可立即重启，或者之后输入<code>reboot</code>命令重启。</p>
+<p>判断BBR加速有没有开启成功。输入以下命令：</p>
+<pre class="lang:default decode:true  prettyprint"><span class="pln">sysctl net</span><span class="pun">.</span><span class="pln">ipv4</span><span class="pun">.</span><span class="pln">tcp_available_congestion_control</span></pre>
+<p>如果返回值为：</p>
+<pre class="lang:default decode:true  prettyprint"><span class="pln">net</span><span class="pun">.</span><span class="pln">ipv4</span><span class="pun">.</span><span class="pln">tcp_available_congestion_control </span><span class="pun">=</span><span class="pln"> bbr cubic reno</span></pre>
+<p>只要后面有bbr，则说明已经开启成功了。</p>
+<p>&nbsp;</p>
+<h2><span class="ez-toc-section" id="%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BAshadowsocksshadowsockR"></span><strong>客户端搭建shadowsocks/shadowsockR</strong><span class="ez-toc-section-end"></span></h2>
+<h3><span class="ez-toc-section" id="%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BAss%E4%BB%A3%E7%90%86"></span><strong>客户端搭建ss代理</strong><span class="ez-toc-section-end"></span></h3>
+<p>各种客户端版本下载地址：<a target="_blank" rel="nofollow" href="https://www.flyzy2005.com/fan-qiang/shadowsocks/ss-clients-download/"><span style="color: #00ccff;">各版本shadowsocks客户端下载地址</span></a>&nbsp;(打不开参考<a target="_blank" href="https://flyzyblog.net/way-to-flyzy2005/">flyzy小站最新镜像网站地址</a>或者访问<a target="_blank" rel="nofollow" href="https://files.flyzy2005.cn/">https://files.flyzy2005.cn</a>）</p>
+<p>以Windows为例（<span style="color: #00ccff;"><a style="color: #00ccff;" target="_blank" rel="nofollow" href="https://www.flyzy2005.com/fan-qiang/shadowsocks/shadowsocks-pc-windows-config/">shadowsocks电脑版（windows）客户端配置教程</a></span>）：</p>
+<p><img class="size-full wp-image-47 aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20465%20304&#39;%3E%3C/svg%3E" alt="shadowsocks客户端配置" width="465" height="304" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2018/07/shadowsocks-pc-windows.png" data-tag="bdshare"><noscript><img class="size-full wp-image-47 aligncenter" src="https://flyzyblog.net/wp-content/uploads/2018/07/shadowsocks-pc-windows.png" alt="shadowsocks客户端配置" width="465" height="304" /></noscript></p>
+<p>在状态栏右击shadowsocks，勾选<strong>开机启动</strong>和<strong>启动系统代理</strong>，在<strong>系统代理模式</strong>中选择<strong>PAC模式</strong>，<strong>服务器</strong>-&gt;<strong>编辑服务器</strong>，一键安装shadowsocks的脚本默认服务器端口是1024，加密方式是aes-256-cfb，密码是你设置的密码，ip是你自己的VPS ip，保存即可~</p>
+<p><strong>PAC模式</strong>是指国内可以访问的站点直接访问，不能直接访问的再走shadowsocks代理~</p>
+<p>OK！一键脚本搭建shadowsocks完毕！享受科学冲浪吧！</p>
+<p>&nbsp;</p>
+<h3><span class="ez-toc-section" id="%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BAssr%E4%BB%A3%E7%90%86"></span><strong>客户端搭建ssr代理</strong><span class="ez-toc-section-end"></span></h3>
+<p>各种客户端版本下载地址：<a target="_blank" rel="nofollow" href="https://www.flyzy2005.com/fan-qiang/shadowsocksr/ss-ssr-clients/">各版本SS客户端&amp;SSR客户端官方下载地址</a>&nbsp;(打不开参考<a target="_blank" href="https://flyzyblog.net/way-to-flyzy2005/">flyzy小站最新镜像网站地址</a>或者访问<a target="_blank" rel="nofollow" href="https://files.flyzy2005.cn/">https://files.flyzy2005.cn</a>）</p>
+<p>以Windows为例：</p>
+<p><img class="alignnone size-full wp-image-48" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20662%20502&#39;%3E%3C/svg%3E" alt="ssr客户端配置" width="662" height="502" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2018/07/ssr-pc-windows-config.png" data-tag="bdshare"><noscript><img class="alignnone size-full wp-image-48" src="https://flyzyblog.net/wp-content/uploads/2018/07/ssr-pc-windows-config.png" alt="ssr客户端配置" width="662" height="502" /></noscript></p>
+<p>在状态栏右击shadowsocksR，在<strong>系统代理模式</strong>中选择<strong>PAC模式</strong>，再左击两次状态栏的图标打开编辑服务器界面，如上图所示，按照自己的服务器配置填充内容<b>，</b>保存即可~</p>
+<p><strong>PAC模式</strong>是指国内可以访问的站点直接访问，不能直接访问的再走shadowsocksR代理~</p>
+<p>OK！一键脚本搭建shadowsocksR完毕！享受科学冲浪吧！</p>
+<p>&nbsp;</p>
+<h2><span class="ez-toc-section" id="vultr%E6%90%AD%E5%BB%BAss%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B"></span><strong>vultr搭建ss视频教程</strong><span class="ez-toc-section-end"></span></h2>
+<p>应读者要求录了个视频教程，如果你觉得这些文字还不够生动，不够清楚的话，可以看一下视频教程。</p>
+<p>视频获取方式：关注微信公众号<strong>flyzy小站</strong>，发送<strong>视频</strong>即可获得。</p>
+<p><img class="alignnone size-full wp-image-8" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20258%20258&#39;%3E%3C/svg%3E" alt="flyzy小站微信公众号" width="258" height="258" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2018/07/flyzy.jpg" data-tag="bdshare"><noscript><img class="alignnone size-full wp-image-8" src="https://flyzyblog.net/wp-content/uploads/2018/07/flyzy.jpg" alt="flyzy小站微信公众号" width="258" height="258" /></noscript></p>
+<p>&nbsp;</p>
+<h2><span class="ez-toc-section" id="%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97"></span><strong>一键脚本更新日志</strong><span class="ez-toc-section-end"></span></h2>
+<p>一键脚本源码：<a target="_blank" rel="nofollow" href="https://github.com/flyzy2005/ss-fly">一键搭建shadowoscks/搭建shadowsocksR并开启bbr内核加速</a></p>
+<p>2018年1月20日，上传一键安装shadowsocks脚本</p>
+<p>2018年1月24日，添加升级内核并开启BBR加速功能</p>
+<p>2018年3月28日，将升级内核&amp;&amp;开启BBR加速集成在一个命令中</p>
+<p>2018年4月4日，添加一键安装shadowsocksR功能（调用的teddysun大大的<a target="_blank" rel="nofollow" href="https://shadowsocks.be/9.html">一键搭建SSR脚本</a>&nbsp;）</p>
+<p>2018年4月27日，支持Ubuntu/CentOS/Debian</p>
+<p>2018年5月29日，支持<a target="_blank" rel="nofollow" href="https://www.flyzy2005.com/v2ray/how-to-build-v2ray/">一键安装V2Ray</a></p>
+<p>2018年10月14日，增加显示ss链接（默认安装完直接显示，后期调用则通过命令<code>ss-fly/ss-fly.sh -sslink查看</code>）</p>
+<p>&nbsp;</p>
+<p>关注公众号<strong>flyzy小站</strong>，上面有一些搭建shadowsocks<strong>常见问题</strong>的总结~如果还是不行，欢迎在公众号留言~</p>
+<p>&nbsp;</p>
+<p><strong>声明</strong>：本文只作为技术分享，请遵守相关法律，严禁做违法乱纪的事情！</p>
+		</article>
+				<div class="asb-post-footer"><b>AD：</b><strong>【搬瓦工VPS】</strong><a target="_blank" href="https://flyzyblog.net/bandwagonhost-cn2-gia-ecommerce/">美西三网CN2 GIA+日本软银，季付仅$46.87</a></div>				            <div class="post-actions">
+            	<a href="javascript:;" class="post-like action action-like" data-pid="34"><i class="fa fa-thumbs-o-up"></i>赞(<span>170</span>)</a>            	<a href="javascript:;" class="action action-rewards" data-event="rewards"><i class="fa fa-jpy"></i> 打赏</a>            	            </div>
+        		<div style="text-align: center;"><img src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%200%200&#39;%3E%3C/svg%3E" alt="关注我们" data-lazy-src="https://www.vpsgo.com/qrcode.png"><noscript><img src="https://www.vpsgo.com/qrcode.png"  alt="关注我们"></noscript></div>
+		<div class="social-footer">
+			<p>VPS交流群</p>
+			<span>VPS交流群： <a target="_blank" ref="nofollow" href="https://jq.qq.com/?_wv=1027&amp;k=5fTWcJC" alt="VPS交流群" title="VPS交流群">879783844</a></span>
+			<span>VPS优惠通知群（禁言，仅推送）：<a target="_blank" href="https://jq.qq.com/?_wv=1027&amp;k=TDZzvAHz" rel="nofollow">941160291</a></span>
+			<span>搬瓦工用户交流群： <a ref="nofollow" target="_blank" href="https://jq.qq.com/?_wv=1027&amp;k=5kxJQx6">910787332</a></span>
+			<span>搬瓦工补货通知群(禁言，仅推送)：<a ref="nofollow" href="https://jq.qq.com/?_wv=1027&amp;k=5OPJzw2" target="_blank">1050861769</a></span>
+			 <span>VPS交流TG群：<a ref="nofollow" href="https://t.me/flyzyxiaozhan" target="_blank">@flyzyxiaozhan</a></span>
+			<span>VPS优惠通知TG频道：<a href="https://t.me/flyzythink" rel="nofollow" target="_blank">@flyzythink</a></span>
+			<span>搬瓦工用户交流TG群：<a ref="nofollow" href="https://t.me/bandwagonhostusers" target="_blank">@bandwagonhostusers</a></span>
+			 <span>搬瓦工补货通知TG频道：<a ref="nofollow" href="https://t.me/banwagongnews" target="_blank">@banwagongnews</a></span>
+     </div>
+		<div class="post-copyright">未经允许不得转载：<a href="https://flyzyblog.net/">flyzy博客</a> » <a href="https://flyzyblog.net/install-ss-ssr-bbr-in-one-command/">一键脚本搭建SS/搭建SSR服务并开启BBR加速</a></div>		
+					<div class="action-share"><div class="bdsharebuttonbox bdshare-button-style0-24" data-bd-bind="1675812154113">
+<span>分享到：</span>
+<a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+<a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+<a class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+<a class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+<a class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+<a class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a>
+<a class="bds_tqf" data-cmd="tqf" title="分享到腾讯朋友"></a>
+<a class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+<a class="bds_more" data-cmd="more">更多</a> <span>(</span><a class="bds_count" data-cmd="count" title="累计分享0次">0</a><span>)</span>
+</div>
+<script>
+window._bd_share_config = {
+    common: {
+		"bdText"     : "",
+		"bdMini"     : "2",
+		"bdMiniList" : false,
+		"bdPic"      : "",
+		"bdStyle"    : "0",
+		"bdSize"     : "24"
+    },
+    share: [{
+        bdCustomStyle: "https://flyzyblog.net/wp-content/themes/dux/css/share.css"
+    }]
+}
+with(document)0[(getElementsByTagName("head")[0]||body).appendChild(createElement("script")).src="/static/api/js/share.js?cdnversion="+~(-new Date()/36e5)];
+</script></div>
+		
+		<div class="article-tags">标签：<a href="https://flyzyblog.net/tag/bbr%e8%84%9a%e6%9c%ac/" rel="tag">bbr脚本</a><a href="https://flyzyblog.net/tag/ss-ssr%e5%8a%a0%e9%80%9f/" rel="tag">ss/ssr加速</a></div>
+		
+		
+		            <nav class="article-nav">
+                <span class="article-nav-prev">上一篇<br><a href="https://flyzyblog.net/build-home-page-with-wordpress/" rel="prev">基于WordPress的手把手建站教程</a></span>
+                <span class="article-nav-next">下一篇<br><a href="https://flyzyblog.net/nginx-mirror-website/" rel="next">结合Nginx反向代理搭建域名被墙网站的镜像网站</a></span>
+            </nav>
+        		<div class="asb asb-post asb-post-02"><script async="" src="./一键脚本搭建ssr_files/f.txt"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-6680896394489430" data-ad-slot="7601107869"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>		<div class="relates"><div class="title"><h3>相关推荐</h3></div><ul><li><a href="https://flyzyblog.net/360/">借助iptables禁止指定IP或者IP段访问服务器教程</a></li><li><a href="https://flyzyblog.net/ios-fake-gps/">iOS虚拟定位：无需越狱，支持iPhone XS Max，支持12.2</a></li><li><a href="https://flyzyblog.net/ssr-free-traffic/">电信/移动/联通三网通用免流方法，SSR免流教程</a></li><li><a href="https://flyzyblog.net/nat-traversal-with-frp/">使用frp实现内网穿透，访问内网web服务以及ssh内网服务器</a></li><li><a href="https://flyzyblog.net/generate-weibo-shortlinks/">微博短链接生成工具</a></li><li><a href="https://flyzyblog.net/telecom-speed-low/">电信shadowsocks速度慢 国际出口速度慢 被QoS限速</a></li><li><a href="https://flyzyblog.net/vps-ip-blocked-check/">VPS IP被墙检测 IP可用性检验</a></li><li><a href="https://flyzyblog.net/nginx-mirror-website/">结合Nginx反向代理搭建域名被墙网站的镜像网站</a></li></ul></div>					</div>
+	</div>
+	<div class="sidebar">
+<div class="widget widget_ui_asb" style=""><div class="item"><a href="https://www.iherb.com/?rcode=AVW8840" target="_blank" rel="nofollow noopener noreferrer"><img src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20360%20208&#39;%3E%3C/svg%3E" alt="iHerb" width="360" height="208" style="height:auto;" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2020/10/iherb-add-360_200.png"><noscript><img src="https://flyzyblog.net/wp-content/uploads/2020/10/iherb-add-360_200.png" alt="iHerb"  width="360" height="208" style="height:auto;"></noscript></a></div></div><div class="widget_text widget widget_custom_html"><h3>关注本站</h3><div class="textwidget custom-html-widget"><div style="text-align: center;">
+	<img src="./一键脚本搭建ssr_files/qrcode.png" alt="关注我们" width="680" height="400" style="height:auto;" data-lazy-src="https://www.vpsgo.com/qrcode.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://www.vpsgo.com/qrcode.png"  alt="关注我们" width="680" height="400" style="height:auto;"></noscript>
+	<p>
+		<strong><span style="color: #ff0000;">本站数据均由Python脚本采集于网络，仅用于学习Linux和编程技术，如有不适请联系删除（reportspam@qq.com）。</span></strong>
+	</p>
+	<p>
+	<strong>VPS优惠通知群：</strong><a target="_blank" rel="nofollow noopener" href="https://jq.qq.com/?_wv=1027&amp;k=TDZzvAHz">941160291</a>
+</p>
+<p>
+	<strong>VPS交流群：</strong><a href="https://jq.qq.com/?_wv=1027&amp;k=5fTWcJC" target="_blank" ref="nofollow" rel="noopener">879783844</a>
+</p>
+</div></div></div><div class="widget_text widget widget_custom_html"><h3>VPS推荐</h3><div class="textwidget custom-html-widget"><ul class="right-vps">
+	<li>
+		<a target="_blank" rel="nofollow noopener" href="https://bwg.wiki/"><b>搬瓦工</b>，性价比VPS，CN2 GIA三网直连</a>
+	</li>
+		<li>
+		<a target="_blank" rel="nofollow noopener" href="https://cloud.tencent.com/redirect.php?redirect=10477&amp;cps_key=42c9b322fd48ff0ce405a0c7d78612fd"><b>腾讯云</b>，新用户秒杀，年付198元起</a>
+	</li>
+	<li>
+		<a target="_blank" rel="nofollow noopener" href="https://www.aliyun.com/minisite/goods?source=5176.11533457&amp;userCode=db10xvu4"><b>阿里云</b>，新用户2000元代金券</a>
+	</li>
+	<li>
+		<a target="_blank" rel="nofollow noopener" href="https://www.vultryhw.cn/vultr-lastest-promo/"><b>VULTR</b>，全球15个机房，按小时付费</a>
+	</li>
+	<li>
+		<a target="_blank" rel="nofollow noopener" href="https://www.vpsgo.com/hostdare-85-promotion-code.html"><b>HostDare</b>，电信CN2 GIA，大硬盘</a>
+	</li>
+	<li>
+		<a target="_blank" rel="nofollow noopener" href="https://www.vpstip.com/aliyun-hk-simiple-application-server.html"><b>阿里云香港</b>，30M带宽，3网直连，24元/月</a>
+	</li>
+		<li>
+		<a target="_blank" rel="nofollow noopener" href="https://www.vpsgo.com/gigsgigscloud-hk-vps.html"><b>GigsGigsCloud</b>，三网直连,香港CN2 VPS</a>
+	</li>
+	<li>
+		<a target="_blank" rel="nofollow noopener" href="https://virmachchina.com/virmach-cheap-plans/"><b>Virmach</b>，低价之王，年付5美元起</a>
+	</li>
+</ul></div></div><div class="widget_text widget widget_custom_html"><h3>VPS优惠推送与交流</h3><div class="textwidget custom-html-widget"><p><strong><span style="color: #ff0000;">VPS优惠推送：</span></strong></p><p><strong>QQ群（禁言，仅推送）：</strong><a href="https://jq.qq.com/?_wv=1027&amp;k=TDZzvAHz" target="_blank" ref="nofollow" rel="noopener">941160291</a></p><p><strong>TG频道：</strong><a href="https://t.me/flyzythink" target="_blank" ref="nofollow" rel="noopener">@flyzythink</a></p>
+<p><strong><span style="color: #ff0000;">VPS交流群：</span></strong></p><p><strong>QQ群：</strong><a target="_blank" href="https://jq.qq.com/?_wv=1027&amp;k=5fTWcJC" ref="nofollow" rel="noopener">879783844</a></p><p><strong>TG群：</strong><a href="https://t.me/flyzyxiaozhan" target="_blank" ref="nofollow" rel="noopener">@flyzyxiaozhan</a></p></div></div><div class="widget_text widget widget_custom_html"><h3>赞助商</h3><div class="textwidget custom-html-widget"><p><a href="https://bwg.wiki/" target="_blank" rel="nofollow noopener noreferrer"><img class="alignnone entered lazyloaded" src="./一键脚本搭建ssr_files/bandwagonhost-ad.png" alt="搬瓦工" width="330" height="170" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2019/11/bandwagonhost-ad.png" data-ll-status="loaded"><noscript><img class="alignnone" src="https://flyzyblog.net/wp-content/uploads/2019/11/bandwagonhost-ad.png" alt="搬瓦工" width="330" height="170"></noscript></a></p>
+<p><a href="https://www.vultryhw.cn/vultr-introduction-2019/" target="_blank" rel="nofollow noopener noreferrer"><img class="alignnone entered lazyloaded" src="./一键脚本搭建ssr_files/vultr-ad.png" alt="Vultr" width="330" height="170" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2019/11/vultr-ad.png" data-ll-status="loaded"><noscript><img class="alignnone" src="https://flyzyblog.net/wp-content/uploads/2019/11/vultr-ad.png" alt="Vultr" width="330" height="170"></noscript></a></p>
+<p><a href="https://www.ucloud.cn/active/kuaijie.html?invitation_code=C1x305DF39E78C2" target="_blank" rel="nofollow noopener noreferrer"><img class="alignnone entered lazyloaded" src="./一键脚本搭建ssr_files/ucloud-double11.jpg" alt="UCloud" width="330" height="170" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2021/11/ucloud-double11.jpg" data-ll-status="loaded"><noscript><img class="alignnone" src="https://flyzyblog.net/wp-content/uploads/2021/11/ucloud-double11.jpg" alt="UCloud" width="330" height="170"></noscript></a></p></div></div><div class="widget widget_ui_tags"><h3>热门标签</h3><div class="items"><a href="https://flyzyblog.net/tag/iherb/">iHerb (1624)</a><a href="https://flyzyblog.net/tag/iherb%e8%b4%ad%e7%89%a9%e4%ba%a4%e6%b5%81/">iHerb购物交流 (900)</a><a href="https://flyzyblog.net/tag/iherb%e4%bc%98%e6%83%a0%e7%a0%81/">iHerb优惠码 (724)</a><a href="https://flyzyblog.net/tag/%e6%90%ac%e7%93%a6%e5%b7%a5/">搬瓦工 (22)</a><a href="https://flyzyblog.net/tag/%e6%90%ac%e7%93%a6%e5%b7%a5cn2-gia/">搬瓦工CN2 GIA (16)</a><a href="https://flyzyblog.net/tag/%e9%98%bf%e9%87%8c%e4%ba%91/">阿里云 (14)</a><a href="https://flyzyblog.net/tag/python/">Python (13)</a><a href="https://flyzyblog.net/tag/%e6%90%ac%e7%93%a6%e5%b7%a5%e4%bc%98%e6%83%a0%e7%a0%81/">搬瓦工优惠码 (11)</a><a href="https://flyzyblog.net/tag/%e9%a6%99%e6%b8%afvps/">香港VPS (10)</a><a href="https://flyzyblog.net/tag/%e8%85%be%e8%ae%af%e4%ba%91/">腾讯云 (8)</a><a href="https://flyzyblog.net/tag/%e6%90%ac%e7%93%a6%e5%b7%a5cn2-gia%e4%be%bf%e5%ae%9c%e6%96%b9%e6%a1%88/">搬瓦工CN2 GIA便宜方案 (7)</a><a href="https://flyzyblog.net/tag/%e6%90%ac%e7%93%a6%e5%b7%a5%e8%a1%a5%e8%b4%a7/">搬瓦工补货 (7)</a><a href="https://flyzyblog.net/tag/%e9%98%bf%e9%87%8c%e4%ba%91%e9%a6%99%e6%b8%af/">阿里云香港 (7)</a><a href="https://flyzyblog.net/tag/%e9%98%bf%e9%87%8c%e4%ba%91%e4%bc%98%e6%83%a0/">阿里云优惠 (7)</a><a href="https://flyzyblog.net/tag/%e6%90%ac%e7%93%a6%e5%b7%a5cn2-gia-e/">搬瓦工CN2 GIA-E (7)</a><a href="https://flyzyblog.net/tag/cn2-gia-vps/">CN2 GIA VPS (7)</a><a href="https://flyzyblog.net/tag/%e6%90%ac%e7%93%a6%e5%b7%a5cn2-gia%e7%89%b9%e6%83%a0%e6%96%b9%e6%a1%88/">搬瓦工CN2 GIA特惠方案 (6)</a><a href="https://flyzyblog.net/tag/%e9%98%bf%e9%87%8c%e4%ba%91%e5%8f%8c12%e4%bc%98%e6%83%a0/">阿里云双12优惠 (6)</a><a href="https://flyzyblog.net/tag/%e6%90%ac%e7%93%a6%e5%b7%a5%e4%be%bf%e5%ae%9c%e6%96%b9%e6%a1%88/">搬瓦工便宜方案 (6)</a><a href="https://flyzyblog.net/tag/%e8%85%be%e8%ae%af%e4%ba%91%e4%bc%98%e6%83%a0%e6%b4%bb%e5%8a%a8/">腾讯云优惠活动 (6)</a><a href="https://flyzyblog.net/tag/%e6%90%ac%e7%93%a6%e5%b7%a5%e8%a1%a5%e8%b4%a7%e9%80%9a%e7%9f%a5/">搬瓦工补货通知 (6)</a><a href="https://flyzyblog.net/tag/%e6%90%ac%e7%93%a6%e5%b7%a5cn2-gia%e4%bc%98%e6%83%a0/">搬瓦工CN2 GIA优惠 (5)</a><a href="https://flyzyblog.net/tag/%e6%90%ac%e7%93%a6%e5%b7%a5%e9%bb%91%e4%ba%94/">搬瓦工黑五 (5)</a><a href="https://flyzyblog.net/tag/%e6%90%ac%e7%93%a6%e5%b7%a5%e9%bb%91%e4%ba%94%e4%bc%98%e6%83%a0/">搬瓦工黑五优惠 (5)</a><a href="https://flyzyblog.net/tag/%e6%90%ac%e7%93%a6%e5%b7%a5%e9%bb%91%e4%ba%94%e4%bf%83%e9%94%80/">搬瓦工黑五促销 (5)</a><a href="https://flyzyblog.net/tag/%e9%98%bf%e9%87%8c%e4%ba%91%e5%8f%8c12%e6%b4%bb%e5%8a%a8/">阿里云双12活动 (5)</a><a href="https://flyzyblog.net/tag/%e9%98%bf%e9%87%8c%e4%ba%91%e5%8f%8c12/">阿里云双12 (5)</a><a href="https://flyzyblog.net/tag/%e6%90%ac%e7%93%a6%e5%b7%a5%e6%97%a5%e6%9c%ac%e8%bd%af%e9%93%b6/">搬瓦工日本软银 (5)</a><a href="https://flyzyblog.net/tag/%e6%90%ac%e7%93%a6%e5%b7%a5%e9%99%90%e9%87%8f%e7%89%88/">搬瓦工限量版 (5)</a><a href="https://flyzyblog.net/tag/%e6%90%ac%e7%93%a6%e5%b7%a5cn2-gia%e7%89%b9%e6%83%a0/">搬瓦工CN2 GIA特惠 (4)</a></div></div></div></section>
+<script type="text/javascript">
+	$(function() {
+	  $.post(
+		  "https://flyzyblog.net/wp-admin/admin-ajax.php", 
+		  {action :'single_view', id:34},
+		  null
+	  );
+  });
+</script>
+
+<footer class="footer">
+	<div class="container">
+						<p>© 2023 <a href="https://flyzyblog.net/">flyzy博客</a> &nbsp; <a href="https://flyzyblog.net/sitemap_index.xml">SiteMap</a> <br>flyzy博客所有内容均来自网络，仅用于学习Linux和编程技术，若无意侵犯到您的权利或其他任何不合适的部分，请联系站站删除（reportspam@qq.com)，本站会在24小时内作出回应。</p>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6680896394489430" data-ad-slot="5008168960" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+		<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?9c8059a9a372dcc3cb4afeaf794ac74e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>	</div>
+</footer>
+
+	<div class="rewards-popover-mask" data-event="rewards-close"></div>
+	<div class="rewards-popover">
+		<h3>这是一种鼓励</h3>
+				<div class="rewards-popover-item">
+			<h4>支付宝扫一扫打赏</h4>
+			<img src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%200%200&#39;%3E%3C/svg%3E" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2018/07/alipay.png"><noscript><img src="https://flyzyblog.net/wp-content/uploads/2018/07/alipay.png"></noscript>
+		</div>
+						<div class="rewards-popover-item">
+			<h4>微信扫一扫打赏</h4>
+			<img src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%200%200&#39;%3E%3C/svg%3E" data-lazy-src="https://flyzyblog.net/wp-content/uploads/2018/07/wechatpay.png"><noscript><img src="https://flyzyblog.net/wp-content/uploads/2018/07/wechatpay.png"></noscript>
+		</div>
+				<span class="rewards-popover-close" data-event="rewards-close"><i class="fa fa-close"></i></span>
+	</div>
+
+<script>
+window.jsui={
+	www: 'https://flyzyblog.net',
+	uri: 'https://flyzyblog.net/wp-content/themes/dux',
+	ver: '5.0',
+	roll: ["1","2","3"],
+	ajaxpager: '0',
+	url_rp: 'https://flyzyblog.net/way-to-flyzy2005/',
+	qq_id: '',
+	qq_tip: ''
+};
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script type="text/javascript" src="./一键脚本搭建ssr_files/bootstrap.min.js.下载" id="bootstrap-js" defer=""></script>
+<script data-minify="1" type="text/javascript" src="./一键脚本搭建ssr_files/loader.js.下载" id="_loader-js" defer=""></script>
+<script type="text/javascript" src="./一键脚本搭建ssr_files/jquery.smooth-scroll.min.js.下载" id="ez-toc-jquery-smooth-scroll-js" defer=""></script>
+<script type="text/javascript" src="./一键脚本搭建ssr_files/js.cookie.min.js.下载" id="ez-toc-js-cookie-js" defer=""></script>
+<script type="text/javascript" src="./一键脚本搭建ssr_files/jquery.sticky-kit.min.js.下载" id="ez-toc-jquery-sticky-kit-js" defer=""></script>
+<script type="text/javascript" id="ez-toc-js-js-extra">
+/* <![CDATA[ */
+var ezTOC = {"smooth_scroll":"1","visibility_hide_by_default":"","width":"auto","scroll_offset":"30"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./一键脚本搭建ssr_files/front.min.js.下载" id="ez-toc-js-js" defer=""></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="./一键脚本搭建ssr_files/lazyload.min.js(1).下载"></script><script>"use strict";function wprRemoveCPCSS(){var preload_stylesheets=document.querySelectorAll('link[data-rocket-async="style"][rel="preload"]');if(preload_stylesheets&&0<preload_stylesheets.length)for(var stylesheet_index=0;stylesheet_index<preload_stylesheets.length;stylesheet_index++){var media=preload_stylesheets[stylesheet_index].getAttribute("media")||"all";if(window.matchMedia(media).matches)return void setTimeout(wprRemoveCPCSS,200)}var elem=document.getElementById("rocket-critical-css");elem&&"remove"in elem&&elem.remove()}window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel="stylesheet" href="https://flyzyblog.net/wp-content/cache/min/1/165d183ee8e1e2f92515f0d87d95b462.css" media="all" data-minify="1" /></noscript>
+
+<!-- Cached for great performance -->    <div class="m-mask"></div>    <div class="rollbar" style="display: block;"><ul><li><a href="javascript:(scrollTo());"><i class="fa fa-angle-up"></i></a><h6>去顶部<i></i></h6></li>    </ul></div><ul class="m-navbar">
+			<li id="menu-item-67" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-67"><a href="https://flyzyblog.net/"><i class="fa fa-home" aria-hidden="true"></i> 首页</a></li>
+<li id="menu-item-1575" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1575"><a href="https://flyzyblog.net/iherb/"><i class="fa fa-star"></i>iHerb</a></li>
+<li id="menu-item-274" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-274"><a href="https://flyzyblog.net/promotions/"><i class="fa fa-jpy" aria-hidden="true"></i>网络优惠</a></li>
+<li id="menu-item-96" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-96"><a href="https://flyzyblog.net/vps/"><i class="fa fa-cloud" aria-hidden="true"></i> 便宜VPS</a></li>
+<li id="menu-item-477" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-477"><a href="https://flyzyblog.net/vps-news/"><i class="fa fa-bookmark" aria-hidden="true"></i>VPS资讯</a></li>
+<li id="menu-item-32" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32"><a href="https://flyzyblog.net/tech/"><i class="fa fa-file-text-o" aria-hidden="true"></i> 技术总结</a></li>
+<li id="menu-item-1374" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1374"><a href="https://flyzyblog.net/ji-shu-fen-xiang/"><i class="fa fa-folder-open-o"></i>技术分享</a></li>
+							<li class="navto-search"><a href="javascript:;" class="search-show active"><i class="fa fa-search"></i></a></li>
+					</ul></body></html>

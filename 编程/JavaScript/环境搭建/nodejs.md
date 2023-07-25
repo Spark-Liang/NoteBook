@@ -40,6 +40,16 @@ Node.js 是一个基于 Chrome JavaScript 运行时建立的一个平台，即�
 
 当需要一台设备安装多个版本的nodejs最好采用压缩包安装，然后设置环境变量
 
+##### 第三方包可能依赖的运行环境
+
+###### python：
+
+1. ###### vs studio环境：
+
+2. 
+
+##### node-gyp 原生插件构建工具
+
 ##### 安装包下载
 
 [Previous Releases | Node.js](https://nodejs.org/en/download/releases/)

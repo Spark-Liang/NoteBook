@@ -21,7 +21,9 @@ yum install tigervnc-server -y
 cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service
 
 # 修改配置文件 /etc/systemd/system/vncserver@:1.service
-# 把配置文件中的 <USER> 替换成对应的用户，需要注意的是 root 用户的home目录是 /root
+# 把配置文件中的 <USER> 替换成对应的用户
+# 需要注意的是 root 用户的home目录是 /root，在设置PIDFILE注意路径 
+# PIDFILE=/root/.vnc/%H%i.pid
 
 # 重新加载配置文件
 systemctl daemon-reload

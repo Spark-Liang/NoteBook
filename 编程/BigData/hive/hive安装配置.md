@@ -39,7 +39,7 @@ Hive 安装配置
    <property>
        <name>hive.exec.scratchdir</name>
        <value>/user/hive/tmp</value>
-       <description>HDFS root scratch dir for Hive jobs which gets created with write all (733) permission. For each connecting user, an HDFS scratch dir: ${hive.exec.scratchdir}/&lt;username&gt; is created, with ${hive.scratch.dir.permission}.</description>
+       <description>HDFS root scratch dir for Hive jobs which gets created with write all (733) permission. For each connecting user, an HDFS scratch dir: ${hive.exec.scratchdir}/<username> is created, with ${hive.scratch.dir.permission}.</description>
      </property>
      <property>
        <name>hive.metastore.warehouse.dir</name>
@@ -66,7 +66,7 @@ Hive 安装配置
    ```<property>xml
    <property>
        <name>javax.jdo.option.ConnectionURL</name>
-       <value>jdbc:mysql://localhost:3306/hive?createDatabaseIfNotExist=true&amp;characterEncoding=UTF-8&amp;useSSL=false</value>
+       <value>jdbc:mysql://localhost:3306/hive?createDatabaseIfNotExist=true&characterEncoding=UTF-8&useSSL=false</value>
      </property>
      <property>
        <name>javax.jdo.option.ConnectionDriverName</name>
@@ -94,26 +94,63 @@ Hive 安装配置
 
 12. 执行hive命令进入
 
+##### 配置启动 metastore
+
+增加metastore绑定端口配置
+
+```xml
+<property>
+  <name>hive.metastore.port</name>
+  <value>9083</value>
+</property>
+```
+
+运行启动命令
+
+```bash
+nohup bin/hive --service metastore 2>&1 1>logs/metastore.log &
+```
+
+其他进程比如hiveserver2 `hive.metastore.uris` 配置的地址访问metastore
+
+```xml
+<property>
+    <name>hive.metastore.uris</name>
+    <value>thrift://{ip}:9083</value>
+  </property>
+```
+
 ###### 配置hiveserver2
 
 启动hiveserver2 需要在hive-site.xml中添加下列的配置项
 
-```<!-- 这是hiveserver2 -->xml
+```xml
 <!-- 这是hiveserver2 -->
 <property>
-    <name>hive.server2.thrift.port</name>
+    <name>hive.server2.thrift.port</name>
     <value>10000</value>
 </property>
-
 <property>
-    <name>hive.server2.thrift.bind.host</name>
+  <name>hive.server2.webui.port</name>
+  <value>10002</value>
+</property>
+<property>
+    <name>hive.server2.thrift.bind.host</name>
     <value>your host name</value>
 </property>
-
-
 ```
 
+运行启动命令：
 
+```bash
+nohup bin/hive --service hiveserver2 2>&1 1>logs/hiveserver2.log &
+```
+
+通过beeline命令连接hive：
+
+```bash
+bin/beeline -u 'jdbc:hive2://127.0.0.1:10000' -n root -p 'pass@word1'
+```
 
 
 
@@ -132,6 +169,10 @@ Hive 安装配置
 </property>
 ```
 
+###### `Cannot find hadoop installation: $HADOOP_HOME or $HADOOP_PREFIX must be set or hadoop must be in the path`
 
+检查`hive-env.sh`配置的HADOOP_HOME 环境变量，是否配置正确
 
+###### `NoSuchMethodError: com.ibm.icu.impl.ICUBinary.getRequiredData`
 
+移除lib目录下的`icu4j-4.8.1.jar`包

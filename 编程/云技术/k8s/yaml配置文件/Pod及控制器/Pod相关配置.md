@@ -75,6 +75,8 @@ pod主要包含两个级别的配置。一个是pod级别的配置，通常直�
   - 状态检测：readinessProbe、livenessProbe、startupProbe
   
   - 回调钩子：lifecycle
+  
+  - 容器退出消息：terminationMessagePath、terminationMessagePolicy
 
 #### pod级别配置
 
