@@ -152,8 +152,6 @@ nohup bin/hive --service hiveserver2 2>&1 1>logs/hiveserver2.log &
 bin/beeline -u 'jdbc:hive2://127.0.0.1:10000' -n root -p 'pass@word1'
 ```
 
-
-
 ##### 错误收集
 
 ###### hive schema 版本和数据库不对应:"message:Hive Schema version 2.1.0 does not match metastore's schema version 1.2.0 Metastore is not upgraded or corrupt"

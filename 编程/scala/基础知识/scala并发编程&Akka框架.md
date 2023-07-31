@@ -55,8 +55,4 @@ override def receive = {
 }
 ```
 
-
-
 ###### actor 间的信息交互
-
-
