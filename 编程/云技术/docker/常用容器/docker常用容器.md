@@ -26,6 +26,8 @@ sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=<YourStrong@Passw0rd>" \
 
 ##### mysql on docker
 
+docker 命令启动：
+
 ```bash
 docker run -p 3306:3306 --name mysql-container \
 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.6 
@@ -33,6 +35,37 @@ docker run -p 3306:3306 --name mysql-container \
 # 额外定义配置文件
 -v $PWD/conf:/etc/mysql/conf.d -v $PWD/logs:/logs -v $PWD/data:/var/lib/mysql
 ```
+
+docker compose 文件：
+
+```yaml
+version: "3.2"
+services:
+  mysql:
+    container_name: mysql-container
+    image: mysql:5.7
+    restart: always
+    networks:
+      - mysql-bridge
+    ports:
+      - "3306:3306"
+    volumes:
+      - /data1/mysql-container/etc:/etc/mysql
+      - /data1/mysql-container/data:/var/lib/mysql
+      - /etc/localtime:/etc/localtime
+    environment:
+      MYSQL_ROOT_PASSWORD: pass@word1
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: "1024M"
+networks:
+   mysql-bridge:
+     driver: bridge
+```
+
+
 
 ##### dns 服务
 

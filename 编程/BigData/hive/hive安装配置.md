@@ -109,6 +109,9 @@ Hive 安装配置
 
 ```bash
 nohup bin/hive --service metastore 2>&1 1>logs/metastore.log &
+
+# 终止命令，如果metastore绑定了其他端口请修改端口号
+kill `netstat -antp | grep 9083 | awk '{split($7,arr,"/");print arr[1]}'``
 ```
 
 其他进程比如hiveserver2 `hive.metastore.uris` 配置的地址访问metastore
@@ -144,6 +147,9 @@ nohup bin/hive --service metastore 2>&1 1>logs/metastore.log &
 
 ```bash
 nohup bin/hive --service hiveserver2 2>&1 1>logs/hiveserver2.log &
+
+# 终止命令，如果hiveserver绑定了其他端口请修改端口号
+kill `netstat -antp | grep 10000 | awk '{split($7,arr,"/");print arr[1]}'``
 ```
 
 通过beeline命令连接hive：

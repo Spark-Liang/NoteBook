@@ -1,3 +1,7 @@
+[TOC]
+
+
+
 ### LVM（逻辑卷管理器） 概念
 
 LVM对磁盘的分层管理结构如下：
@@ -100,3 +104,10 @@ mkfs.ext4 /dev/vgtest/lv0 # 创建ext4文件系统
 mkdir <mount point>
 mount <logical volumn path> <mount point>
 ```
+
+##### lv删除
+
+```bash
+lvremove /dev/vg_name/lv_name
+```
+

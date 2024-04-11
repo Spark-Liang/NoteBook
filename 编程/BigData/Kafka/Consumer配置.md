@@ -1,16 +1,10 @@
-#### Consumer 配置
+# Consumer 配置
 
-- 消费者与消费者组概念
+[TOC]
 
-- 基本配置
+## 消费者与消费者组概念
 
-- commit 机制
-
-- Partition Assign机制
-
-##### 消费者与消费者组概念
-
-###### 相关角色
+### 相关角色
 
 - **消费者**：一个消费者进程或者线程，负责真正消费队列中的信息
 
@@ -20,7 +14,7 @@
 
 - **消费者组的coordinator**：实际维护消费者组状态信息的进程
 
-###### 消费者与消费者组的关系
+### 消费者与消费者组的关系
 
 消费者leader在rebalance 发生时，会按照`partition.assignment.strategy` 定义的分区分配策略把每个topic 的不同分区分配给消费者组里面的不同消费者
 
@@ -36,9 +30,11 @@
    
    <img src="img/has__idle_customer.png" title="" alt="" data-align="center">
 
-###### Rebalance
+## Rebalance
 
-**发生条件**：
+rebalance 是指 partition 和 consumer 关系发生变化的情况。
+
+### **发生条件**：
 
 - 增加partition
 
@@ -50,7 +46,7 @@
 
 - coordinator自己也宕机
 
-**步骤**：
+### **步骤**：
 
 1. coordinator从组中选择一个leader
 
@@ -58,9 +54,9 @@
 
 3. 由coordinator发送 Sync请求到各个consumer，同步分区分配结果
 
-##### 基本配置
+### 基本配置
 
-###### 代码样例
+#### 代码样例
 
 创建consumer实例：
 
@@ -89,11 +85,9 @@ try {
        for (ConsumerRecord<String, String> record : records)  
        {
             // 消费消息
-           log.debug("topic = %s, partition = %s, offset = %d,
-              customer = %s, country = %s\n",
+           log.debug("topic = %s, partition = %s, offset = %d, customer = %s, country = %s\n",
               record.topic(), record.partition(), record.offset(),
               record.key(), record.value());
-
        }
    }
 } finally {
@@ -102,7 +96,7 @@ try {
 }
 ```
 
-###### 常用配置项
+#### 常用配置项
 
 - `fetch.min.bytes`：从broker抓取的最小数据量，当broker的数据量不够时，consumer不会抓取
 

@@ -1,16 +1,8 @@
 #### Maven setting 文件
 
-- 基本配置
-  
-  - servers配置项
-  
-  - mirrors配置项
-  
-  - profiles配置项
-  
-  - 仓库相关配置
+[TOC]
 
-- mvn命令运行时选项
+
 
 ##### 基本配置
 
@@ -102,3 +94,7 @@ profiles用于全局配置一些选项需要在不同的条件下有不同的值
   ```
 
 - 
+
+##### 其他配置
+
+- 配置maven每次安装时都更新snapshot依赖：https://techexpertise.medium.com/force-maven-to-fetch-dependencies-from-remote-f8d44b80a37d

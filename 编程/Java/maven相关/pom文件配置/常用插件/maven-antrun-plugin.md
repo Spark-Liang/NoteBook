@@ -35,4 +35,9 @@
 </plugin>
 ```
 
+运行命令 
+
+```bash
+mvn antrun:run@ant-execute 
+```
 

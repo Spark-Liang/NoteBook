@@ -1,34 +1,6 @@
 ### Vue组件
 
-- 组件注册使用
-
-- 组件配置项
-  
-  - template
-    
-    - 插槽slot
-  
-  - props
-    
-    - prop配置
-  
-  - data
-  
-  - methods
-  
-  - computed
-  
-  - watch
-  
-  - model
-  
-  - 钩子方法
-    
-    - 组件声明周期
-
-- 实例属性
-  
-  - \$attrs 和 \$listener
+[TOC]
 
 #### 组件注册使用
 
@@ -107,7 +79,9 @@ vue实例都提供了钩子方法用于在vue实例的不同生命周期时刻�
 
 ##### vue生命周期
 
-<img src="img/Vue_Lifecycle.png" title="" alt="" data-align="center">
+- 生命周期图示<img src="img/Vue_Lifecycle.png" title="" alt="" data-align="center">
+
+- [data和props与生命周期关系](https://blog.csdn.net/aexwx/article/details/128781723)
 
 #### 实例属性
 
